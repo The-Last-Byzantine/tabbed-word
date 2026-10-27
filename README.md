@@ -1,5 +1,7 @@
 # Tabbed Word
 
+Live version: https://tabbedword.pages.dev/
+
 A browser-based word processor with tabs. Open, edit, save and export DOCX, ODT, TXT, MD and HTML files.
 Everything runs on your device; files are never uploaded. Works offline after the first visit, with spellcheck
 dictionaries cached locally.
