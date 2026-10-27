@@ -1,0 +1,53 @@
+EMAIL SETUP: "Email all" puts every open tab (as .docx) into one new draft with the files attached.
+Do this once. Then send the two IDs to whoever rebuilds the app, or set them yourself (see the end).
+
+============================================================
+A) OUTLOOK.COM / MICROSOFT 365 (recommended, simplest)
+============================================================
+1. Open https://entra.microsoft.com and sign in with your Microsoft account.
+2. Go to "Identity" > "Applications" > "App registrations" > "New registration".
+3. Name: Tabbed Word
+   Supported account types: "Accounts in any organizational directory and personal Microsoft accounts"
+   Redirect URI: choose "Single-page application (SPA)" and enter
+       https://tabbedword.pages.dev/
+   (For testing on your own computer, also add http://localhost:8000/ under the same platform.)
+4. Click "Register".
+5. On the Overview page copy the "Application (client) ID". This is the microsoftClientId.
+6. Go to "API permissions" > "Add a permission" > "Microsoft Graph" > "Delegated permissions",
+   tick "Mail.ReadWrite", then "Add permissions". No admin consent is needed for personal accounts.
+
+============================================================
+B) GMAIL (Google Cloud)
+============================================================
+1. Open https://console.cloud.google.com and create a project named "Tabbed Word".
+2. "APIs & Services" > "Library" > search "Gmail API" > "Enable".
+3. "APIs & Services" > "OAuth consent screen":
+   User type "External". Fill in the app name and your email addresses.
+   "Scopes" > add  https://www.googleapis.com/auth/gmail.compose
+   "Test users" > add your Gmail address.
+   Leave the publishing status on "Testing". Only the listed test users can sign in, which is fine for personal use.
+4. "APIs & Services" > "Credentials" > "Create credentials" > "OAuth client ID":
+   Application type "Web application".
+   Authorized JavaScript origins:
+       https://tabbedword.pages.dev
+       http://localhost:8000   (only for testing on your computer)
+   Click "Create" and copy the "Client ID". This is the googleClientId.
+   Google may show a warning that the app is not verified. That is expected in Testing mode.
+
+============================================================
+WHICH ONE TO USE
+============================================================
+Outlook and Gmail both work. Pick one as the provider. Outlook is simpler to set up.
+
+============================================================
+SENDING THE IDs
+============================================================
+Send the provider ("outlook" or "gmail") and the ID(s). The app is rebuilt with them included.
+The IDs are not secret, but do not share the app secret or any password. This setup does not need one.
+
+Notes
+- The first click asks you to sign in and allow access. Later clicks reuse that sign-in.
+- Browsers may block the sign-in window. Allow pop-ups for the site if nothing opens.
+- One draft can hold up to about 3.5 MB of files in Outlook, and about 20 MB in Gmail.
+  Larger sets: use "Save all & close" and attach the files yourself.
+- The drafts are not sent. You review and press Send yourself.
