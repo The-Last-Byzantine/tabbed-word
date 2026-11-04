@@ -20,7 +20,7 @@ header{padding:10px 3%;}header small{font-size:11px}#toolbar{background:var(--ri
 </style>
 <header><div><h1>Tabbed Word</h1><small>Local editing · DOCX · ODT · TXT · MD · HTML</small></div><span id="filename">New document.docx</span></header>
 <div id="appstate"><span id="offlinestate">Local editing</span><button id="updateapp" hidden>Update app</button></div><div id="ribbon-tabs" aria-label="Ribbon sections"><span class="selected">Home</span><span>Insert</span><span>Review</span><span>Session</span><span>View</span><span>About</span></div><nav id="toolbar"><select id="newformat" aria-label="New file type"><option value="docx">New DOCX</option><option value="odt">New ODT</option><option value="txt">New TXT</option><option value="md">New Markdown</option><option value="html">New HTML</option></select><button id="new">New</button><button id="open">Open</button><button id="openfolder" hidden title="Open a folder and choose a file (Chrome and Edge on desktop)">Open folder</button><button id="restoreworkspace" type="button" title="Restore the tabs from a session file, in the order they were saved">Restore session</button><button class="primary" id="save">Save</button><button id="saveall" type="button" title="Save every open tab to a file, then close it">Save all &amp; close</button><button id="exportpdf" type="button" title="Save this document as a PDF. Your browser print dialog opens: choose Save as PDF.">Save as PDF</button><span id="morewrap" class="more-wrap"><button type="button" id="moremenu" aria-haspopup="true" aria-expanded="false" aria-controls="morepanel" title="Save As, Export PDF and Email all">More ▾</button><span id="morepanel" class="more-panel" role="menu" hidden><button type="button" id="saveas" role="menuitem">Save As…</button></span></span><button id="consistency" type="button" title="Check this document for repeated words, spacing, punctuation, Greek final sigma, mixed quote styles and spelling variants. Results appear in the right panel.">Check consistency</button><button id="backupworkspace" type="button" title="Save all open tabs, in their order, to one session file">Save session</button><button id="splitdoc" type="button" title="Split at the cursor. The text after the cursor moves to a new tab after this one.">Split</button><button id="compile" type="button" title="Join all open tabs, in tab order, into one Word file. Each tab starts on a new page.">Compile</button><button id="discardall" type="button" title="Close every open tab and delete its draft">Discard all</button><button id="mobiletools" aria-expanded="false">Tools ▾</button><button id="newhtml">New HTML</button><span id="sepfmt" class="tb-sep" aria-hidden="true"></span><select id="paragraphstyle" aria-label="Paragraph style"><option value="normal">Text</option><option value="title">Document title</option><option value="heading1">Heading 1</option><option value="heading2">Heading 2</option><option value="heading3">Heading 3</option><option value="quote">Quote · TNR 11 · 0.5 cm</option></select><select id="pagesize" aria-label="Page size"><option value="a4">A4 page</option><option value="letter">Letter page</option></select><button id="boldtext" type="button" aria-pressed="false"><b>Bold</b></button><button id="italictext" type="button" aria-pressed="false"><i>Italic</i></button><button id="alignjustify" type="button" aria-pressed="false" title="Justify: text reaches both margins">Justify</button><button id="alignleft" type="button" aria-pressed="false" title="Align left">Align left</button><button id="aligncenter" type="button" aria-pressed="false" title="Centre">Centre</button><button id="alignright" type="button" aria-pressed="false" title="Align right">Align right</button><button id="numberlist" aria-pressed="false">1. Numbering</button><button id="bulletlist" aria-pressed="false">• Bullets</button><select id="doclang" aria-label="Document language" title="Language for spelling, Turkish capitals and this document"><option value="el">Ελληνικά</option><option value="en">English</option><option value="tr">Türkçe</option></select><span id="sepfind" class="tb-sep" aria-hidden="true"></span><button id="hltext" type="button" title="Highlight the selected text in yellow">Highlight</button><button id="unhltext" type="button" title="Remove the highlight from the selected text">No highlight</button><button id="findreplace" type="button">Find and replace</button><button id="instable" type="button" title="Insert a table">Table</button><button id="insimage" type="button" title="Insert a JPG or PNG image">Image</button><button id="inshead" type="button" title="Header for every page">Header</button><button id="insfoot" type="button" title="Footer for every page">Footer</button><button id="pagenumbers" type="button" title="Show page numbers at the top or bottom of each page, with a choice of format and alignment">Page numbers</button><button id="insertnote">Footnote</button><button id="insend" type="button" title="Insert an endnote at the cursor">Endnote</button><button id="insremnote" type="button" title="Remove the footnote or endnote mark next to the cursor">Remove note</button><button id="newcomment">New comment</button><button id="commentsbutton">Comments (0)</button><button id="rescomment" type="button" title="Mark the comment at the cursor as resolved">Resolve comment</button><button id="resallcomments" type="button" title="Mark every comment as resolved">Resolve all</button><button id="delallcomments" type="button" title="Delete every comment in the document">Delete all comments</button><button id="citebutton" type="button">Cite</button><button id="devicesave" hidden>Files / Share</button><input id="workspacefile" type="file" accept=".json,application/json" hidden><button id="moveleft" title="Alt + Shift + ←">← Tab</button><button id="moveright" title="Alt + Shift + →">Tab →</button><input type="file" id="file" accept=".docx,.odt,.txt,.md,.markdown,.html,.htm" multiple hidden><button id="sidebyside" type="button" aria-pressed="false" title="Show two documents side by side. The right one is read only; click it to edit there.">Side by side</button><button id="swapsides" type="button" title="Put the right document on the left and the left one on the right">Tab left and right</button><button id="focusview" type="button" aria-pressed="false" title="Hide the ribbon and side panels. Press Esc to leave.">Focus</button><button id="fullscreenview" type="button" aria-pressed="false" title="Full screen. Press Esc to return.">Full screen</button><select id="zoomsel" aria-label="Document zoom" title="Zoom the document"><option value="100">Zoom 100%</option><option value="120">Zoom 120%</option><option value="140">Zoom 140%</option><option value="160">Zoom 160%</option><option value="180">Zoom 180%</option><option value="200">Zoom 200%</option></select><select id="readfont" aria-label="Reading font" title="Font on screen. Exported files keep their own font."><option value="literata">Literata</option><option value="arial">Arial</option><option value="sans">System sans-serif</option></select><select id="readsize" aria-label="Reading size" title="Text size on screen only. Exported files keep their own size."><option value="100">Text 100%</option><option value="115">Text 115%</option><option value="130">Text 130%</option><option value="150">Text 150%</option></select><button id="viewa4" type="button" aria-pressed="false" title="A4 page size, paged view">A4 Page</button><button id="viewletter" type="button" aria-pressed="false" title="Letter page size, paged view">Letter</button><button id="viewlandscape" type="button" aria-pressed="false" title="Landscape: turn the page sideways. Saved with this document. Press again for portrait.">Landscape</button><button id="viewcontinuous" type="button" aria-pressed="false" title="Continuous text, no pages">Continuous Text</button><button id="zoom100" type="button" aria-pressed="true" title="Show the document at 100%">100%</button><button id="zoom120" type="button" aria-pressed="false" title="Show the document at 120%">120%</button><button id="zoom140" type="button" aria-pressed="false" title="Show the document at 140%">140%</button><button id="zoom160" type="button" aria-pressed="false" title="Show the document at 160%">160%</button><button id="zoom180" type="button" aria-pressed="false" title="Show the document at 180%">180%</button><button id="zoom200" type="button" aria-pressed="false" title="Show the document at 200%">200%</button><button type="button" class="tw-ico" id="aboutshortcuts" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button><button type="button" class="tw-ico" id="aboutbackups" title="Backups and drafts" aria-label="Backups and drafts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9"/><path d="M10 13h4"/></svg></button><button type="button" class="tw-ico" id="aboutinfo" title="About Tabbed Word" aria-label="About Tabbed Word"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg></button></nav>
-<div id="tabs" class="tabs" role="tablist" aria-label="Open documents"></div><main><aside id="folderpanel" aria-label="Folder files" hidden><div class="fp-head"><strong id="fpname">Folder</strong><button type="button" id="fpcollapse" title="Hide the folder panel" aria-label="Hide the folder panel" aria-expanded="true">Hide ‹</button></div><div class="fp-body"><p class="fp-note" id="fpnote"></p><div><button type="button" id="fpchoose">Choose folder</button><button type="button" id="fpallow" hidden>Allow access</button><button type="button" id="fprefresh" hidden>Refresh</button></div><label class="fp-sort" hidden>Sort <select id="fpsort"><option value="name">Name, A–Z</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label><ul id="fplist"></ul></div><button type="button" id="fpexpand" class="fp-expand" title="Show the folder panel" aria-label="Show the folder panel">Folders ›</button></aside><section class="paper" id="paper"><div id="docxtools" class="docx-tools"><button id="pageview">Continuous text</button><span id="pagecount"></span><span id="selectioninfo">Shift + click to select a range of paragraphs</span><span id="pagesizeinfo">A4 · on-screen pagination is approximate</span></div><div id="docpages"></div><section id="notespanel" hidden aria-label="Footnotes"><h2>Footnotes</h2><p id="noteshelp">In DOCX/ODT, footnotes appear at the bottom of their page. Here you edit all notes in one list. Click the number to go to the reference.</p><div id="noteslist"></div></section><p id="sourcehint" hidden></p><div id="htmltools" class="html-tools" hidden><button id="codeview">Code</button><button id="splitview">Code + preview</button><button id="previewview">Preview</button><button id="refreshpreview">Refresh</button><label id="scriptchoice"><input id="runscripts" type="checkbox">Run JavaScript</label></div><label for="title" hidden>Title</label><input id="title" placeholder="Document title" aria-label="Document title"><label for="body" hidden>Text</label><textarea id="body" placeholder="Type or paste your text…" aria-label="Document text" spellcheck="true"></textarea><iframe id="preview" title="HTML preview" sandbox="" referrerpolicy="no-referrer" hidden></iframe><section id="commentspanel" hidden aria-label="Document comments"><h2>Comments</h2><div id="commentslist"></div></section></section><textarea id="pagemeter" class="page-measure" tabindex="-1" aria-hidden="true"></textarea><aside><h2>COUNT</h2><div id="stats">0 words</div><div id="chars">0 characters</div><label class="countnotes"><input id="countnotes" type="checkbox" checked> Include footnotes in word count</label><hr><div id="docxhelp"><h2>EXPORT FORMAT</h2>Times New Roman · 12 pt<br>Line spacing 1.5 · justified<br>Bold title<br><span id="pagesizehelp">A4 · 21.00 × 29.70 cm</span><br>Top/bottom: 2.54 cm<br>Left/right: 3.175 cm<br>After paragraph: 10 pt<p id="odtinfo" hidden>ODT: text, headings, simple lists, comments and footnotes are supported. Replies appear as separate comments in other editors. Tables, images, headers and complex layout are not supported.</p></div><div id="htmlhelp" hidden><h2>HTML</h2>The source code opens first. Save keeps the HTML as a UTF-8 file.<p>The preview supports embedded CSS and data images. Files from neighbouring folders and external libraries are not loaded. JavaScript is optional. Features such as localStorage are not available in the preview.</p></div><hr><h2 class="tw-nospell">SPELLING</h2><div id="spellbox" class="tw-nospell"><label><input id="spellon" type="checkbox"><span>Check spelling in English, Greek and Turkish</span></label><select id="spellmode" hidden aria-label="Spelling language on phones"><option value="auto">Language: auto</option><option value="en">Greek and English</option><option value="tr">Turkish</option></select><span id="spellstate" role="status" aria-live="polite">Off</span><ul id="spelllist" aria-label="Possible misspellings"></ul><section id="consistpanel" hidden aria-label="Consistency findings"><h2>CONSISTENCY</h2><p id="consiststate" role="status" aria-live="polite"></p><ul id="consistlist" aria-label="Consistency findings"></ul></section></div><hr><h2>SHORTCUTS</h2><p>Ctrl (Windows) or ⌘ (Mac) with:<br>B Bold · I Italic · F Find<br>Alt+1 Open · Alt+2 New<br>Alt+3 Save · Alt+4 Close · Alt+5 Save As</p><span id="autosave" role="status" aria-live="polite">Automatic draft saving is on</span><span id="status" role="status" aria-live="polite">Ready</span><details class="aside-help"><summary>On your computer: files, backups and drafts</summary><p>No document is uploaded. In DOCX, pasting keeps the text and applies the template format.</p><p>In DOCX, each line break in the body creates a Word paragraph.</p><p id="mode"></p><p>Tabs come back in the same browser with the same app file. Save stores the DOCX or HTML separately. Clearing browser data deletes the drafts.</p><p>Open folder works only in Chromium browsers (Chrome and Edge) on desktop. In other browsers it is hidden and Open still works.</p></details></aside></main><footer>Version 3.4.6 Landscape · For text documents. Tables and JPG/PNG images are supported. Other complex elements are not.<p class="credit">Made by The Last Byzantine, MMXXVI. Sharing is love!</p><p class="contact">For any bug or suggestion, please contact me at <a href="mailto:thelastbyzantine@proton.me">thelastbyzantine@proton.me</a>.</p><p class="contact">Source code and updates: <a href="https://github.com/The-Last-Byzantine/tabbed-word" target="_blank" rel="noopener">github.com/The-Last-Byzantine/tabbed-word</a></p><details id="mobilehelp"><summary>Backups and drafts</summary><p>Open chooses a DOCX, ODT, TXT, Markdown or HTML file. Save downloads a file and does not replace the original automatically. “Files / Share” offers more save options.</p><p>Drafts stay on this device and in this installation. Importing drafts adds documents from another installation without removing the ones that are open.</p><p>The JSON backup contains your text and comments and is not encrypted. Keep it somewhere safe. Also keep your regular DOCX files, because browser data may be cleared. The app does not sync between devices automatically.</p><p>On touch screens, move the active tab with the ← Tab / Tab → buttons. To format, select the paragraph and choose the style under Tools.</p></details></footer>
+<div id="tabs" class="tabs" role="tablist" aria-label="Open documents"></div><main><aside id="folderpanel" aria-label="Folder files" hidden><div class="fp-head"><strong id="fpname">Folder</strong><button type="button" id="fpcollapse" title="Hide the folder panel" aria-label="Hide the folder panel" aria-expanded="true">Hide ‹</button></div><div class="fp-body"><p class="fp-note" id="fpnote"></p><div><button type="button" id="fpchoose">Choose folder</button><button type="button" id="fpallow" hidden>Allow access</button><button type="button" id="fprefresh" hidden>Refresh</button></div><label class="fp-sort" hidden>Sort <select id="fpsort"><option value="name">Name, A–Z</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label><ul id="fplist"></ul></div><button type="button" id="fpexpand" class="fp-expand" title="Show the folder panel" aria-label="Show the folder panel">Folders ›</button></aside><section class="paper" id="paper"><div id="docxtools" class="docx-tools"><button id="pageview">Continuous text</button><span id="pagecount"></span><span id="selectioninfo">Shift + click to select a range of paragraphs</span><span id="pagesizeinfo">A4 · on-screen pagination is approximate</span></div><div id="docpages"></div><section id="notespanel" hidden aria-label="Footnotes"><h2>Footnotes</h2><p id="noteshelp">In DOCX/ODT, footnotes appear at the bottom of their page. Here you edit all notes in one list. Click the number to go to the reference.</p><div id="noteslist"></div></section><p id="sourcehint" hidden></p><div id="htmltools" class="html-tools" hidden><button id="codeview">Code</button><button id="splitview">Code + preview</button><button id="previewview">Preview</button><button id="refreshpreview">Refresh</button><label id="scriptchoice"><input id="runscripts" type="checkbox">Run JavaScript</label></div><label for="title" hidden>Title</label><input id="title" placeholder="Document title" aria-label="Document title"><label for="body" hidden>Text</label><textarea id="body" placeholder="Type or paste your text…" aria-label="Document text" spellcheck="true"></textarea><iframe id="preview" title="HTML preview" sandbox="" referrerpolicy="no-referrer" hidden></iframe><section id="commentspanel" hidden aria-label="Document comments"><h2>Comments</h2><div id="commentslist"></div></section></section><textarea id="pagemeter" class="page-measure" tabindex="-1" aria-hidden="true"></textarea><aside><h2>COUNT</h2><div id="stats">0 words</div><div id="chars">0 characters</div><label class="countnotes"><input id="countnotes" type="checkbox" checked> Include footnotes in word count</label><hr><div id="docxhelp"><h2>EXPORT FORMAT</h2>Times New Roman · 12 pt<br>Line spacing 1.5 · justified<br>Bold title<br><span id="pagesizehelp">A4 · 21.00 × 29.70 cm</span><br>Top/bottom: 2.54 cm<br>Left/right: 3.175 cm<br>After paragraph: 10 pt<p id="odtinfo" hidden>ODT: text, headings, simple lists, comments and footnotes are supported. Replies appear as separate comments in other editors. Tables, images, headers and complex layout are not supported.</p></div><div id="htmlhelp" hidden><h2>HTML</h2>The source code opens first. Save keeps the HTML as a UTF-8 file.<p>The preview supports embedded CSS and data images. Files from neighbouring folders and external libraries are not loaded. JavaScript is optional. Features such as localStorage are not available in the preview.</p></div><hr><h2 class="tw-nospell">SPELLING</h2><div id="spellbox" class="tw-nospell"><label><input id="spellon" type="checkbox"><span>Check spelling in English, Greek and Turkish</span></label><select id="spellmode" hidden aria-label="Spelling language on phones"><option value="auto">Language: auto</option><option value="en">Greek and English</option><option value="tr">Turkish</option></select><span id="spellstate" role="status" aria-live="polite">Off</span><ul id="spelllist" aria-label="Possible misspellings"></ul><section id="consistpanel" hidden aria-label="Consistency findings"><h2>CONSISTENCY</h2><p id="consiststate" role="status" aria-live="polite"></p><ul id="consistlist" aria-label="Consistency findings"></ul></section></div><hr><h2>SHORTCUTS</h2><p>Ctrl (Windows) or ⌘ (Mac) with:<br>B Bold · I Italic · F Find<br>Alt+1 Open · Alt+2 New<br>Alt+3 Save · Alt+4 Close · Alt+5 Save As</p><span id="autosave" role="status" aria-live="polite">Automatic draft saving is on</span><span id="status" role="status" aria-live="polite">Ready</span><details class="aside-help"><summary>On your computer: files, backups and drafts</summary><p>No document is uploaded. In DOCX, pasting keeps the text and applies the template format.</p><p>In DOCX, each line break in the body creates a Word paragraph.</p><p id="mode"></p><p>Tabs come back in the same browser with the same app file. Save stores the DOCX or HTML separately. Clearing browser data deletes the drafts.</p><p>Open folder works only in Chromium browsers (Chrome and Edge) on desktop. In other browsers it is hidden and Open still works.</p></details></aside></main><footer>Version 3.4.8 Landscape · For text documents. Tables and JPG/PNG images are supported. Other complex elements are not.<p class="credit">Made by The Last Byzantine, MMXXVI. Sharing is love!</p><p class="contact">For any bug or suggestion, please contact me at <a href="mailto:thelastbyzantine@proton.me">thelastbyzantine@proton.me</a>.</p><p class="contact">Source code and updates: <a href="https://github.com/The-Last-Byzantine/tabbed-word" target="_blank" rel="noopener">github.com/The-Last-Byzantine/tabbed-word</a></p><details id="mobilehelp"><summary>Backups and drafts</summary><p>Open chooses a DOCX, ODT, TXT, Markdown or HTML file. Save downloads a file and does not replace the original automatically. “Files / Share” offers more save options.</p><p>Drafts stay on this device and in this installation. Importing drafts adds documents from another installation without removing the ones that are open.</p><p>The JSON backup contains your text and comments and is not encrypted. Keep it somewhere safe. Also keep your regular DOCX files, because browser data may be cleared. The app does not sync between devices automatically.</p><p>On touch screens, move the active tab with the ← Tab / Tab → buttons. To format, select the paragraph and choose the style under Tools.</p></details></footer>
 <dialog id="naming"><form method="dialog"><b>Save copy</b><input id="newname" aria-label="File name" required><button value="cancel" formnovalidate>Cancel</button> <button value="save" class="primary">Save</button></form></dialog>
 <dialog id="notedialog" class="footnote-dialog"><form method="dialog"><h2 id="notedialogtitle">New footnote</h2><p>Type the footnote text.</p><textarea id="notetext" aria-label="Footnote text" required></textarea><button value="cancel" formnovalidate>Cancel</button> <button class="primary" value="save">Insert / Save</button></form></dialog><dialog id="commentdialog" class="footnote-dialog"><form method="dialog"><h2 id="commentdialogtitle">Comment</h2><label for="commentauthor">Commenter name</label><input id="commentauthor" required><textarea id="commenttext" aria-label="Comment or reply text" required></textarea><button value="cancel" formnovalidate>Cancel</button><button class="primary" value="save">Save</button></form></dialog><dialog id="devicesavedialog" class="devicesave-dialog"><h2>Save to device</h2><small id="devicesavename"></small><p>Tap “Open menu” and choose “Save to Files” if it appears. You can also download the file directly.</p><button id="shareprepared" class="primary">Open menu</button><button id="downloadprepared">Download file</button><form method="dialog"><button value="cancel">Close</button></form></dialog><script id="tw-drafts-db">(function(){var DB="tabbedword-drafts",ST="kv",KEY="workspace";function open(){return new Promise(function(res,rej){if(!window.indexedDB){rej(new Error("no indexedDB"));return}var r=indexedDB.open(DB,1);r.onupgradeneeded=function(){r.result.createObjectStore(ST)};r.onsuccess=function(){res(r.result)};r.onerror=function(){rej(r.error)}})}function run(mode,fn){return open().then(function(db){return new Promise(function(res,rej){var t=db.transaction(ST,mode),req=fn(t.objectStore(ST));t.oncomplete=function(){db.close();res(req?req.result:true)};t.onerror=function(){db.close();rej(t.error)};t.onabort=function(){db.close();rej(t.error||new Error("aborted"))}})})}window.twDraftPut=function(v){return run("readwrite",function(st){return st.put(v,KEY)})};window.twDraftGet=function(){return run("readonly",function(st){return st.get(KEY)}).then(function(v){return v===undefined?null:v})};})();</script>
 <script id="align-v345-core">
@@ -442,7 +442,7 @@ function refreshPreview(force=false){clearTimeout(previewTimer);const d=activeDo
 function updateView(){const d=activeDoc(),html=isSource(),view=d?.view||'code';$('title').hidden=html;$('htmltools').hidden=!html;$('docxhelp').hidden=html;$('htmlhelp').hidden=!html;$('paper').className=html?'paper html-mode'+(view==='split'?' split':''):'paper docx-mode'+(d?.continuous?' continuous':'');$('insertnote').disabled=html;renderNotes();renderComments();$('docxtools').hidden=html;$('docpages').hidden=html;if(html){clearTimeout(pageTimer)}else schedulePages();body.hidden=html&&view==='preview';body.spellcheck=!html;body.setAttribute('aria-label',html?'HTML source code':'Document text');body.placeholder=html?'<!doctype html>…':'Type or paste your text…';$('preview').hidden=!html||view==='code';$('runscripts').checked=!!d?.scripts;for(const [id,v] of [['codeview','code'],['splitview','split'],['previewview','preview']])$(id).setAttribute('aria-pressed',String(view===v));if(html&&view!=='code'){clearTimeout(previewTimer);previewTimer=setTimeout(()=>refreshPreview(),350)}else{clearTimeout(previewTimer);$('preview').srcdoc='';previewKey=''}}
 
 let pageTimer=null,pageKey='',composingPage=false,pageHistory=new Map();
-function pageState(){const focused=document.activeElement;if(focused?.dataset?.pageField){return {field:focused.dataset.pageField,start:(Number(focused.dataset.offset)||0)+focused.selectionStart,end:(Number(focused.dataset.offset)||0)+focused.selectionEnd,direction:focused.selectionDirection}}return null}
+function pageState(){const sel0=window.getSelection();const surf0=typeof surfaceEl==='function'?surfaceEl():null;const tl0=surf0&&titleLineEl(surf0);if(tl0&&sel0&&sel0.rangeCount){const rg0=sel0.getRangeAt(0);if(tl0.contains(rg0.startContainer)||(rg0.startContainer===surf0&&surf0.childNodes[rg0.startOffset]===tl0))return {field:'title',start:0,end:0}}const focused=document.activeElement;if(focused?.dataset?.pageField){return {field:focused.dataset.pageField,start:(Number(focused.dataset.offset)||0)+focused.selectionStart,end:(Number(focused.dataset.offset)||0)+focused.selectionEnd,direction:focused.selectionDirection}}return null}
 function schedulePages(){clearTimeout(pageTimer);if(!composingPage)pageTimer=setTimeout(renderPages,60)}
 function measureHeight(text,width,bold=false){const m=$('pagemeter');m.style.width=width+'px';m.style.fontWeight=bold?'bold':'normal';m.value=text||' ';return Math.max(24,m.scrollHeight)}
 function fitPage(text,width,height){if(!text)return 0;if(measureHeight(text,width)<=height)return text.length;let low=1,high=text.length;while(low<high){const mid=Math.ceil((low+high)/2);if(measureHeight(text.slice(0,mid),width)<=height)low=mid;else high=mid-1}let n=low;if(n>0&&n<text.length&&/[\uD800-\uDBFF]/.test(text[n-1]))n--;const near=text.slice(0,n).search(/\s+\S*$/);if(near>n*.65)n=near+1;return Math.max(1,n)}
@@ -829,7 +829,13 @@ let PAGE_CONTENT_H=931, PAGE_MARGIN_H=96, PAGE_SEAM_H=24, PAGE_GAP_H=2*PAGE_MARG
 let paginateTimer=null; let pageSizeKey='a4'; window.twPageSize=function(k){pageSizeKey=k==='letter'?'letter':'a4';PAGE_CONTENT_H=(pageSizeKey==='letter'?1056:1123)-192;return pageSizeKey}; window.twPageSizeKey=function(){return pageSizeKey}; window.twRefresh=function(){try{pageKey='';update()}catch(e){}}; window.twStatsText=function(w){return w.toLocaleString('el')+' words'};
 
 function surfaceEl(){return $('docpages').querySelector('.doc-surface')}
-function surfaceBlocks(surface){return Array.from(surface.children).filter(n=>n.classList.contains('dp'))}
+/* v3.4.8: the title is the first paragraph of the text surface, so one drag can select the title and the article.
+   Everything that reads the article uses surfaceBlocks, which leaves the title out. */
+function titleLineEl(surface){const f=surface&&surface.firstElementChild;return f&&f.classList.contains('dp')?f:null}
+function surfaceBlocks(surface){const f=titleLineEl(surface);return Array.from(surface.children).filter(n=>n.classList.contains('dp')&&n!==f)}
+function styleTitleLine(p,d){const st=STYLE[d.titleMeta.style]||STYLE.title;p.className='dp tw-title';p.removeAttribute('data-sig');p.removeAttribute('style');Object.assign(p.style,{fontFamily:'var(--tw-read-font,"Literata",Georgia,serif)',fontSize:screenFontSize(st)+'px',fontWeight:'bold',textAlign:twCssAlign(d.titleMeta||{style:'title'}),color:'#'+st.color,margin:'0 0 13.333px'})}
+/* a paragraph that was the title and is now body (after Enter in the title) takes the body look back */
+function freeBodyLines(surface){const f=titleLineEl(surface);Array.from(surface.children).forEach(n=>{if(n!==f&&n.classList&&n.classList.contains('tw-title')){n.classList.remove('tw-title');n.removeAttribute('style');n.dataset.sig=''}})}
 function dpText(el){return el.textContent.replace(/ /g,' ')}
 function fitTitle(t){t.style.height='auto';t.style.height=t.scrollHeight+'px'}
 
@@ -864,6 +870,7 @@ function surfaceOffset(surface,node,off){
   let blk=node.nodeType===1?node:node.parentNode;
   while(blk&&blk.parentNode!==surface)blk=blk.parentNode;
   if(!blk||!blk.classList||!blk.classList.contains('dp'))return null;
+  if(blk===titleLineEl(surface))return null;
   let pos=0;
   for(const b of surfaceBlocks(surface)){if(b===blk)break;pos+=dpText(b).length+1}
   const r=document.createRange();
@@ -913,6 +920,8 @@ function setSurfaceCaret(surface,caret){
 function pageState(){
   const f=document.activeElement;
   if(f&&f.classList&&f.classList.contains('doc-surface')){
+    /* v3.4.8: a caret in the title line reports the title */
+    const tl=titleLineEl(f),sel=window.getSelection();if(tl&&sel&&sel.rangeCount){const rg=sel.getRangeAt(0);if(tl.contains(rg.startContainer)||(rg.startContainer===f&&f.childNodes[rg.startOffset]===tl))return {field:'title',start:0,end:0,direction:'forward'}}
     const s=surfaceSelection(f);
     return s?{field:'body',start:s.start,end:s.end,direction:'forward'}:null;
   }
@@ -956,12 +965,16 @@ function surfaceSync(){
     }
     const p=document.createElement('p');p.className='dp';p.textContent=n.textContent;n.replaceWith(p);structural=true;
   }
+  freeBodyLines(surface);
+  const tlEl=titleLineEl(surface);const tlDo=activeDoc();if(tlEl&&!tlEl.classList.contains('tw-title'))styleTitleLine(tlEl,tlDo);
+  const newTitle=tlEl?dpText(tlEl):title.value,titleChanged=newTitle!==title.value;
   const blocks=surfaceBlocks(surface),lines=body.value.split('\n').length;
   const text=blocks.map(dpText).join('\n');const fmt=((d.fmt&&d.fmt.length)||surface.querySelector('b,i,strong,em,mark,.tw-nb,.tw-ni'))?domRuns(blocks):[];const fmtSame=JSON.stringify(fmt)===JSON.stringify(d.fmt||[]);
-  if(!structural&&blocks.length===lines&&text===body.value&&fmtSame)return;
+  if(!structural&&blocks.length===lines&&text===body.value&&fmtSame&&!titleChanged)return;
   if(blocks.length!==lines)structural=true;
   const caret=structural?pageState():null;
   recordPageHistory();
+  if(titleChanged)title.value=newTitle;
   body.value=text;dirty=true;syncDoc();d.fmt=fmt;
   if(structural){pageKey='';renderPages(caret)}else pageKey=richKey(d);
   queueDraft();status('Changes not saved to a file');scheduleStats();
@@ -1084,6 +1097,8 @@ function syncBlockStyles(surface,d){
 /* Model from DOM for local structural edits. The caller records undo history first. */
 function modelFromDom(surface){
   const d=activeDoc();
+  const tl=titleLineEl(surface);if(tl){if(!tl.classList.contains('tw-title'))styleTitleLine(tl,d);title.value=dpText(tl)}
+  freeBodyLines(surface);
   d.fmt=domRuns(surfaceBlocks(surface));body.value=surfaceBlocks(surface).map(dpText).join('\n');
   dirty=true;syncDoc();
   syncBlockStyles(surface,d);
@@ -1145,7 +1160,7 @@ function paginateSurface(surface){
   const cs=getComputedStyle(sheet),padL=parseFloat(cs.paddingLeft)||0,padR=parseFloat(cs.paddingRight)||0,padT=parseFloat(cs.paddingTop)||0;
   const sRect=sheet.getBoundingClientRect(),surfRect=surface.getBoundingClientRect();
   const titleH=Math.max(0,surfRect.top-(sRect.top+padT));
-  const list=surfaceBlocks(surface);
+  const list=Array.from(surface.children).filter(n=>n.classList.contains('dp'));
   const geo=list.map(b=>{const r=b.getBoundingClientRect(),c=getComputedStyle(b);return {top:r.top-surfRect.top,bottom:r.bottom-surfRect.top,mt:parseFloat(c.marginTop)||0,mb:parseFloat(c.marginBottom)||0}});
   const inserts=[];
   let shift=0,pageStart=0,pageLimit=PAGE_CONTENT_H-titleH,prevBottom=0,prevMb=0,pageNo=1;
@@ -1194,14 +1209,9 @@ function renderPages(caretOverride){
   const sheet=document.createElement('section');
   sheet.className='doc-page rich-sheet '+(d.continuous?'is-continuous':'is-paged');
 
-  const titleSt=STYLE[d.titleMeta.style]||STYLE.title;
-  const t=document.createElement('textarea');
-  t.className='page-title';t.rows=1;t.value=title.value;t.spellcheck=true;t.autocapitalize='sentences';
-  t.dataset.pageField='title';t.dataset.offset='0';
-  t.placeholder='Document title';t.setAttribute('aria-label','Document title');
-  Object.assign(t.style,{fontFamily:'var(--tw-read-font,"Literata",Georgia,serif)',fontSize:screenFontSize(titleSt)+'px',fontWeight:'bold',textAlign:twCssAlign(d.titleMeta||{style:'title'}),color:'#'+titleSt.color});
-  t.addEventListener('input',()=>{fitTitle(t);titleSync()});
-  t.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const s=surfaceEl();if(s)setSurfaceCaret(s,{start:0,end:0})}});
+  /* v3.4.8: the title is the first paragraph of the text surface */
+  const t=document.createElement('p');styleTitleLine(t,d);
+  if(title.value)t.textContent=title.value;else t.append(document.createElement('br'));
 
   const surface=document.createElement('div');
   surface.className='doc-surface';
@@ -1210,6 +1220,7 @@ function renderPages(caretOverride){
   surface.dataset.pageField='body';surface.dataset.offset='0';
   surface.setAttribute('role','textbox');surface.setAttribute('aria-multiline','true');
   surface.setAttribute('aria-label','Document text');
+  surface.append(t);
   const lines=body.value.split('\n'),labels=listLabels(d,lines.length),comments=d.comments||[],flags=(d.fmt&&d.fmt.length)?flagsOf(d,body.value.length):null;
   let offset=0;
   const titleLen=title.value.length+1;
@@ -1224,9 +1235,8 @@ function renderPages(caretOverride){
 
   const pageNo=document.createElement('div');
   pageNo.className='page-number';
-  sheet.append(t,surface,pageNo);
+  sheet.append(surface,pageNo);
   box.append(sheet);
-  fitTitle(t);
   wireSurface(surface);
   const pages=d.continuous?1:paginateSurface(surface);
 
@@ -1616,10 +1626,19 @@ renderPages();
 
 <style id="edition-v213-spelling">
 ::highlight(tw-spell){text-decoration-line:underline;text-decoration-style:wavy;text-decoration-color:#b42318;text-decoration-thickness:1px}
-#spellmenu{position:fixed;z-index:60;min-width:180px;max-width:280px;background:#fff;border:1px solid #ced3da;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.18);padding:4px;font:14px system-ui,sans-serif;color:#1f2834}
-#spellmenu button{display:block;width:100%;text-align:left;border:0;background:none;padding:7px 10px;border-radius:4px;font:inherit;color:inherit;cursor:pointer}
-#spellmenu button:hover,#spellmenu button:focus-visible{background:#e5ebf2;outline:none}
-#spellmenu .sm-head{padding:6px 10px 2px;font-size:12px;color:#6a727c}
+/* v3.4.7: right-click menu. A floating card in the sky-blue palette of the app, with spelling suggestions at the top when a word is misspelt. */
+.tw-ctx{position:fixed;z-index:70;min-width:220px;max-width:320px;padding:6px;background:#fff;border:1px solid #d3dde9;border-radius:10px;box-shadow:0 12px 32px rgba(30,58,95,.18),0 2px 6px rgba(30,58,95,.08);font:14px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;color:#1f2834}
+.tw-ctx button{display:flex;align-items:center;justify-content:space-between;gap:24px;width:100%;border:0;border-radius:6px;background:none;padding:7px 10px 7px 30px;text-align:left;font:inherit;color:inherit;cursor:default;white-space:nowrap;position:relative}
+.tw-ctx button .k{color:#8a97a8;font-size:12px}
+.tw-ctx button:hover:not(:disabled),.tw-ctx button:focus-visible{background:#e6eef7;color:#1e3a5f;outline:none}
+.tw-ctx button:hover:not(:disabled) .k,.tw-ctx button:focus-visible .k{color:#4d6585}
+.tw-ctx button:disabled{color:#a7b2c1}
+.tw-ctx button.checked::before{content:"";position:absolute;left:12px;top:50%;width:7px;height:7px;margin-top:-4px;border-radius:50%;background:#2563eb}
+.tw-ctx button.sug{font-weight:600;color:#1e3a5f}
+.tw-ctx hr{border:0;height:1px;margin:5px 4px;background:#e1e8f1}
+.tw-ctx .tw-ctx-head{padding:6px 10px 4px;font-size:12px;color:#6a7a8f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:300px}
+.tw-ctx .tw-ctx-head strong{color:#1e3a5f;font-weight:600}
+@media (max-width:800px){.tw-ctx button{padding-top:11px;padding-bottom:11px;font-size:16px}}
 #spellbox{margin:8px 0 0;font-size:13px}
 #spellbox label{display:flex;gap:6px;align-items:flex-start;cursor:pointer}
 #spellbox input[type=checkbox]{width:auto;flex:none;margin:3px 0 0}
@@ -1869,23 +1888,46 @@ renderPages();
   function openMenu(hit, x, y) {
     closeMenu();
     var mine = document.createElement('div');
-    mine.id = 'spellmenu';
+    mine.id = 'twctx';
+    mine.className = 'tw-ctx';
     mine.setAttribute('role', 'menu');
-    var head = document.createElement('div'); head.className = 'sm-head'; head.textContent = '“' + hit.word + '”';
-    var note = document.createElement('div'); note.className = 'sm-head'; note.textContent = 'Loading suggestions…';
-    mine.append(head, note);
+    /* the menu takes no focus, so the paper keeps its caret and selection */
+    mine.addEventListener('mousedown', function (e) { e.preventDefault(); });
+    function ctxButton(label, key, checked, disabled, fn) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('role', 'menuitem');
+      var l = document.createElement('span'); l.textContent = label; b.append(l);
+      if (key) { var k = document.createElement('span'); k.className = 'k'; k.textContent = key; b.append(k); }
+      if (checked) b.className = 'checked';
+      b.disabled = !!disabled;
+      b.addEventListener('click', function () { closeMenu(); fn(); });
+      return b;
+    }
+    if (hit) {
+      var box = document.createElement('div');
+      var head = document.createElement('div'); head.className = 'tw-ctx-head'; head.innerHTML = 'Spelling · <strong></strong>'; head.querySelector('strong').textContent = '“' + hit.word + '”';
+      var note = document.createElement('div'); note.className = 'tw-ctx-head'; note.textContent = 'Loading suggestions…';
+      box.append(head, note);
+      mine.append(box, document.createElement('hr'));
+      getSuggestions(hit.word).then(function (list) {
+        if (menu !== mine) return;
+        note.remove();
+        if (!list.length) { var none = document.createElement('div'); none.className = 'tw-ctx-head'; none.textContent = 'No suggestions'; box.append(none); return; }
+        list.forEach(function (s) { var sb = ctxButton(s, '', false, false, function () { replaceRanges([hit], s); }); sb.classList.add('sug'); box.append(sb); });
+      }).catch(function () { note.textContent = 'Suggestions unavailable'; });
+    }
+    var entries = window.twCtx ? window.twCtx.items() : [];
+    entries.forEach(function (it) {
+      if (it.sep) mine.append(document.createElement('hr'));
+      else mine.append(ctxButton(it.label, it.key || '', it.checked, it.disabled, it.run));
+    });
     document.body.append(mine);
-    mine.style.left = Math.max(8, Math.min(x, innerWidth - 220)) + 'px';
-    mine.style.top = Math.max(8, Math.min(y, innerHeight - 80)) + 'px';
     menu = mine;
-    getSuggestions(hit.word).then(function (list) {
-      if (menu !== mine) return;
-      note.remove();
-      if (!list.length) { var none = document.createElement('div'); none.className = 'sm-head'; none.textContent = 'No suggestions'; mine.append(none); return; }
-      list.forEach(function (s) {
-        mine.append(button(s, function () { closeMenu(); replaceRanges([hit], s); }));
-      });
-    }).catch(function () { note.textContent = 'Suggestions unavailable'; });
+    var r = mine.getBoundingClientRect();
+    mine.style.left = Math.max(4, Math.min(x, innerWidth - r.width - 4)) + 'px';
+    mine.style.top = Math.max(4, Math.min(y, innerHeight - r.height - 4)) + 'px';
+    var onScroll = function () { window.removeEventListener('scroll', onScroll, true); if (menu === mine) closeMenu(); };
+    window.addEventListener('scroll', onScroll, true);
   }
 
   /* Native spellcheck is switched off while the Hunspell checker is on, so underlines never double up. */
@@ -1918,13 +1960,14 @@ renderPages();
     if (on() && e.target && e.target.closest && e.target.closest('#docpages, #body')) schedule(300);
   }, true);
   document.addEventListener('contextmenu', function (e) {
-    syncResult();
-    if (!on() || !result) return;
-    var surface = surfaceEl();
-    if (!surface || !surface.contains(e.target)) return;
-    var hit = wordAt(e.clientX, e.clientY, surface);
-    if (!hit) return;
+    /* v3.4.7: the right-click menu opens anywhere in the paper. On a misspelt word, suggestions come first. */
+    if (!e.target || !e.target.closest || !e.target.closest('#docpages, #body, #title')) return;
     e.preventDefault();
+    if (window.twCtx) window.twCtx.remember(e.target);
+    syncResult();
+    var hit = null;
+    var surface = surfaceEl();
+    if (on() && result && surface && surface.contains(e.target)) hit = wordAt(e.clientX, e.clientY, surface);
     openMenu(hit, e.clientX, e.clientY);
   });
   document.addEventListener('mousedown', function (e) { if (menu && !menu.contains(e.target)) closeMenu(); }, true);
@@ -4618,6 +4661,7 @@ function surfaceOffset(surface,node,off){
   let blk=node.nodeType===1?node:node.parentNode;
   while(blk&&blk.parentNode!==surface)blk=blk.parentNode;
   if(!blk||!blk.classList||!blk.classList.contains('dp'))return null;
+  if(blk===titleLineEl(surface))return null;
   let pos=fastBlockStart(surface,blk);
   if(pos===null){pos=0;for(const b of surfaceBlocks(surface)){if(b===blk)break;pos+=dpText(b).length+1}}
   if(blk.dataset&&blk.dataset.obj)return pos;
@@ -6356,6 +6400,94 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
     sync();
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<script id="ctx-v347-js">
+/* v3.4.7: right-click menu for the paper. Each item runs the same ribbon button or keyboard path, so nothing is duplicated. */
+(function () {
+  var isMac = /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent || '');
+  var WRAP = '#docpages, #body, #title';
+  var target = null, last = null;
+  function inside(n) { return !!(n && n.closest && n.closest(WRAP)); }
+  function editor() {
+    if (target && target.isConnected && inside(target)) return target;
+    if (last && last.isConnected && inside(last)) return last;
+    return null;
+  }
+  function focusEditor() {
+    var t = editor();
+    if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } }
+    return t;
+  }
+  function rich() { var k = typeof kindNow === 'function' ? kindNow() : 'docx'; return k === 'docx' || k === 'odt'; }
+  function el(id) { return document.getElementById(id); }
+  function pressed(id) { var b = el(id); return !!b && b.getAttribute('aria-pressed') === 'true'; }
+  function dis(id) { var b = el(id); return !b || !!b.disabled; }
+  function click(id) { var b = el(id); if (b && !b.disabled) b.click(); }
+  function note(msg) { var s = el('status'); if (s) s.textContent = msg; }
+  function can(redo) {
+    if (!rich()) return true;
+    var h = typeof pageHistory !== 'undefined' ? pageHistory.get(activeId) : null;
+    return !!h && (redo ? h.redo.length > 0 : h.undo.length > 0);
+  }
+  function undoRedo(redo) {
+    if (!rich()) {
+      focusEditor();
+      try { document.execCommand(redo ? 'redo' : 'undo'); } catch (e) {}
+      return;
+    }
+    var t = focusEditor();
+    if (!t) return;
+    /* the same key path as Ctrl+Z and Ctrl+Shift+Z, so the paper's own history is used */
+    t.dispatchEvent(new KeyboardEvent('keydown', { key: 'z', code: 'KeyZ', ctrlKey: true, shiftKey: !!redo, bubbles: true, cancelable: true }));
+  }
+  function clip(cmd) {
+    if (!focusEditor()) return;
+    try { document.execCommand(cmd); } catch (e) {}
+  }
+  function paste() {
+    var t = focusEditor();
+    if (!t) return;
+    var ok = false;
+    try { ok = document.execCommand('paste'); } catch (e) {}
+    if (ok) return;
+    if (navigator.clipboard && navigator.clipboard.readText) {
+      navigator.clipboard.readText().then(function (text) {
+        if (!text) return;
+        focusEditor();
+        document.execCommand('insertText', false, text);
+      }).catch(function () { note(isMac ? 'Paste with ⌘V' : 'Paste with Ctrl+V'); });
+    } else note(isMac ? 'Paste with ⌘V' : 'Paste with Ctrl+V');
+  }
+  function items() {
+    var K = function (w, m) { return isMac ? m : w; };
+    return [
+      { label: 'Undo', key: K('Ctrl+Z', '\u2318Z'), disabled: !can(false), run: function () { undoRedo(false); } },
+      { label: 'Redo', key: K('Ctrl+Y', '\u21e7\u2318Z'), disabled: !can(true), run: function () { undoRedo(true); } },
+      { sep: true },
+      { label: 'Cut', key: K('Ctrl+X', '\u2318X'), run: function () { clip('cut'); } },
+      { label: 'Copy', key: K('Ctrl+C', '\u2318C'), run: function () { clip('copy'); } },
+      { label: 'Paste', key: K('Ctrl+V', '\u2318V'), run: paste },
+      { sep: true },
+      { label: 'Bold', key: K('Ctrl+B', '\u2318B'), checked: pressed('boldtext'), disabled: dis('boldtext'), run: function () { click('boldtext'); } },
+      { label: 'Italic', key: K('Ctrl+I', '\u2318I'), checked: pressed('italictext'), disabled: dis('italictext'), run: function () { click('italictext'); } },
+    ];
+  }
+  document.addEventListener('focusin', function (e) { if (inside(e.target)) last = e.target; }, true);
+  /* Arrow keys move through an open menu */
+  document.addEventListener('keydown', function (e) {
+    var m = document.getElementById('twctx');
+    if (!m) return;
+    var bs = Array.prototype.slice.call(m.querySelectorAll('button:not(:disabled)'));
+    if (!bs.length) return;
+    var i = bs.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); bs[(i + 1) % bs.length].focus(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); bs[i < 0 ? bs.length - 1 : (i - 1 + bs.length) % bs.length].focus(); }
+  });
+  window.twCtx = {
+    items: items,
+    remember: function (node) { target = node; }
+  };
 })();
 </script>
 <script id="tabbed-link-v343">
