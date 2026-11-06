@@ -97,6 +97,7 @@ The panel is hidden on narrow screens and phones.
 - **Track changes** (Tools menu, or Ctrl+Shift+E) records insertions and deletions with the author name. The Accept and Reject commands work on all changes, or only the one at the cursor. Exports leave out deleted text.
 - **Comments:** add a comment to selected text, reply to it, resolve it or delete it. Comments are kept in DOCX files.
 - **Footnotes:** Insert > Footnote adds a numbered footnote. Footnotes are written to DOCX files as real Word footnotes.
+- **Hyperlinks:** select text and press Ctrl+K, or use Insert > Hyperlink…, to add, edit or remove a link. Ctrl+click opens it. Links are written to DOCX and ODT files and read back from DOCX files; Undo restores them.
 - **Cite** (Tools menu, and the Review tab): inserts a citation from a BibTeX key. This is the original citation tool and is separate from References.
 
 ---
