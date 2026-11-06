@@ -840,3 +840,19 @@ DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.
 
+
+================================================================
+References (Tools > References…)
+================================================================
+
+citeproc-js 2.4.63 (refs/citeproc.js)
+Copyright (c) 2009-2019 Frank Bennett. Dual licensed under the
+Common Public Attribution License 1.0 or the GNU Affero General Public License 1.0.
+Source: https://github.com/Juris-M/citeproc-js
+
+CSL style files (refs/csl/apa.csl, refs/csl/chicago-author-date.csl)
+and the English locale (refs/csl/locales-en-US.xml)
+From the Citation Style Language project, licensed under Creative Commons
+Attribution-ShareAlike 3.0.
+Sources: https://github.com/citation-style-language/styles and
+https://github.com/citation-style-language/locales
