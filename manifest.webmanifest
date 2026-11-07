@@ -6,8 +6,8 @@
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#e6eef7",
-  "theme_color": "#0055E5",
+  "background_color": "#D4D0C8",
+  "theme_color": "#0A246A",
   "icons": [
     {
       "src": "icons/tabbed-word-192.png",
