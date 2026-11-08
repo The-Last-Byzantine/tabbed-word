@@ -8,7 +8,13 @@
 (function () {
   'use strict';
   var CLIENT_ID = '1030444770738-0r8vo12bf77lof26jifk31bq1qu7gll1.apps.googleusercontent.com';
-  var SCOPE = 'https://www.googleapis.com/auth/drive';
+  var SCOPE = 'https://www.googleapis.com/auth/drive.file';
+  /* Google Picker: lets the person choose a file, which is all drive.file allows us to open.
+     API_KEY is a browser key (Cloud Console > Credentials > API key), restricted to the Google Picker API
+     and to this app's web address. PROJECT_NUMBER is the project that holds the OAuth client. */
+  var API_KEY = 'AIzaSyAv8K9QXz7WzNuZFfYLY_Hf-RyqJHy_d_I';
+  var PROJECT_NUMBER = '1030444770738';
+  var API_JS = 'https://apis.google.com/js/api.js';
   var GIS_URL = 'https://accounts.google.com/gsi/client';
   var FILES = 'https://www.googleapis.com/drive/v3/files';
   var UPLOAD = 'https://www.googleapis.com/upload/drive/v3/files';
@@ -339,47 +345,67 @@
 
   /* ---- Open from Drive ---- */
 
-  function listFiles(t) {
-    var q = 'trashed=false and (' + OPEN_MIMES.map(function (m) { return "mimeType='" + m + "'"; }).join(' or ') + ')';
-    var url = FILES + '?' + new URLSearchParams({
-      q: q, orderBy: 'modifiedTime desc', pageSize: '100', fields: 'files(id,name,mimeType,modifiedTime)'
-    });
-    return fetch(url, { headers: { Authorization: 'Bearer ' + t } }).then(function (r) {
-      if (!r.ok) throw httpError(r);
-      return r.json();
-    }).then(function (j) {
-      return (j.files || []).filter(function (f) { return OPEN_EXT.test(f.name); });
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.async = true;
+      s.onload = function () { resolve(); };
+      s.onerror = function () { reject(new Error('Could not load ' + src + '. Check your internet connection.')); };
+      document.head.appendChild(s);
     });
   }
 
-  var dlg = null;
-  function showList(files) {
-    if (!dlg) {
-      dlg = document.createElement('dialog');
-      dlg.id = 'drive-open';
-      dlg.setAttribute('aria-labelledby', 'drive-open-title');
-      dlg.innerHTML = '<h2 id="drive-open-title">Open from Google Drive</h2>' +
-        '<p id="drive-open-msg" style="margin:0 0 8px"></p>' +
-        '<ul id="drive-open-list" style="list-style:none;margin:0;padding:0;max-height:55vh;overflow:auto"></ul>' +
-        '<p style="text-align:right;margin:12px 0 0"><button type="button" id="drive-open-cancel">Cancel</button></p>';
-      document.body.appendChild(dlg);
-      dlg.querySelector('#drive-open-cancel').addEventListener('click', function () { dlg.close(); });
+  var pickerLoading = null;
+  function loadPicker() {
+    if (window.google && google.picker) return Promise.resolve();
+    if (pickerLoading) return pickerLoading;
+    pickerLoading = loadScript(API_JS).then(function () {
+      return new Promise(function (resolve, reject) {
+        gapi.load('picker', { callback: resolve, onerror: function () { reject(new Error('Google Picker could not be loaded.')); } });
+      });
+    }).catch(function (e) { pickerLoading = null; throw e; });
+    return pickerLoading;
+  }
+
+  /* Keeps Google's picker inside the window: fixed in the centre, never larger than the screen.
+     Without this, Safari can place its top above the visible area, where it cannot be scrolled to. */
+  function fitPickerStyle() {
+    if (document.getElementById('picker-fit')) return;
+    var st = document.createElement('style');
+    st.id = 'picker-fit';
+    st.textContent =
+      '.picker-dialog-bg{position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;z-index:10000!important}' +
+      '.picker-dialog{position:fixed!important;top:50%!important;left:50%!important;transform:translate(-50%,-50%)!important;' +
+      'max-width:calc(100vw - 16px)!important;max-height:calc(100vh - 16px)!important;z-index:10001!important}' +
+      '.picker-dialog-content,.picker-dialog-content iframe{max-width:calc(100vw - 16px)!important;max-height:calc(100vh - 16px)!important}';
+    document.head.appendChild(st);
+  }
+
+  /* Shows Google's own file chooser, limited to PDFs. Resolves with the chosen file, or null if cancelled. */
+  function openPicker(t) {
+    if (!API_KEY || API_KEY.indexOf('PASTE_') === 0) {
+      return Promise.reject(new Error('The Picker key is not set in this build.'));
     }
-    var list = dlg.querySelector('#drive-open-list');
-    list.textContent = '';
-    dlg.querySelector('#drive-open-msg').textContent = files.length
-      ? 'Choose a file. Only that file is downloaded to Tabbed Word.'
-      : 'No Word, ODT, text or Markdown files were found in your Drive.';
-    files.forEach(function (f) {
-      var li = document.createElement('li');
-      var b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = f.name + '  ·  ' + new Date(f.modifiedTime).toLocaleDateString();
-      b.addEventListener('click', function () { dlg.close(); openDriveFile(f); });
-      li.appendChild(b);
-      list.appendChild(li);
+    return loadPicker().then(function () {
+      return new Promise(function (resolve) {
+        var view = new google.picker.DocsView(google.picker.ViewId.DOCS).setMimeTypes(OPEN_MIMES.join(','));
+        fitPickerStyle();
+        new google.picker.PickerBuilder()
+          .addView(view)
+          .setSize(Math.max(320, Math.min(1051, window.innerWidth - 32)), Math.max(320, Math.min(650, window.innerHeight - 32)))
+          .setOAuthToken(t)
+          .setDeveloperKey(API_KEY)
+          .setAppId(PROJECT_NUMBER)
+          .setTitle('Open a PDF from Google Drive')
+          .setCallback(function (data) {
+            if (data.action === google.picker.Action.PICKED) resolve(data.docs[0]);
+            else if (data.action === google.picker.Action.CANCEL) resolve(null);
+          })
+          .build()
+          .setVisible(true);
+      });
     });
-    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
   }
 
   function openDriveFile(f) {
@@ -461,14 +487,20 @@
     if (openBtn) {
       openBtn.addEventListener('click', function () {
         requireGis(function () {
-          report('Loading your Google Drive files…');
-          getToken().then(listFiles).then(
-            showList,
-            function (e) {
-              if (e.status === 401) token = null;
-              report('Could not list Google Drive files: ' + e.message);
-            }
-          );
+          var tokenP = getToken(false);           /* starts the sign-in window while this click is still active */
+          tokenP.then(function (t) {
+            return openPicker(t).then(function (doc) {
+              if (!doc) return;
+              report('Opening ' + doc.name + ' from Google Drive…');
+              return fetch(FILES + '/' + encodeURIComponent(doc.id) + '?fields=id,name,modifiedTime', {
+                headers: { Authorization: 'Bearer ' + t }
+              }).then(function (r) { if (!r.ok) throw httpError(r); return r.json(); })
+                .then(function (meta) { openDriveFile(meta); });
+            });
+          }).catch(function (e) {
+            if (e && e.status === 401) token = null;
+            report('Could not open from Google Drive: ' + e.message, true);
+          });
         });
       });
     }

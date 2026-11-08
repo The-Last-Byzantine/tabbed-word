@@ -5,6 +5,8 @@
 
 Tabbed Word is a word processor that runs in the browser, with each document in its own tab and a look based on Word 2003 (the Windows XP "Blue" colours, the classic menu row and the beige status bar). You can open, edit, save and export DOCX, ODT, TXT, Markdown and HTML files, and open old Word 97–2003 (.doc) files to read and edit.
 
+**Version 2026.11.78:** Google Drive uses the narrower `drive.file` access: the app sees only files it created and files you pick in Google's file picker. Open from Google Drive opens that picker, sized to fit the window (also in Safari). The site now sends only its own address to other sites (`strict-origin-when-cross-origin`), which the picker's website-restricted key needs. New setting under Writing: "Capitalise the first letter of each sentence" (on by default; also works in Safari and in the paged view).
+
 Everything runs on your device. Your files are never uploaded. The app works offline after the first visit, and spellcheck dictionaries are cached locally.
 
 ---
