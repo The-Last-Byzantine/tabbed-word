@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Tabbed Word: Duck.ai bridge",
+  "version": "1.2.1",
+  "description": "Passes the Duck.ai answer to the Duck.ai window in Tabbed Word.",
+  "host_permissions": [
+    "https://duck.ai/*",
+    "https://tabbedword.pages.dev/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://duck.ai/*"
+      ],
+      "js": [
+        "duck.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://tabbedword.pages.dev/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "tabbed.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}

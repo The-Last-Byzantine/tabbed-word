@@ -20,8 +20,8 @@ header{padding:10px 3%;}header small{font-size:11px}#toolbar{background:var(--ri
 </style>
 <header><div><h1>Tabbed Word</h1><small hidden>Local editing · DOCX · ODT · TXT · MD · HTML</small></div><span id="filename">New document.docx</span></header>
 <style id="header-compact-css">header>div>small,header #filename{display:none!important}</style>
-<div id="appstate"><span id="offlinestate">Local editing</span><button id="updateapp" hidden>Update app</button></div><div id="ribbon-tabs" aria-label="Ribbon sections"><span class="selected">Home</span><span>Insert</span><span>Review</span><span>Session</span><span>View</span><span>About</span></div><nav id="toolbar"><select id="newformat" aria-label="New file type"><option value="docx">New DOCX</option><option value="rtf">New RTF</option><option value="odt">New ODT</option><option value="doc">New DOC</option><option value="txt">New TXT</option><option value="md">New Markdown</option><option value="html">New HTML</option></select><button id="new">New</button><button id="open">Open</button><button id="openfolder" hidden title="Open a folder and choose a file (Chrome and Edge on desktop)">Open folder</button><button id="restoreworkspace" type="button" title="Restore the tabs from a session file, in the order they were saved">Restore session</button><button class="primary" id="save">Save</button><button id="opendrive" type="button" title="Open a file from Google Drive" aria-label="Open from Google Drive">Open Drive</button><button id="savedrive" type="button" title="Save this document to Google Drive. Needs internet; your device copy is not affected." aria-label="Save to Google Drive"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" style="vertical-align:-3px;margin-right:4px"><path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 15.5V10.5m0 0-2.2 2.2M12 10.5l2.2 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Drive</button><button id="savegdoc" type="button" hidden title="Save this document as a new Google Doc. The tab stays linked to it and syncs.">Save as Google Doc</button><button id="saveall" type="button" title="Save every open tab to a file, then close it">Save all &amp; close</button><button id="exportpdf" type="button" title="Save this document as a PDF. Your browser print dialog opens: choose Save as PDF.">Save as PDF</button><span id="morewrap" class="more-wrap"><button type="button" id="moremenu" aria-haspopup="true" aria-expanded="false" aria-controls="morepanel" title="Save As, Export PDF and Email all">More ▾</button><span id="morepanel" class="more-panel" role="menu" hidden><button type="button" id="saveas" role="menuitem">Save As…</button></span></span><button id="consistency" type="button" title="Check this document for repeated words, spacing, punctuation, Greek final sigma, mixed quote styles and spelling variants. Results appear in the right panel.">Check consistency</button><button id="backupworkspace" type="button" title="Save all open tabs, in their order, to one session file">Save session</button><button id="splitdoc" type="button" title="Split at the cursor. The text after the cursor moves to a new tab after this one.">Split</button><button id="compile" type="button" title="Join all open tabs, in tab order, into one Word file. Each tab starts on a new page.">Compile</button><button id="discardall" type="button" title="Close every open tab and delete its draft">Discard all</button><button id="mobiletools" aria-expanded="false">Tools ▾</button><button id="newhtml">New HTML</button><span id="sepfmt" class="tb-sep" aria-hidden="true"></span><select id="paragraphstyle" aria-label="Paragraph style"><option value="normal">Text</option><option value="title">Document title</option><option value="heading1">Heading 1</option><option value="heading2">Heading 2</option><option value="heading3">Heading 3</option><option value="quote">Quote · TNR 11 · 0.5 cm</option></select><select id="pagesize" aria-label="Page size"><option value="a4">A4 page</option><option value="letter">Letter page</option></select><button id="boldtext" type="button" aria-pressed="false"><b>Bold</b></button><button id="italictext" type="button" aria-pressed="false"><i>Italic</i></button><button id="alignjustify" type="button" aria-pressed="false" title="Justify: text reaches both margins">Justify</button><button id="alignleft" type="button" aria-pressed="false" title="Align left">Align left</button><button id="aligncenter" type="button" aria-pressed="false" title="Centre">Centre</button><button id="alignright" type="button" aria-pressed="false" title="Align right">Align right</button><button id="numberlist" aria-pressed="false">1. Numbering</button><button id="bulletlist" aria-pressed="false">• Bullets</button><select id="doclang" aria-label="Document language" title="Language for spelling, Turkish capitals and this document"><option value="el">Ελληνικά</option><option value="en">English</option><option value="tr">Türkçe</option></select><span id="sepfind" class="tb-sep" aria-hidden="true"></span><button id="hltext" type="button" title="Highlight the selected text in yellow">Highlight</button><button id="unhltext" type="button" title="Remove the highlight from the selected text">No highlight</button><button id="findreplace" type="button">Find and replace</button><button id="instable" type="button" title="Insert a table">Table</button><button id="insimage" type="button" title="Insert a JPG or PNG image">Image</button><button id="inshead" type="button" title="Header for every page">Header</button><button id="insfoot" type="button" title="Footer for every page">Footer</button><button id="pagenumbers" type="button" title="Show page numbers at the top or bottom of each page, with a choice of format and alignment">Page numbers</button><button id="insertnote">Footnote</button><button id="insend" type="button" title="Insert an endnote at the cursor">Endnote</button><button id="insremnote" type="button" title="Remove the footnote or endnote mark next to the cursor">Remove note</button><button id="newcomment">New comment</button><button id="commentsbutton">Comments (0)</button><button id="rescomment" type="button" title="Mark the comment at the cursor as resolved">Resolve comment</button><button id="resallcomments" type="button" title="Mark every comment as resolved">Resolve all</button><button id="delallcomments" type="button" title="Delete every comment in the document">Delete all comments</button><button id="devicesave" hidden>Files / Share</button><input id="workspacefile" type="file" accept=".json,application/json" hidden><button id="moveleft" title="Alt + Shift + ←">← Tab</button><button id="moveright" title="Alt + Shift + →">Tab →</button><input type="file" id="file" accept=".docx,.doc,.odt,.txt,.md,.markdown,.html,.htm" multiple hidden><button id="sidebyside" type="button" aria-pressed="false" title="Show two documents side by side. The right one is read only; click it to edit there.">Side by side</button><button id="swapsides" type="button" title="Put the right document on the left and the left one on the right">Tab left and right</button><button id="focusview" type="button" aria-pressed="false" title="Hide the ribbon and side panels. Press Esc to leave.">Focus</button><button id="fullscreenview" type="button" aria-pressed="false" title="Full screen. Press Esc to return.">Full screen</button><button id="paragraphview" type="button" aria-pressed="false" title="Paragraph view: the paragraph at the cursor is shown on a sky-blue band. Press again to turn it off.">Paragraph</button><select id="zoomsel" aria-label="Document zoom" title="Zoom the document"><option value="100">Zoom 100%</option><option value="120">Zoom 120%</option><option value="140">Zoom 140%</option><option value="160">Zoom 160%</option><option value="180">Zoom 180%</option><option value="200">Zoom 200%</option></select><select id="readfont" aria-label="Screen font" title="Screen font. Word layout uses the document's own fonts, as in print and Word. Exported files keep their own font."><option value="word">Word layout (document fonts)</option><option value="literata">Reading font: Literata</option><option value="arial">Arial</option><option value="sans">System sans-serif</option></select><select id="readsize" aria-label="Reading size" title="Text size on screen only. Exported files keep their own size."><option value="100">Text 100%</option><option value="115">Text 115%</option><option value="130">Text 130%</option><option value="150">Text 150%</option></select><button id="viewa4" type="button" aria-pressed="false" title="A4 page size, paged view">A4 Page</button><button id="viewletter" type="button" aria-pressed="false" title="Letter page size, paged view">Letter</button><button id="viewlandscape" type="button" aria-pressed="false" title="Landscape: turn the page sideways. Saved with this document. Press again for portrait.">Landscape</button><button id="viewcontinuous" type="button" aria-pressed="false" title="Continuous text, no pages">Continuous Text</button><button id="zoom100" type="button" aria-pressed="true" title="Show the document at 100%">100%</button><button id="zoom120" type="button" aria-pressed="false" title="Show the document at 120%">120%</button><button id="zoom140" type="button" aria-pressed="false" title="Show the document at 140%">140%</button><button id="zoom160" type="button" aria-pressed="false" title="Show the document at 160%">160%</button><button id="zoom180" type="button" aria-pressed="false" title="Show the document at 180%">180%</button><button id="zoom200" type="button" aria-pressed="false" title="Show the document at 200%">200%</button><button type="button" class="tw-ico" id="aboutshortcuts" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button><button type="button" class="tw-ico" id="aboutbackups" title="Backups and drafts" aria-label="Backups and drafts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9"/><path d="M10 13h4"/></svg></button><button type="button" class="tw-ico" id="aboutinfo" title="About Tabbed Word" aria-label="About Tabbed Word"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg></button></nav>
-<div id="tabs" class="tabs" role="tablist" aria-label="Open documents"></div><main><aside id="folderpanel" aria-label="Folder files" hidden><div class="fp-head"><strong id="fpname">Folder</strong><button type="button" id="fpcollapse" title="Hide the folder panel" aria-label="Hide the folder panel" aria-expanded="true">Hide ‹</button></div><div class="fp-body"><p class="fp-note" id="fpnote"></p><div><button type="button" id="fpchoose">Choose folder</button><button type="button" id="fpallow" hidden>Allow access</button><button type="button" id="fprefresh" hidden>Refresh</button></div><label class="fp-sort" hidden>Sort <select id="fpsort"><option value="name">Name, A–Z</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label><ul id="fplist"></ul></div><button type="button" id="fpexpand" class="fp-expand" title="Show the folder panel" aria-label="Show the folder panel">Folders ›</button></aside><section class="paper" id="paper"><div id="docxtools" class="docx-tools"><button id="pageview">Continuous text</button><span id="pagecount"></span><span id="selectioninfo">Shift + click to select a range of paragraphs</span><span id="pagesizeinfo">A4 · on-screen pagination is approximate</span></div><div id="docpages"></div><section id="notespanel" hidden aria-label="Footnotes"><h2>Footnotes</h2><p id="noteshelp">In DOCX/ODT, footnotes appear at the bottom of their page. Here you edit all notes in one list. Click the number to go to the reference.</p><div id="noteslist"></div></section><p id="sourcehint" hidden></p><div id="htmltools" class="html-tools" hidden><button id="codeview">Code</button><button id="splitview">Code + preview</button><button id="previewview">Preview</button><button id="refreshpreview">Refresh</button><label id="scriptchoice"><input id="runscripts" type="checkbox">Run JavaScript</label></div><label for="title" hidden>Title</label><input id="title" placeholder="Document title" aria-label="Document title"><label for="body" hidden>Text</label><textarea id="body" placeholder="Type or paste your text…" aria-label="Document text" spellcheck="true"></textarea><iframe id="preview" title="HTML preview" sandbox="" referrerpolicy="no-referrer" hidden></iframe></section><textarea id="pagemeter" class="page-measure" tabindex="-1" aria-hidden="true"></textarea><aside><section id="commentspanel" hidden aria-label="TabZot and Comments"><h2>TabZot and Comments</h2><div class="tz-tabs" role="tablist"><button type="button" id="tz-tab-lib" role="tab" class="on" aria-selected="true">TabZot</button><button type="button" id="tz-tab-com" role="tab" aria-selected="false">Comments</button></div><div id="tz-lib" class="tz-pane"><label>Library<select id="tz-lib-sel" aria-label="Library"></select></label><div class="tz-row2"><button type="button" id="tz-newlib">New library</button><button type="button" id="tz-dellib">Delete library</button></div><div class="tz-row2"><button type="button" id="tz-import" disabled>Import…</button><select id="tz-exp-fmt" aria-label="Export format"><option value="ris" selected>RIS</option><option value="bib">BibTeX</option></select><button type="button" id="tz-export">Export</button></div><input type="file" id="tz-file" accept=".ris,.bib,.txt,.json" multiple hidden><label>Citation style<select id="tz-style" aria-label="Citation style"><option value="apa">APA 7th</option><option value="chicago">Chicago author-date</option><option value="chicago-note">Chicago footnotes</option><option value="temp-note">Footnotes for Zotero RTF Scan</option><option value="temp">In-text for Zotero RTF Scan</option></select></label><label style="margin-top:8px"><input type="search" id="tz-search" placeholder="Search author, year or title" aria-label="Search references"></label><div class="tz-row2 tz-fields"><label>Page<input type="text" id="tz-page" placeholder="45-47" aria-label="Page or pages"></label><label>Prefix<input type="text" id="tz-pre" placeholder="see" aria-label="Prefix"></label><label>Suffix<input type="text" id="tz-suf" placeholder="ch. 3" aria-label="Suffix"></label></div><p class="tz-hint">Page, prefix and suffix apply to the next citation you click, then clear.</p><p id="tz-count" class="tz-count"></p><div id="tz-list" class="tz-list"></div><p id="tz-note" class="tz-note" role="status"></p><div class="tz-row2"><button type="button" id="tz-bib" class="primary">Insert reference list</button></div></div><div id="tz-com" class="tz-pane" hidden><div id="commentslist"></div></div></section><h2>COUNT</h2><div id="stats">0 words</div><div id="chars">0 characters</div><label class="countnotes"><input id="countnotes" type="checkbox" checked> Include footnotes in word count</label><hr><div id="docxhelp"><h2>EXPORT FORMAT</h2>Times New Roman · 12 pt<br>Line spacing 1.5 · justified<br>Bold title<br><span id="pagesizehelp">A4 · 21.00 × 29.70 cm</span><br>Top/bottom: 2.54 cm<br>Left/right: 3.175 cm<br>After paragraph: 10 pt<p id="odtinfo" hidden>ODT: text, headings, simple lists, comments and footnotes are supported. Replies appear as separate comments in other editors. Tables, images, headers and complex layout are not supported.</p></div><div id="htmlhelp" hidden><h2>HTML</h2>The source code opens first. Save keeps the HTML as a UTF-8 file.<p>The preview supports embedded CSS and data images. Files from neighbouring folders and external libraries are not loaded. JavaScript is optional. Features such as localStorage are not available in the preview.</p></div><hr><h2 class="tw-nospell">WRITING</h2><div id="autocapbox" class="tw-nospell"><label><input id="autocapon" type="checkbox" checked><span>Capitalise the first letter of each sentence</span></label></div><h2 class="tw-nospell">SPELLING</h2><div id="spellbox" class="tw-nospell"><label><input id="spellon" type="checkbox"><span>Check spelling in English, Greek and Turkish</span></label><select id="spellmode" hidden aria-label="Spelling language on phones"><option value="auto">Language: auto</option><option value="en">Greek and English</option><option value="tr">Turkish</option></select><span id="spellstate" role="status" aria-live="polite">Off</span><ul id="spelllist" aria-label="Possible misspellings"></ul><section id="consistpanel" hidden aria-label="Consistency findings"><h2>CONSISTENCY</h2><p id="consiststate" role="status" aria-live="polite"></p><ul id="consistlist" aria-label="Consistency findings"></ul></section></div><hr><h2>SHORTCUTS</h2><p>Ctrl (Windows) or ⌘ (Mac) with:<br>B Bold · I Italic · F Find<br>Alt+1 Open · Alt+2 New<br>Alt+3 Save · Alt+4 Close · Alt+5 Save As</p><span id="autosave" role="status" aria-live="polite">Automatic draft saving is on</span><span id="status" role="status" aria-live="polite">Ready</span><details class="aside-help"><summary>On your computer: files, backups and drafts</summary><p>No document is uploaded. In DOCX, pasting keeps the text and applies the template format.</p><p>In DOCX, each line break in the body creates a Word paragraph.</p><p id="mode"></p><p>Tabs come back in the same browser with the same app file. Save stores the DOCX or HTML separately. Clearing browser data deletes the drafts.</p><p>Open folder works only in Chromium browsers (Chrome and Edge) on desktop. In other browsers it is hidden and Open still works.</p></details></aside></main><footer>Version 2026.11.80 · For text documents. Tables and JPG/PNG images are supported. Other complex elements are not.<p class="whatsnew"><strong>New in 2026.11.75</strong></p><ul class="whatsnew"><li>Drive sync: linked documents upload to Google Drive automatically after you pause typing, and sync when you are back online. The bottom bar shows the sync state.</li><li>Google Drive: save, open from Drive (icon and File menu), and Email all saves every open tab to Drive before opening Gmail. Google sign-in loads only when you press a Drive button.</li><li>Insert › Page break (a real page break in Word files) and Insert › Table of contents (a list of your Heading 1–3 paragraphs; delete the old list before inserting an updated one).</li><li>File › New from template: academic article, memo, letter and press release.</li><li>File › Save version and File › Versions: named copies of a document that you can restore or delete. They are kept in this browser only.</li><li>Tools › Start dictation: speech into the text. It needs a browser with speech recognition (Chrome, Edge or Safari; Brave often blocks it). The language is set in View › Settings.</li><li>View › Settings: light, dark or system theme, and read the document aloud.</li></ul><p class="credit">Made by The Last Byzantine, MMXXVI. Sharing is love!</p><p class="contact">For any bug or suggestion, please contact me at <a href="mailto:thelastbyzantine@proton.me">thelastbyzantine@proton.me</a>.</p><p class="contact">Source code and updates: <a href="https://github.com/The-Last-Byzantine/tabbed-word" target="_blank" rel="noopener">github.com/The-Last-Byzantine/tabbed-word</a></p><details id="mobilehelp"><summary>Backups and drafts</summary><p>Open chooses a DOCX, ODT, TXT, Markdown or HTML file. Save downloads a file and does not replace the original automatically. “Files / Share” offers more save options.</p><p>Named versions (File › Versions) are kept in this browser only and are not included in the JSON backup.</p><p>Drafts stay on this device and in this installation. Importing drafts adds documents from another installation without removing the ones that are open.</p><p>The JSON backup contains your text and comments and is not encrypted. Keep it somewhere safe. Also keep your regular DOCX files, because browser data may be cleared. The app does not sync between devices automatically.</p><p>On touch screens, move the active tab with the ← Tab / Tab → buttons. To format, select the paragraph and choose the style under Tools.</p></details></footer>
+<div id="appstate"><span id="offlinestate">Local editing</span><button id="updateapp" hidden>Update app</button></div><div id="ribbon-tabs" aria-label="Ribbon sections"><span class="selected">Home</span><span>Insert</span><span>Review</span><span>Session</span><span>View</span><span>About</span></div><nav id="toolbar"><select id="newformat" aria-label="New file type"><option value="docx">New DOCX</option><option value="rtf">New RTF</option><option value="odt">New ODT</option><option value="doc">New DOC</option><option value="txt">New TXT</option><option value="md">New Markdown</option><option value="html">New HTML</option></select><button id="new">New</button><button id="open">Open</button><button id="openfolder" hidden title="Open a folder and choose a file (Chrome and Edge on desktop)">Open folder</button><button id="restoreworkspace" type="button" title="Restore the tabs from a session file, in the order they were saved">Restore session</button><button class="primary" id="save">Save</button><button id="opendrive" type="button" title="Open a file from Google Drive" aria-label="Open from Google Drive">Open Drive</button><button id="savedrive" type="button" title="Save this document to Google Drive. Needs internet; your device copy is not affected." aria-label="Save to Google Drive"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" style="vertical-align:-3px;margin-right:4px"><path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 15.5V10.5m0 0-2.2 2.2M12 10.5l2.2 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Drive</button><button id="savegdoc" type="button" hidden title="Save this document as a new Google Doc. The tab stays linked to it and syncs.">Save as Google Doc</button><button id="saveall" type="button" title="Save every open tab to a file, then close it">Save all &amp; close</button><button id="exportpdf" type="button" title="Save this document as a PDF. Your browser print dialog opens: choose Save as PDF.">Save as PDF</button><span id="morewrap" class="more-wrap"><button type="button" id="moremenu" aria-haspopup="true" aria-expanded="false" aria-controls="morepanel" title="Save As, Export PDF and Email all">More ▾</button><span id="morepanel" class="more-panel" role="menu" hidden><button type="button" id="saveas" role="menuitem">Save As…</button></span></span><button id="consistency" type="button" title="Check this document for repeated words, spacing, punctuation, Greek final sigma, mixed quote styles and spelling variants. Results appear in the right panel.">Check consistency</button><button id="backupworkspace" type="button" title="Save all open tabs, in their order, to one session file">Save session</button><button id="splitdoc" type="button" title="Split at the cursor. The text after the cursor moves to a new tab after this one.">Split</button><button id="compile" type="button" title="Join all open tabs, in tab order, into one Word file. Each tab starts on a new page.">Compile</button><button id="discardall" type="button" title="Close every open tab and delete its draft">Discard all</button><button id="mobiletools" aria-expanded="false">Tools ▾</button><button id="newhtml">New HTML</button><span id="sepfmt" class="tb-sep" aria-hidden="true"></span><select id="paragraphstyle" aria-label="Paragraph style"><option value="normal">Text</option><option value="title">Document title</option><option value="heading1">Heading 1</option><option value="heading2">Heading 2</option><option value="heading3">Heading 3</option><option value="quote">Quote · TNR 11 · 0.5 cm</option></select><select id="pagesize" aria-label="Page size"><option value="a4">A4 page</option><option value="letter">Letter page</option></select><button id="boldtext" type="button" aria-pressed="false"><b>Bold</b></button><button id="italictext" type="button" aria-pressed="false"><i>Italic</i></button><button id="underlinetext" type="button" aria-pressed="false" title="Underline the selected text"><u>Underline</u></button><button id="alignjustify" type="button" aria-pressed="false" title="Justify: text reaches both margins">Justify</button><button id="alignleft" type="button" aria-pressed="false" title="Align left">Align left</button><button id="aligncenter" type="button" aria-pressed="false" title="Centre">Centre</button><button id="alignright" type="button" aria-pressed="false" title="Align right">Align right</button><button id="numberlist" aria-pressed="false">1. Numbering</button><button id="bulletlist" aria-pressed="false">• Bullets</button><select id="doclang" aria-label="Document language" title="Language for spelling, Turkish capitals and this document"><option value="el">Ελληνικά</option><option value="en">English</option><option value="tr">Türkçe</option></select><span id="sepfind" class="tb-sep" aria-hidden="true"></span><button id="hltext" type="button" title="Highlight the selected text in yellow">Highlight</button><button id="unhltext" type="button" title="Remove the highlight from the selected text">No highlight</button><button id="findreplace" type="button">Find and replace</button><button id="instable" type="button" title="Insert a table">Table</button><button id="insimage" type="button" title="Insert a JPG or PNG image">Image</button><button id="inshead" type="button" title="Header for every page">Header</button><button id="insfoot" type="button" title="Footer for every page">Footer</button><button id="pagenumbers" type="button" title="Show page numbers at the top or bottom of each page, with a choice of format and alignment">Page numbers</button><button id="insertnote">Footnote</button><button id="insend" type="button" title="Insert an endnote at the cursor">Endnote</button><button id="insremnote" type="button" title="Remove the footnote or endnote mark next to the cursor">Remove note</button><button id="newcomment">New comment</button><button id="commentsbutton">Comments (0)</button><button id="rescomment" type="button" title="Mark the comment at the cursor as resolved">Resolve comment</button><button id="resallcomments" type="button" title="Mark every comment as resolved">Resolve all</button><button id="delallcomments" type="button" title="Delete every comment in the document">Delete all comments</button><button id="devicesave" hidden>Files / Share</button><input id="workspacefile" type="file" accept=".json,application/json" hidden><button id="moveleft" title="Alt + Shift + ←">← Tab</button><button id="moveright" title="Alt + Shift + →">Tab →</button><input type="file" id="file" accept=".docx,.doc,.odt,.txt,.md,.markdown,.html,.htm" multiple hidden><button id="sidebyside" type="button" aria-pressed="false" title="Show two documents side by side. The right one is read only; click it to edit there.">Side by side</button><button id="swapsides" type="button" title="Put the right document on the left and the left one on the right">Tab left and right</button><button id="focusview" type="button" aria-pressed="false" title="Hide the ribbon and side panels. Press Esc to leave.">Focus</button><button id="fullscreenview" type="button" aria-pressed="false" title="Full screen. Press Esc to return.">Full screen</button><button id="paragraphview" type="button" aria-pressed="false" title="Paragraph view: the paragraph at the cursor is shown on a sky-blue band. Press again to turn it off.">Paragraph</button><select id="zoomsel" aria-label="Document zoom" title="Zoom the document"><option value="100">Zoom 100%</option><option value="120">Zoom 120%</option><option value="140">Zoom 140%</option><option value="160">Zoom 160%</option><option value="180">Zoom 180%</option><option value="200">Zoom 200%</option></select><select id="readfont" aria-label="Screen font" title="Screen font. Word layout uses the document's own fonts, as in print and Word. Exported files keep their own font."><option value="word">Word layout (document fonts)</option><option value="literata">Reading font: Literata</option><option value="arial">Arial</option><option value="sans">System sans-serif</option></select><select id="readsize" aria-label="Reading size" title="Text size on screen only. Exported files keep their own size."><option value="100">Text 100%</option><option value="115">Text 115%</option><option value="130">Text 130%</option><option value="150">Text 150%</option></select><button id="viewa4" type="button" aria-pressed="false" title="A4 page size, paged view">A4 Page</button><button id="viewletter" type="button" aria-pressed="false" title="Letter page size, paged view">Letter</button><button id="viewlandscape" type="button" aria-pressed="false" title="Landscape: turn the page sideways. Saved with this document. Press again for portrait.">Landscape</button><button id="viewcontinuous" type="button" aria-pressed="false" title="Continuous text, no pages">Continuous Text</button><button id="zoom100" type="button" aria-pressed="true" title="Show the document at 100%">100%</button><button id="zoom120" type="button" aria-pressed="false" title="Show the document at 120%">120%</button><button id="zoom140" type="button" aria-pressed="false" title="Show the document at 140%">140%</button><button id="zoom160" type="button" aria-pressed="false" title="Show the document at 160%">160%</button><button id="zoom180" type="button" aria-pressed="false" title="Show the document at 180%">180%</button><button id="zoom200" type="button" aria-pressed="false" title="Show the document at 200%">200%</button><button type="button" class="tw-ico" id="aboutshortcuts" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button><button type="button" class="tw-ico" id="aboutbackups" title="Backups and drafts" aria-label="Backups and drafts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9"/><path d="M10 13h4"/></svg></button><button type="button" class="tw-ico" id="aboutinfo" title="About Tabbed Word" aria-label="About Tabbed Word"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg></button></nav>
+<div id="tabs" class="tabs" role="tablist" aria-label="Open documents"></div><main><aside id="folderpanel" aria-label="Folder files" hidden><div class="fp-head"><strong id="fpname">Folder</strong><button type="button" id="fpcollapse" title="Hide the folder panel" aria-label="Hide the folder panel" aria-expanded="true">Hide ‹</button></div><div class="fp-body"><p class="fp-note" id="fpnote"></p><div><button type="button" id="fpchoose">Choose folder</button><button type="button" id="fpallow" hidden>Allow access</button><button type="button" id="fprefresh" hidden>Refresh</button></div><label class="fp-sort" hidden>Sort <select id="fpsort"><option value="name">Name, A–Z</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label><ul id="fplist"></ul></div><button type="button" id="fpexpand" class="fp-expand" title="Show the folder panel" aria-label="Show the folder panel">Folders ›</button></aside><section class="paper" id="paper"><div id="docxtools" class="docx-tools"><button id="pageview">Continuous text</button><span id="pagecount"></span><span id="selectioninfo">Shift + click to select a range of paragraphs</span><span id="pagesizeinfo">A4 · on-screen pagination is approximate</span></div><div id="docpages"></div><section id="notespanel" hidden aria-label="Footnotes"><h2>Footnotes</h2><p id="noteshelp">In DOCX/ODT, footnotes appear at the bottom of their page. Here you edit all notes in one list. Click the number to go to the reference.</p><div id="noteslist"></div></section><p id="sourcehint" hidden></p><div id="htmltools" class="html-tools" hidden><button id="codeview">Code</button><button id="splitview">Code + preview</button><button id="previewview">Preview</button><button id="refreshpreview">Refresh</button><label id="scriptchoice"><input id="runscripts" type="checkbox">Run JavaScript</label></div><label for="title" hidden>Title</label><input id="title" placeholder="Document title" aria-label="Document title"><label for="body" hidden>Text</label><textarea id="body" placeholder="Type or paste your text…" aria-label="Document text" spellcheck="true"></textarea><iframe id="preview" title="HTML preview" sandbox="" referrerpolicy="no-referrer" hidden></iframe></section><textarea id="pagemeter" class="page-measure" tabindex="-1" aria-hidden="true"></textarea><aside><section id="commentspanel" hidden aria-label="TabZot and Comments"><h2>TabZot and Comments</h2><div class="tz-tabs" role="tablist"><button type="button" id="tz-tab-lib" role="tab" class="on" aria-selected="true">TabZot</button><button type="button" id="tz-tab-com" role="tab" aria-selected="false">Comments</button></div><div id="tz-lib" class="tz-pane"><label>Library<select id="tz-lib-sel" aria-label="Library"></select></label><div class="tz-row2"><button type="button" id="tz-newlib">New library</button><button type="button" id="tz-dellib">Delete library</button></div><div class="tz-row2"><button type="button" id="tz-import" disabled>Import…</button><select id="tz-exp-fmt" aria-label="Export format"><option value="ris" selected>RIS</option><option value="bib">BibTeX</option></select><button type="button" id="tz-export">Export</button></div><input type="file" id="tz-file" accept=".ris,.bib,.txt,.json" multiple hidden><label>Citation style<select id="tz-style" aria-label="Citation style"><option value="apa">APA 7th</option><option value="chicago">Chicago author-date</option><option value="chicago-note">Chicago footnotes</option><option value="temp-note">Footnotes for Zotero RTF Scan</option><option value="temp">In-text for Zotero RTF Scan</option></select></label><label style="margin-top:8px"><input type="search" id="tz-search" placeholder="Search author, year or title" aria-label="Search references"></label><div class="tz-row2 tz-fields"><label>Page<input type="text" id="tz-page" placeholder="45-47" aria-label="Page or pages"></label><label>Prefix<input type="text" id="tz-pre" placeholder="see" aria-label="Prefix"></label><label>Suffix<input type="text" id="tz-suf" placeholder="ch. 3" aria-label="Suffix"></label></div><p class="tz-hint">Page, prefix and suffix apply to the next citation you click, then clear.</p><p id="tz-count" class="tz-count"></p><div id="tz-list" class="tz-list"></div><p id="tz-note" class="tz-note" role="status"></p><div class="tz-row2"><button type="button" id="tz-bib" class="primary">Insert reference list</button></div></div><div id="tz-com" class="tz-pane" hidden><div id="commentslist"></div></div></section><h2>COUNT</h2><div id="stats">0 words</div><div id="chars">0 characters</div><label class="countnotes"><input id="countnotes" type="checkbox" checked> Include footnotes in word count</label><hr><div id="docxhelp"><h2>EXPORT FORMAT</h2>Times New Roman · 12 pt<br>Line spacing 1.5 · justified<br>Bold title<br><span id="pagesizehelp">A4 · 21.00 × 29.70 cm</span><br>Top/bottom: 2.54 cm<br>Left/right: 3.175 cm<br>After paragraph: 10 pt<p id="odtinfo" hidden>ODT: text, headings, simple lists, comments and footnotes are supported. Replies appear as separate comments in other editors. Tables, images, headers and complex layout are not supported.</p></div><div id="htmlhelp" hidden><h2>HTML</h2>The source code opens first. Save keeps the HTML as a UTF-8 file.<p>The preview supports embedded CSS and data images. Files from neighbouring folders and external libraries are not loaded. JavaScript is optional. Features such as localStorage are not available in the preview.</p></div><hr><h2 class="tw-nospell">WRITING</h2><div id="autocapbox" class="tw-nospell"><label><input id="autocapon" type="checkbox" checked><span>Capitalise the first letter of each sentence</span></label></div><h2 class="tw-nospell">SPELLING</h2><div id="spellbox" class="tw-nospell"><label><input id="spellon" type="checkbox"><span>Check spelling in English, Greek and Turkish</span></label><select id="spellmode" hidden aria-label="Spelling language on phones"><option value="auto">Language: auto</option><option value="en">Greek and English</option><option value="tr">Turkish</option></select><span id="spellstate" role="status" aria-live="polite">Off</span><ul id="spelllist" aria-label="Possible misspellings"></ul><section id="consistpanel" hidden aria-label="Consistency findings"><h2>CONSISTENCY</h2><p id="consiststate" role="status" aria-live="polite"></p><ul id="consistlist" aria-label="Consistency findings"></ul></section></div><hr><h2>SHORTCUTS</h2><p>Ctrl (Windows) or ⌘ (Mac) with:<br>B Bold · I Italic · U Underline · F Find<br>Alt+1 Open · Alt+2 New<br>Alt+3 Save · Alt+4 Close · Alt+5 Save As</p><span id="autosave" role="status" aria-live="polite">Automatic draft saving is on</span><span id="status" role="status" aria-live="polite">Ready</span><details class="aside-help"><summary>On your computer: files, backups and drafts</summary><p>No document is uploaded. In DOCX, pasting keeps the text and applies the template format.</p><p>In DOCX, each line break in the body creates a Word paragraph.</p><p id="mode"></p><p>Tabs come back in the same browser with the same app file. Save stores the DOCX or HTML separately. Clearing browser data deletes the drafts.</p><p>Open folder works only in Chromium browsers (Chrome and Edge) on desktop. In other browsers it is hidden and Open still works.</p></details></aside></main><footer>Version 2026.11.93 · For text documents. Tables and JPG/PNG images are supported. Other complex elements are not.<p class="whatsnew"><strong>New in 2026.11.75</strong></p><ul class="whatsnew"><li>Drive sync: linked documents upload to Google Drive automatically after you pause typing, and sync when you are back online. The bottom bar shows the sync state.</li><li>Google Drive: save, open from Drive (icon and File menu), and Email all saves every open tab to Drive before opening Gmail. Google sign-in loads only when you press a Drive button.</li><li>Insert › Page break (a real page break in Word files) and Insert › Table of contents (a list of your Heading 1–3 paragraphs; delete the old list before inserting an updated one).</li><li>File › New from template: academic article, memo, letter and press release.</li><li>File › Save version and File › Versions: named copies of a document that you can restore or delete. They are kept in this browser only.</li><li>Tools › Start dictation: speech into the text. It needs a browser with speech recognition (Chrome, Edge or Safari; Brave often blocks it). The language is set in View › Settings.</li><li>View › Settings: light, dark or system theme, and read the document aloud.</li></ul><p class="credit">Made by The Last Byzantine, MMXXVI. Sharing is love!</p><p class="contact">For any bug or suggestion, please contact me at <a href="mailto:thelastbyzantine@proton.me">thelastbyzantine@proton.me</a>.</p><p class="contact">Source code and updates: <a href="https://github.com/The-Last-Byzantine/tabbed-word" target="_blank" rel="noopener">github.com/The-Last-Byzantine/tabbed-word</a></p><details id="mobilehelp"><summary>Backups and drafts</summary><p>Open chooses a DOCX, ODT, TXT, Markdown or HTML file. Save downloads a file and does not replace the original automatically. “Files / Share” offers more save options.</p><p>Named versions (File › Versions) are kept in this browser only and are not included in the JSON backup.</p><p>Drafts stay on this device and in this installation. Importing drafts adds documents from another installation without removing the ones that are open.</p><p>The JSON backup contains your text and comments and is not encrypted. Keep it somewhere safe. Also keep your regular DOCX files, because browser data may be cleared. The app does not sync between devices automatically.</p><p>On touch screens, move the active tab with the ← Tab / Tab → buttons. To format, select the paragraph and choose the style under Tools.</p></details></footer>
 <dialog id="naming"><form method="dialog"><b>Save copy</b><input id="newname" aria-label="File name" required><button value="cancel" formnovalidate>Cancel</button> <button value="save" class="primary">Save</button></form></dialog>
 <dialog id="notedialog" class="footnote-dialog"><form method="dialog"><h2 id="notedialogtitle">New footnote</h2><p>Type the footnote text.</p><textarea id="notetext" aria-label="Footnote text" required></textarea><button value="cancel" formnovalidate>Cancel</button> <button class="primary" value="save">Insert / Save</button></form></dialog><dialog id="commentdialog" class="footnote-dialog"><form method="dialog"><h2 id="commentdialogtitle">Comment</h2><label for="commentauthor">Commenter name</label><input id="commentauthor" required><textarea id="commenttext" aria-label="Comment or reply text" required></textarea><button value="cancel" formnovalidate>Cancel</button><button class="primary" value="save">Save</button></form></dialog><dialog id="devicesavedialog" class="devicesave-dialog"><h2>Save to device</h2><small id="devicesavename"></small><p>Tap “Open menu” and choose “Save to Files” if it appears. You can also download the file directly.</p><button id="shareprepared" class="primary">Open menu</button><button id="downloadprepared">Download file</button><form method="dialog"><button value="cancel">Close</button></form></dialog><script id="para-spacing-v2026122-js">
 /* 2026.11.22: paragraph indents and line spacing. Each paragraph may carry pf = {l, f, b, a, ln}:
@@ -254,7 +254,7 @@ async function hdbSync(map){const db=await hdbOpen();return new Promise((res,rej
    Model: d.fmt is a list of runs {s, e, f} in body offsets. f is a bit set:
    FB_ON / FI_ON force bold / italic on, FB_OFF / FI_OFF force it off (for example bold removed from a heading).
    Without a flag the paragraph style decides, so a heading stays bold until the user removes bold. */
-var FB_ON = 1, FI_ON = 2, FB_OFF = 4, FI_OFF = 8, HL_ON = 16, REV_INS = 32, REV_DEL = 64;
+var FB_ON = 1, FI_ON = 2, FB_OFF = 4, FI_OFF = 8, HL_ON = 16, REV_INS = 32, REV_DEL = 64, U_ON = 128;
 var typingFmt = null;   // {at, b, i}: bold/italic pending for the next typed text at a collapsed caret
 
 function normFlag(f) { if (f & FB_ON) f &= ~FB_OFF; if (f & FI_ON) f &= ~FI_OFF; return f; }
@@ -286,7 +286,7 @@ function sanitizeFmt(list, len) {
   for (const r of Array.isArray(list) ? list : []) {
     if (!r || !Number.isInteger(r.s) || !Number.isInteger(r.e) || !Number.isInteger(r.f)) continue;
     const e = Math.min(r.e, a.length);
-    for (let k = Math.max(0, r.s); k < e; k++) a[k] |= (r.f & 127);
+    for (let k = Math.max(0, r.s); k < e; k++) a[k] |= (r.f & 255);
   }
   return runsOf(a);
 }
@@ -396,6 +396,7 @@ function wrapFlags(node, f) {
   if (f & FI_OFF) { const el = document.createElement('span'); el.className = 'tw-ni'; el.append(n); n = el; }
   if (f & FB_ON) { const el = document.createElement('b'); el.append(n); n = el; }
   if (f & HL_ON) { const el = document.createElement('mark'); el.append(n); n = el; }
+  if (f & U_ON) { const el = document.createElement('u'); el.append(n); n = el; }
   if (f & FB_OFF) { const el = document.createElement('span'); el.className = 'tw-nb'; el.append(n); n = el; }
   if (f & REV_DEL) { const el = document.createElement('del'); el.className = 'tw-rev-del'; el.append(n); n = el; }
   if (f & REV_INS) { const el = document.createElement('ins'); el.className = 'tw-rev-ins'; el.append(n); n = el; }
@@ -419,6 +420,7 @@ function nextFlag(el, f) {
   if (t === 'INS') return f | REV_INS;
   if (t === 'DEL') return f | REV_DEL;
   if (t === 'MARK') return f | HL_ON;
+  if (t === 'U') return f | U_ON;
   if (t === 'B' || t === 'STRONG') return (f & ~FB_OFF) | FB_ON;
   if (t === 'I' || t === 'EM') return (f & ~FI_OFF) | FI_ON;
   if (cl && cl.contains('tw-nb')) return (f & ~FB_ON) | FB_OFF;
@@ -462,6 +464,7 @@ function inlineControlState() {
   }
   bb.setAttribute('aria-pressed', String(v.b));
   ii.setAttribute('aria-pressed', String(v.i));
+  if (typeof window.twUnderlineSync === 'function') window.twUnderlineSync();
 }
 
 // Find and replace: the replacement keeps the formatting of the first replaced character.
@@ -507,7 +510,7 @@ function odRuns(text, fl, base) {
 
 function odTextStyles() {
   let out = '';
-  for (let f = 1; f < 32; f++) {
+  for (let f = 1; f < 256; f++) {
     if (normFlag(f) !== f) continue;
     const attrs = [];
     if (f & FB_ON) attrs.push('fo:font-weight="bold"');
@@ -515,6 +518,7 @@ function odTextStyles() {
     if (f & FI_ON) attrs.push('fo:font-style="italic"');
     if (f & FI_OFF) attrs.push('fo:font-style="normal"');
     if (f & HL_ON) attrs.push('fo:background-color="#ffff00"');
+    if (f & U_ON) attrs.push('style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color"');
     out += '<style:style style:name="TF_' + f + '" style:family="text"><style:text-properties ' + attrs.join(' ') + '/></style:style>';
   }
   return out;
@@ -530,6 +534,7 @@ function odSpanBits(n, psf, f, styleMap) {
   if (fw) g = setVis(g, psf, 'b', fw === 'bold' || Number(fw) >= 600);
   if (fs) g = setVis(g, psf, 'i', fs === 'italic' || fs === 'oblique');
   const bg = oa(tp, 'fo', 'background-color'); if (bg && bg !== 'transparent') g |= HL_ON;
+  const ul = oa(tp, 'style', 'text-underline-style'); if (ul && ul !== 'none') g |= U_ON;
   return g;
 }
 
@@ -543,6 +548,7 @@ function docxRunBits(n, pst) {
   if (bEl) { const v = attr(bEl, 'val'); f = setVis(f, sf, 'b', !(v === '0' || v === 'false')); }
   if (iEl) { const v = attr(iEl, 'val'); f = setVis(f, sf, 'i', !(v === '0' || v === 'false')); }
   const hl = child(rpr, 'highlight'); if (hl && attr(hl, 'val') && attr(hl, 'val') !== 'none') f |= HL_ON;
+  const ul = child(rpr, 'u'); if (ul && attr(ul, 'val') && attr(ul, 'val') !== 'none') f |= U_ON;
   return f;
 }
 
@@ -698,7 +704,7 @@ function richSnapshot(){const d=activeDoc();return JSON.stringify([title.value,b
 function recordPageHistory(force=false){const id=activeId;let h=pageHistory.get(id);if(!h){h={undo:[],redo:[],last:0};pageHistory.set(id,h)}if(force||!h.undo.length||Date.now()-h.last>700)h.undo.push({state:richSnapshot(),caret:pageState()});h.last=Date.now();h.redo=[];if(h.undo.length>80)h.undo.shift()}
 function applyParagraphStyle(style){if(busy||isSource()||!STYLE[style])return;syncDoc();recordPageHistory(true);const d=activeDoc(),p=editingCaret();if(p.field==='title')d.titleMeta={...d.titleMeta,style};else{const [a,b]=selectedBlocks(p);for(let i=a;i<=b;i++)d.blocks[i]={...d.blocks[i],style}}dirty=true;pageKey='';update();renderPages(p);queueDraft();status('Applied '+STYLE[style].label)}
 function toggleList(type){if(busy||isSource())return;syncDoc();const p=editingCaret();if(p.field==='title'){status('Lists apply to the document body.');return}recordPageHistory(true);const d=activeDoc(),[a,b]=selectedBlocks(p),remove=d.blocks.slice(a,b+1).every(m=>m.list===type);let group=d.blocks[a-1]?.list===type?d.blocks[a-1].listId:crypto.randomUUID();for(let i=a;i<=b;i++)d.blocks[i]={...d.blocks[i],list:remove?null:type,listId:remove?null:group,level:0,start:1};dirty=true;pageKey='';update();renderPages(p);queueDraft();status(remove?'List removed':'List applied')}
-$('paragraphstyle').onchange=()=>applyParagraphStyle($('paragraphstyle').value);$('numberlist').onclick=()=>toggleList('number');$('bulletlist').onclick=()=>toggleList('bullet');let selectionIdle;document.addEventListener('selectionchange',()=>{clearTimeout(selectionIdle);selectionIdle=setTimeout(rememberRichCaret,180)});for(const id of ['paragraphstyle','numberlist','bulletlist','boldtext','italictext','alignjustify','alignleft','aligncenter','alignright','newcomment'])$(id).addEventListener('mousedown',rememberRichCaret);
+$('paragraphstyle').onchange=()=>applyParagraphStyle($('paragraphstyle').value);$('numberlist').onclick=()=>toggleList('number');$('bulletlist').onclick=()=>toggleList('bullet');let selectionIdle;document.addEventListener('selectionchange',()=>{clearTimeout(selectionIdle);selectionIdle=setTimeout(rememberRichCaret,180)});for(const id of ['paragraphstyle','numberlist','bulletlist','boldtext','italictext','underlinetext','alignjustify','alignleft','aligncenter','alignright','newcomment'])$(id).addEventListener('mousedown',rememberRichCaret);
 function screenFontSize(st){return (window.innerWidth<=600?Math.max(16,st.size*4/3):st.size*4/3)*(window.twReadScale||1)}
 function styledHeight(text,width,m){const st=STYLE[m.style]||STYLE.normal,meter=$('pagemeter');meter.style.width=Math.max(50,width)+'px';meter.style.fontFamily=twFontFor(st);meter.style.fontSize=screenFontSize(st)+'px';meter.style.fontWeight=st.bold?'bold':'normal';meter.style.fontStyle=st.italic?'italic':'normal';meter.style.lineHeight=screenFontSize(st)*st.line+'px';meter.value=text||' ';return Math.max(screenFontSize(st)*st.line,meter.scrollHeight)}
 function styledFit(text,width,height,m){if(!text)return 0;if(styledHeight(text,width,m)<=height)return text.length;let a=0,b=text.length;while(a<b){const mid=Math.ceil((a+b)/2);if(styledHeight(text.slice(0,mid),width,m)<=height)a=mid;else b=mid-1}if(a&&/[\uD800-\uDBFF]/.test(text[a-1]))a--;const word=text.slice(0,a).search(/\s+\S*$/);if(word>a*.65)a=word+1;return a}
@@ -753,7 +759,7 @@ async function commentEditor(parentId=null){if(busy||isSource())return;syncDoc()
 function renderComments(){const d=activeDoc();if(!d)return;if(window.tzSync)tzSync();ensureRich(d);const html=isSource();$('commentsbutton').disabled=html;$('newcomment').disabled=html;$('paragraphstyle').disabled=html;$('numberlist').disabled=html;$('bulletlist').disabled=html;$('commentsbutton').textContent='Comments ('+d.comments.length+')';$('commentspanel').hidden=false;const key=JSON.stringify([d.id,d.comments,title.value,body.value]);if(key===commentsPanelKey)return;commentsPanelKey=key;const list=$('commentslist');list.replaceChildren();if(!d.comments.length){const p=document.createElement('p');p.textContent='No comments. Select text and click “New comment”.';list.append(p);return}const raw=title.value+'\n'+body.value;function card(c,depth=0){const row=document.createElement('article');row.className='comment-card';row.style.marginLeft=Math.min(depth,3)*16+'px';const heading=document.createElement('strong');heading.textContent=c.author||'Unnamed';row.append(heading);if(c.date){const date=document.createElement('small');const parsed=new Date(c.date);date.textContent=Number.isNaN(parsed.getTime())?c.date:parsed.toLocaleString('el');row.append(date)}if(c.done){const state=document.createElement('small');state.textContent='Resolved';row.append(state)}if(c.anchor){const jump=document.createElement('button');jump.className='comment-anchor';const snippet=raw.slice(c.anchor.start,c.anchor.end);jump.textContent=snippet?snippet.slice(0,160):'Go to the comment';jump.onclick=()=>jumpComment(c);row.append(jump)}const text=document.createElement('p');text.textContent=c.text;row.append(text);const reply=document.createElement('button');reply.textContent='Reply';reply.onclick=()=>commentEditor(c.id);const del=document.createElement('button');del.textContent='Delete';del.onclick=()=>deleteComment(c.id);if(c.parentId==null)row.append(twResolveButton(c));row.append(reply,del);list.append(row);for(const child of d.comments.filter(x=>x.parentId===c.id))card(child,depth+1)}const validIds=new Set(d.comments.map(c=>c.id));for(const c of d.comments.filter(c=>c.parentId==null||!validIds.has(c.parentId)))card(c)}
 $('commentsbutton').onclick=()=>{if(isSource())return;activeDoc().showComments=!activeDoc().showComments;renderComments();if(activeDoc().showComments)$('commentspanel').scrollIntoView({behavior:'smooth',block:'nearest'})};$('newcomment').onclick=()=>commentEditor();
 function styleId(style){return ({normal:'Normal',title:'Title',heading1:'Heading1',heading2:'Heading2',heading3:'Heading3',quote:'Quote'})[style]||'Normal'}
-function richRPr(m,f=0){const st=STYLE[m.style]||STYLE.normal,vb=f&FB_ON?true:f&FB_OFF?false:!!st.bold,vi=f&FI_ON?true:f&FI_OFF?false:!!st.italic;return '<w:rPr><w:rFonts w:ascii="'+st.font+'" w:hAnsi="'+st.font+'" w:cs="'+st.font+'"/><w:b w:val="'+(vb?'1':'0')+'"/><w:i w:val="'+(vi?'1':'0')+'"/><w:color w:val="'+st.color+'"/><w:sz w:val="'+st.size*2+'"/><w:szCs w:val="'+st.size*2+'"/>'+(f&HL_ON?'<w:highlight w:val="yellow"/>':'')+'</w:rPr>'}
+function richRPr(m,f=0){const st=STYLE[m.style]||STYLE.normal,vb=f&FB_ON?true:f&FB_OFF?false:!!st.bold,vi=f&FI_ON?true:f&FI_OFF?false:!!st.italic;return '<w:rPr><w:rFonts w:ascii="'+st.font+'" w:hAnsi="'+st.font+'" w:cs="'+st.font+'"/><w:b w:val="'+(vb?'1':'0')+'"/><w:i w:val="'+(vi?'1':'0')+'"/><w:color w:val="'+st.color+'"/><w:sz w:val="'+st.size*2+'"/><w:szCs w:val="'+st.size*2+'"/>'+(f&HL_ON?'<w:highlight w:val="yellow"/>':'')+(f&U_ON?'<w:u w:val="single"/>':'')+'</w:rPr>'}
 function richRun(text,m,f=0){return '<w:r>'+richRPr(m,f)+text.split(/(\t|\u2028)/).map(t=>t==='\t'?'<w:tab/>':t==='\u2028'?'<w:br/>':'<w:t xml:space="preserve">'+esc(t)+'</w:t>').join('')+'</w:r>'}
 function paragraphProperties(m,numId=null){const st=STYLE[m.style]||STYLE.normal,heading=/^heading([123])$/.exec(m.style);return '<w:pPr><w:pStyle w:val="'+styleId(m.style)+'"/>'+(heading?'<w:keepNext/><w:keepLines/><w:outlineLvl w:val="'+(Number(heading[1])-1)+'"/>':'')+(numId?'<w:numPr><w:ilvl w:val="'+m.level+'"/><w:numId w:val="'+numId+'"/></w:numPr>':'')+twDocxSpacing(m,st)+twDocxInd(m,numId,st)+'<w:jc w:val="'+twDocxJc(m)+'"/></w:pPr>'}
 function richParagraph(text,m,notes,offset,roots,numId,last=false,fl=null){const len=text.length,end=offset+len,starts=new Map(),ends=new Map();for(const c of roots){if(!c.anchor)continue;const at=(map,position)=>{const k=Math.max(0,Math.min(len,position-offset));if(!map.has(k))map.set(k,[]);map.get(k).push(c)};if(c.anchor.start>=offset&&(c.anchor.start<=end))at(starts,c.anchor.start);if(c.anchor.end>=offset&&(c.anchor.end<=end))at(ends,c.anchor.end)}let out='',plain='',i=0,ps=0;const flush=()=>{if(plain){out+=richRuns(plain,m,fl,offset+ps);plain=''}};while(i<=len){if(starts.has(i)){flush();for(const c of starts.get(i))out+='<w:commentRangeStart w:id="'+c.exportId+'"/>'}if(ends.has(i)){flush();for(const c of ends.get(i))out+='<w:commentRangeEnd w:id="'+c.exportId+'"/><w:r><w:commentReference w:id="'+c.exportId+'"/></w:r>'}if(i===len)break;const n=notes.find(n=>text.startsWith(n.marker,i));if(n){flush();out+='<w:r><w:rPr><w:vertAlign w:val="superscript"/></w:rPr>'+(n.kind==='end'?'<w:endnoteReference w:id="'+n.id+'"/>':'<w:footnoteReference w:id="'+n.id+'"/>')+'</w:r>';i+=n.marker.length}else{if(!plain)ps=i;plain+=text[i++]}}flush();return '<w:p>'+paragraphProperties(m,numId)+out+'</w:p>'}
@@ -851,7 +857,7 @@ $('updateapp').onclick=()=>{if(!hostedRegistration?.waiting)return;if(!persistDr
 </style>
 <script id="edition-v12-behaviour">
 (()=>{
-const groups={Home:['newformat','new','open','opendrive','savedrive','openfolder','save','saveall','saveas','exportpdf','emailall','morewrap','sepfmt','paragraphstyle','doclang','boldtext','italictext','alignjustify','alignleft','aligncenter','alignright','hltext','unhltext','numberlist','bulletlist','sepfind','findreplace','searchall',],Insert:['instable','insimage','inshead','insfoot','pagenumbers'],Review:['consistency','insertnote','insend','insremnote','newcomment','commentsbutton','rescomment','resallcomments','delallcomments','citebutton'],View:['outlineview','outlinelevel','outlinefirst','outlinepromote','outlinedemote','outlineup','outlinedown','outlineshow','sidebyside','focusview','fullscreenview','paragraphview','zoomsel','readfont','readsize','viewa4','viewletter','viewlandscape','viewcontinuous','moveleft','moveright'],Session:['backupworkspace','restoreworkspace','discardall','splitdoc','compile'],About:['aboutshortcuts','aboutinfo','aboutbackups']};
+const groups={Home:['newformat','new','open','opendrive','savedrive','openfolder','save','saveall','saveas','exportpdf','emailall','morewrap','sepfmt','paragraphstyle','doclang','boldtext','italictext','underlinetext','alignjustify','alignleft','aligncenter','alignright','hltext','unhltext','numberlist','bulletlist','sepfind','findreplace','searchall',],Insert:['instable','insimage','inshead','insfoot','pagenumbers'],Review:['consistency','insertnote','insend','insremnote','newcomment','commentsbutton','rescomment','resallcomments','delallcomments','citebutton'],View:['outlineview','outlinelevel','outlinefirst','outlinepromote','outlinedemote','outlineup','outlinedown','outlineshow','sidebyside','focusview','fullscreenview','paragraphview','zoomsel','readfont','readsize','viewa4','viewletter','viewlandscape','viewcontinuous','moveleft','moveright'],Session:['backupworkspace','restoreworkspace','discardall','splitdoc','compile'],About:['aboutshortcuts','aboutinfo','aboutbackups']};
 const tabs=document.getElementById('ribbon-tabs'),bar=document.getElementById('toolbar');if(!tabs||!bar)return;
 const old=Array.from(tabs.children).map(x=>x.textContent.trim()).filter(x=>groups[x]);tabs.replaceChildren();
 const label=document.createElement('span');label.id='ribbon-caption';label.textContent='Tabbed Word';
@@ -4141,6 +4147,60 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 
 
+// Underline and remove underline for the selected text (flag 128, shown as <u>, saved in DOCX as a single underline).
+// Ctrl+U and the ribbon, quick-row, Format menu and Font dialog all use the same button.
+(function () {
+  var pendingCaret = null; // the selection as it was when the button was pressed (a mouse press clears it)
+  document.addEventListener('pointerdown', function (e) {
+    if (e.target && e.target.closest && e.target.closest('#underlinetext')) pendingCaret = { caret: editingCaret(), id: activeId };
+  }, true);
+  function change(on) {
+    if (typeof busy !== 'undefined' && busy) return;
+    if (typeof isSource === 'function' && isSource()) { status('Underline works in the document view.'); return; }
+    var d = typeof activeDoc === 'function' ? activeDoc() : null;
+    if (!d) return;
+    if (typeof commitPageInputs === 'function') commitPageInputs();
+    var p = (pendingCaret && pendingCaret.id === activeId) ? pendingCaret.caret : editingCaret();
+    pendingCaret = null;
+    if (!p || p.field !== 'body') { status('Select text in the document to underline it.'); return; }
+    if (p.start === p.end) { status('Select the text to underline first.'); return; }
+    var s = p.start, e = p.end, len = body.value.length;
+    var flags = flagsOf(d, len);
+    /* null means toggle: underline unless every character is already underlined. */
+    if (on === null) { on = false; for (var j = s; j < e; j++) if (!(flags[j] & U_ON)) { on = true; break; } }
+    recordPageHistory(true);
+    for (var i = s; i < e; i++) flags[i] = on ? (flags[i] | U_ON) : (flags[i] & ~U_ON);
+    d.fmt = runsOf(flags);
+    dirty = true; pageKey = ''; update();
+    renderPages({ field: 'body', start: s, end: e });
+    queueDraft();
+    status(on ? 'Underline added.' : 'Underline removed.');
+  }
+  // Ribbon button state: pressed when the selection is underlined (or the caret sits in underlined text).
+  function sync() {
+    var b = document.getElementById('underlinetext');
+    if (!b) return;
+    var on = false, d = typeof activeDoc === 'function' ? activeDoc() : null, p = typeof editingCaret === 'function' ? editingCaret() : null;
+    if (d && p && p.field === 'body' && typeof body !== 'undefined' && body) {
+      var fl = flagsOf(d, body.value.length);
+      if (p.start < p.end) { on = true; for (var k = p.start; k < p.end; k++) if (!(fl[k] & U_ON)) { on = false; break; } }
+      else if (p.start > 0) on = !!(fl[p.start - 1] & U_ON);
+    }
+    b.setAttribute('aria-pressed', String(on));
+  }
+  window.twUnderlineSync = sync;
+  document.addEventListener('keydown', function (e) {
+    if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey || !e.key || e.key.toLowerCase() !== 'u') return;
+    e.preventDefault(); // stops the browser's view-source shortcut
+    change(null);
+  }, true);
+  function build() {
+    var a = document.getElementById('underlinetext');
+    if (a) a.addEventListener('click', function () { change(null); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+
 // v2.96: Export PDF. Prints a clean A4 copy of the document (bold, italic, highlight, footnotes) through the browser's
 // print dialog, where the user chooses Save as PDF.
 (function () {
@@ -4149,13 +4209,14 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     var body = d.body || '', blocks = d.blocks || [], runs = d.fmt || [];
     var num = 0, links = d.links || [];
     function linkAt(pos) { for (var x = 0; x < links.length; x++) if (pos >= links[x].s && pos < links[x].e) return x; return -1; }
-    var len = body.length, bold = new Int8Array(len + 1).fill(-1), ital = new Int8Array(len + 1).fill(-1), hl = new Uint8Array(len + 1);
+    var len = body.length, bold = new Int8Array(len + 1).fill(-1), ital = new Int8Array(len + 1).fill(-1), hl = new Uint8Array(len + 1), ul = new Uint8Array(len + 1);
     runs.forEach(function (r) {
       var s = Math.max(0, r.s | 0), e = Math.min(len, r.e | 0);
       for (var i = s; i < e; i++) {
         if (r.f & FB_ON) bold[i] = 1; else if (r.f & FB_OFF) bold[i] = 0;
         if (r.f & FI_ON) ital[i] = 1; else if (r.f & FI_OFF) ital[i] = 0;
         if (r.f & 16) hl[i] = 1;
+        if (r.f & 128) ul[i] = 1;
       }
     });
     var out = '', off = 0;
@@ -4164,13 +4225,13 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       var style = String(m.style || 'normal').replace(/[^a-z0-9]/gi, '');
       var styleBold = /^(title|heading)/.test(style), styleItal = style === 'quote';
       var html = '', cur = null, buf = '';
-      function flush() { if (!buf) return; var t = esc(buf); if (cur.h) t = '<mark>' + t + '</mark>'; if (cur.i) t = '<i>' + t + '</i>'; if (cur.b) t = '<b>' + t + '</b>'; if (cur.l >= 0) t = '<a href="' + esc(links[cur.l].url) + '">' + t + '</a>'; html += t; buf = ''; }
+      function flush() { if (!buf) return; var t = esc(buf); if (cur.h) t = '<mark>' + t + '</mark>'; if (cur.u) t = '<u>' + t + '</u>'; if (cur.i) t = '<i>' + t + '</i>'; if (cur.b) t = '<b>' + t + '</b>'; if (cur.l >= 0) t = '<a href="' + esc(links[cur.l].url) + '">' + t + '</a>'; html += t; buf = ''; }
       for (var k = 0; k < line.length; k++) {
         var pos = off + k;
-        var key = { b: bold[pos] === -1 ? styleBold : bold[pos] === 1, i: ital[pos] === -1 ? styleItal : ital[pos] === 1, h: !!hl[pos] };
+        var key = { b: bold[pos] === -1 ? styleBold : bold[pos] === 1, i: ital[pos] === -1 ? styleItal : ital[pos] === 1, h: !!hl[pos], u: !!ul[pos] };
         key.l = linkAt(pos);
-        var id = (key.b ? 'b' : '') + (key.i ? 'i' : '') + (key.h ? 'h' : '') + (key.l >= 0 ? 'l' + key.l : '');
-        if (cur === null || id !== cur.id) { flush(); cur = { b: key.b, i: key.i, h: key.h, l: key.l, id: id }; }
+        var id = (key.b ? 'b' : '') + (key.i ? 'i' : '') + (key.h ? 'h' : '') + (key.u ? 'u' : '') + (key.l >= 0 ? 'l' + key.l : '');
+        if (cur === null || id !== cur.id) { flush(); cur = { b: key.b, i: key.i, h: key.h, u: key.u, l: key.l, id: id }; }
         buf += line[k];
       }
       flush();
@@ -5686,6 +5747,7 @@ twActiveTabRename();
     discardall:'<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>',
     boldtext:'<path d="M7 5h6a3.5 3.5 0 0 1 0 7H7zM7 12h7a3.5 3.5 0 0 1 0 7H7z" stroke-width="2.2"/>',
     italictext:'<path d="M14 5h-4M14 19h-4M14.5 5l-5 14"/>',
+    underlinetext:'<path d="M7 4v7a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/>',
     alignjustify:'<path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>',
     alignleft:'<path d="M4 6h16M4 10h10M4 14h16M4 18h10"/>',
     aligncenter:'<path d="M4 6h16M7 10h10M4 14h16M7 18h10"/>',
@@ -6633,6 +6695,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
       { sep: true },
       { label: 'Bold', key: K('Ctrl+B', '\u2318B'), checked: pressed('boldtext'), disabled: dis('boldtext'), run: function () { click('boldtext'); } },
       { label: 'Italic', key: K('Ctrl+I', '\u2318I'), checked: pressed('italictext'), disabled: dis('italictext'), run: function () { click('italictext'); } },
+      { label: 'Underline', key: K('Ctrl+U', '\u2318U'), checked: pressed('underlinetext'), disabled: dis('underlinetext'), run: function () { click('underlinetext'); } },
     ];
   }
   document.addEventListener('focusin', function (e) { if (inside(e.target)) last = e.target; }, true);
@@ -6788,7 +6851,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
       { label: 'Comment', id: 'newcomment' }
     ] },
     { name: 'Format', items: [
-      { label: 'Bold', id: 'boldtext', key: K('Ctrl+B', '⌘B'), check: 'boldtext' }, { label: 'Italic', id: 'italictext', key: K('Ctrl+I', '⌘I'), check: 'italictext' },
+      { label: 'Bold', id: 'boldtext', key: K('Ctrl+B', '⌘B'), check: 'boldtext' }, { label: 'Italic', id: 'italictext', key: K('Ctrl+I', '⌘I'), check: 'italictext' }, { label: 'Underline', id: 'underlinetext', key: K('Ctrl+U', '⌘U'), check: 'underlinetext' },
       { label: 'Highlight', id: 'hltext' }, { sep: true },
       { label: 'Justify', id: 'alignjustify', check: 'alignjustify' }, { label: 'Align left', id: 'alignleft', check: 'alignleft' },
       { label: 'Centre', id: 'aligncenter', check: 'aligncenter' }, { label: 'Align right', id: 'alignright', check: 'alignright' }, { sep: true },
@@ -6912,6 +6975,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
     emailall: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     boldtext: '<path d="M6 4h8a4 4 0 0 1 0 8H6zM6 12h9a4 4 0 0 1 0 8H6z"/>',
     italictext: '<path d="M19 4h-9M14 20H5M15 4L9 20"/>',
+    underlinetext: '<path d="M7 4v7a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/>',
     alignjustify: '<path d="M3 6h18M3 10h18M3 14h18M3 18h18"/>',
     alignleft: '<path d="M3 6h18M3 10h12M3 14h18M3 18h12"/>',
     aligncenter: '<path d="M3 6h18M7 10h10M3 14h18M7 18h10"/>',
@@ -6930,7 +6994,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
   var TITLE = {
     sidebyside: 'Side by side', fullscreenview: 'Full screen (Esc returns)', paragraphview: 'Paragraph view',
     pagenumbers: 'Page numbers', hltext: 'Highlight: press again on the same text to remove it', findreplace: 'Find and replace',
-    searchall: 'Search all', emailall: 'Email', boldtext: 'Bold', italictext: 'Italic', alignjustify: 'Justify',
+    searchall: 'Search all', emailall: 'Email', boldtext: 'Bold', italictext: 'Italic', underlinetext: 'Underline', alignjustify: 'Justify',
     alignleft: 'Align left', aligncenter: 'Centre', alignright: 'Align right', numberlist: 'Numbering', bulletlist: 'Bullets',
     open: 'Open', save: 'Save', opendrive: 'Open from Google Drive', savedrive: 'Save to Google Drive', saveall: 'Save all & close', new: 'New', undo: 'Undo (Ctrl+Z)', redo: 'Redo (Ctrl+Y)'
   };
@@ -6939,7 +7003,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
     ['undo', 'redo'],
     ['findreplace', 'searchall'],
     ['sidebyside', 'fullscreenview', 'paragraphview', 'pagenumbers'],
-    ['|style|', 'boldtext', 'italictext', 'hltext', 'alignjustify', 'alignleft', 'aligncenter', 'alignright', 'numberlist', 'bulletlist']
+    ['|style|', 'boldtext', 'italictext', 'underlinetext', 'hltext', 'alignjustify', 'alignleft', 'aligncenter', 'alignright', 'numberlist', 'bulletlist']
   ];
   var row = document.createElement('div');
   row.id = 'quickrow';
@@ -7238,7 +7302,7 @@ function exportDoc(){
     while(k<line.length){
       const f=flags[pos+k];let e=k+1;while(e<line.length&&flags[pos+e]===f)e++;
       let t=docEsc(line.slice(k,e));
-      if(f&FB_ON)t='<b>'+t+'</b>';if(f&FI_ON)t='<i>'+t+'</i>';if(f&HL_ON)t='<span style="background:#ffff00">'+t+'</span>';
+      if(f&FB_ON)t='<b>'+t+'</b>';if(f&FI_ON)t='<i>'+t+'</i>';if(f&HL_ON)t='<span style="background:#ffff00">'+t+'</span>';if(f&U_ON)t='<u>'+t+'</u>';
       html+=t;k=e;
     }
     if(m.list==='number'){num++;html=num+'. '+html}else{num=0;if(m.list==='bullet')html='&bull; '+html}
@@ -7333,18 +7397,20 @@ async function loadDoc(file,nextHandle){
       '<fieldset><legend>Font style and effects</legend>' +
       '<label><input type="checkbox" id="o3-bold"> Bold</label>' +
       '<label><input type="checkbox" id="o3-italic"> Italic</label>' +
+      '<label><input type="checkbox" id="o3-u"> Underline</label>' +
       '<label><input type="checkbox" id="o3-hl"> Highlight</label></fieldset>';
     var dlg = makeDialog('Font', inner, function (d) {
       var f = d.querySelector('#o3-font'), z = d.querySelector('#o3-size');
       if (rf && f.value !== rf.value) { rf.value = f.value; rf.dispatchEvent(new Event('change', { bubbles: true })); }
       if (rs && z.value !== rs.value) { rs.value = z.value; rs.dispatchEvent(new Event('change', { bubbles: true })); }
-      [['o3-bold', 'boldtext'], ['o3-italic', 'italictext'], ['o3-hl', 'hltext']].forEach(function (pair) {
+      [['o3-bold', 'boldtext'], ['o3-italic', 'italictext'], ['o3-u', 'underlinetext'], ['o3-hl', 'hltext']].forEach(function (pair) {
         var box = d.querySelector('#' + pair[0]);
         if (box.checked !== pressed(pair[1])) { var b = document.getElementById(pair[1]); if (b) b.click(); }
       });
     });
     dlg.querySelector('#o3-bold').checked = pressed('boldtext');
     dlg.querySelector('#o3-italic').checked = pressed('italictext');
+    dlg.querySelector('#o3-u').checked = pressed('underlinetext');
     dlg.querySelector('#o3-hl').checked = pressed('hltext');
     if (rf) dlg.querySelector('#o3-font').value = rf.value;
     if (rs) dlg.querySelector('#o3-size').value = rs.value;
@@ -10017,3 +10083,291 @@ html[data-theme="dark"] body #tabs [role="tab"]{box-shadow:none!important;border
 html[data-theme="dark"] body #toolbar [aria-pressed="true"],html[data-theme="dark"] body #toolbar .on,html[data-theme="dark"] body #toolbar .selected{background:#34506e!important;color:#fff!important;border-color:#5b7ba3!important}
 html[data-theme="dark"] body #toolbar [aria-pressed="true"] svg{stroke:#fff!important}
 </style>
+<style id="shoulder-css">
+main{display:flex!important;align-items:flex-start;justify-content:center;grid-template-columns:none!important;position:relative}
+main:has(#shoulder:not([hidden])){justify-content:flex-start}
+main>aside{display:none!important}
+#shoulder{flex:0 0 300px;width:300px;min-width:0;display:flex;flex-direction:column;background:#d4d0c8;border:1px solid #808080;position:sticky;top:8px;align-self:flex-start;max-height:calc(100vh - 24px);overflow:hidden;margin:0 12px 0 0;font:11px Tahoma,sans-serif;color:#000}
+#shoulder[hidden],#shoulderopen[hidden],#shoulder .sh-pane[hidden]{display:none!important}
+#shoulder .sh-head{flex:none;display:flex;justify-content:flex-end;padding:3px 4px;background:#d4d0c8}
+#shoulder .sh-head button,#shoulderopen{font:11px Tahoma,sans-serif;padding:2px 8px;background:#e9e7e1;border:1px solid #808080;border-radius:3px;color:#000;cursor:pointer}
+#shoulderopen{position:absolute;left:0;top:8px;z-index:2;writing-mode:vertical-rl;padding:10px 4px;margin:0}
+#shoulder .sh-tabs{flex:none;display:flex;flex-wrap:wrap;gap:2px;padding:4px 4px 0;background:#d4d0c8;border-bottom:1px solid #808080}
+#shoulder .sh-tabs button{flex:1 1 auto;border:1px solid #808080;border-bottom:0;background:#e9e7e1;padding:3px 5px;font:11px Tahoma,sans-serif;color:#000;cursor:pointer;border-radius:3px 3px 0 0;white-space:nowrap}
+#shoulder .sh-tabs button[aria-selected="true"]{background:#fff;font-weight:700;margin-bottom:-1px}
+#shoulder .sh-pane{flex:1 1 auto;min-height:0;overflow:auto;background:#fff;padding:8px;font:13px system-ui,sans-serif;color:#1f2834}
+#shoulder #folderpanel{position:static;max-height:none;border:0;box-shadow:none;padding:0;background:#fff;align-self:auto;overflow:visible;width:auto;display:block!important}
+#shoulder #folderpanel .fp-head{display:flex!important}
+#shoulder #folderpanel .fp-body{display:block!important}
+#shoulder #folderpanel #fplist:not([hidden]){display:block}
+#shoulder #folderpanel .fp-expand,#shoulder #fpcollapse{display:none!important}
+#shoulder dialog.findreplace-dialog{position:static!important;inset:auto!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;margin:0!important;width:100%!important;max-width:none!important;box-shadow:none!important;border:0!important;padding:0!important;background:transparent!important}
+#shoulder .tz-tabs{display:none!important}
+#commentspanel{display:none!important}
+#shoulder #tz-lib,#shoulder #tz-com{margin:0}
+#shoulder #consistpanel{margin-top:10px}
+@media (max-width:800px){main{flex-direction:column}#shoulder{width:100%;flex-basis:auto;position:static;max-height:60vh;margin:0 0 8px}#shoulderopen{position:static;writing-mode:horizontal-tb;margin:0 0 8px}}
+body.focus-on #shoulder,body.focus-on #shoulderopen{display:none!important}
+#duckwin{position:fixed;right:24px;bottom:56px;width:320px;max-width:calc(100vw - 32px);z-index:60;background:#d4d0c8;border:1px solid #808080;box-shadow:2px 3px 10px #0004;font:12px Tahoma,sans-serif;color:#000}
+#duckwin[hidden]{display:none!important}
+#duckwin .dw-head{display:flex;align-items:center;gap:4px;padding:4px 4px 4px 8px;background:linear-gradient(90deg,#1e3a8a,#7aa6d8);color:#fff;cursor:move;user-select:none;touch-action:none}
+#duckwin .dw-head strong{flex:1;font-size:12px}
+#duckwin .dw-head button{font:13px system-ui,sans-serif;line-height:1;width:24px;height:22px;padding:0;background:#e9e7e1;border:1px solid #808080;border-radius:3px;cursor:pointer;color:#000}
+#duckwin .dw-body{padding:8px;display:flex;flex-direction:column;gap:6px}
+#duckwin textarea{width:100%;height:110px;box-sizing:border-box;font:13px system-ui,sans-serif;padding:6px;border:1px solid #808080;background:#fff;resize:vertical}
+#duckwin .dw-send{align-self:flex-end;font:12px Tahoma,sans-serif;padding:4px 10px;background:#e9e7e1;border:1px solid #808080;border-radius:3px;cursor:pointer}
+#duckwin .dw-note{margin:0;color:#333;font-size:11px}
+#duckwin .dw-row{display:flex;justify-content:flex-end;gap:6px}
+#shoulder .dw-pane{font:13px system-ui,sans-serif}
+#shoulder .dw-pane p{margin:0 0 10px}
+#shoulder .dw-pane button{font:12px Tahoma,sans-serif;padding:4px 10px;background:#e9e7e1;border:1px solid #808080;border-radius:3px;cursor:pointer}
+#duckwin{width:360px}
+#shoulder #duckwin{position:static;width:auto;max-width:none;box-shadow:none;border:0;background:transparent;z-index:auto;padding:0}
+#shoulder #duckwin .dw-head{cursor:default;border-radius:0;padding:4px 6px}
+#shoulder #duckwin .dw-body{max-height:none;overflow:visible;padding:8px 6px}
+#shoulder #duckwin textarea{height:110px}
+#duckwin .dw-body{max-height:calc(100vh - 110px);overflow-y:auto}
+#duckwin #duckAnswer{height:220px;min-height:0;flex:none;overflow-y:auto;white-space:pre-wrap}
+#duckwin #duckText{min-height:0}
+#duckAnsWrap{display:flex;flex-direction:column;gap:6px}
+#duckAnsWrap[hidden]{display:none!important}
+#duckwin .dw-hist{display:flex;align-items:center;gap:6px;font:12px Tahoma,sans-serif}
+#duckwin .dw-hist label{white-space:nowrap}
+#duckwin #duckHistory{flex:1;min-width:0;font:12px system-ui,sans-serif;padding:3px}
+body.focus-on #duckwin{display:none!important}
+</style>
+<script id="shoulder-js">
+/* Side shoulder (left, one panel with tabs): Folders, Find and replace, Universal search, TabZot, Comments.
+   Hidden when the app loads; "Panels ›" opens it. The panels are moved, not copied, so their ids and logic stay. */
+(function () {
+  var TABS = [
+    { id: 'duck', label: 'Duck.ai' },
+    { id: 'folders', label: 'Folders' },
+    { id: 'find', label: 'Find and replace' },
+    { id: 'search', label: 'Universal search' },
+    { id: 'tabzot', label: 'TabZot' },
+    { id: 'comments', label: 'Comments' }
+  ];
+  /* Dialogs inside the shoulder open inline, not as modal windows. */
+  var nativeShowModal = HTMLDialogElement.prototype.showModal;
+  HTMLDialogElement.prototype.showModal = function () {
+    if (this.closest && this.closest('#shoulder')) { if (!this.open) this.show(); return; }
+    return nativeShowModal.apply(this, arguments);
+  };
+  function init() {
+    var main = document.querySelector('main'), paper = document.getElementById('paper');
+    if (!main || !paper || document.getElementById('shoulder')) return;
+    var sh = document.createElement('section');
+    sh.id = 'shoulder'; sh.setAttribute('aria-label', 'Side panels'); sh.hidden = true;
+    /* A control inside the shoulder must never submit a form or follow a link and reload the page. */
+    sh.addEventListener('submit', function (e) { e.preventDefault(); }, true);
+    sh.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]:not([download])') : null;
+      if (a) e.preventDefault();
+    }, true);
+    var head = document.createElement('div'); head.className = 'sh-head';
+    var hide = document.createElement('button');
+    hide.type = 'button'; hide.id = 'shoulderhide'; hide.title = 'Hide the side panels';
+    hide.setAttribute('aria-label', 'Hide the side panels'); hide.textContent = 'Hide ‹';
+    head.append(hide);
+    var bar = document.createElement('div'); bar.className = 'sh-tabs'; bar.setAttribute('role', 'tablist'); bar.setAttribute('aria-label', 'Side panels');
+    sh.append(head, bar);
+    var panes = {}, btns = {};
+    TABS.forEach(function (t) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.id = 'sh-tab-' + t.id; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', 'false'); b.textContent = t.label;
+      b.addEventListener('click', function () { select(t.id); });
+      bar.append(b); btns[t.id] = b;
+      var p = document.createElement('div');
+      p.className = 'sh-pane'; p.id = 'sh-pane-' + t.id; p.setAttribute('role', 'tabpanel'); p.setAttribute('aria-labelledby', b.id); p.hidden = true;
+      sh.append(p); panes[t.id] = p;
+    });
+    function move(id, pane) { var n = document.getElementById(id); if (n) panes[pane].append(n); }
+    move('folderpanel', 'folders');
+    move('findreplacedialog', 'find');
+    move('searchalldialog', 'search');
+    move('tz-lib', 'tabzot');
+    move('tz-com', 'comments');
+    move('consistpanel', 'comments');
+    /* Duck.ai: a tab in the left shoulder. Send hands the question to the bridge extension (duck.ai answers in a background tab);
+       the answer comes back here. The arrow button opens duck.ai in a new tab. */
+    var DUCK_URL = 'https://duck.ai/';
+    var DUCK_QUERY = 'q';   /* if duck.ai does not take the question in the address, the clipboard still has it */
+    var duckWin = document.createElement('div');
+    duckWin.id = 'duckwin'; duckWin.setAttribute('role', 'region'); duckWin.setAttribute('aria-label', 'Duck.ai');
+    var duckHead = document.createElement('div'); duckHead.className = 'dw-head';
+    var duckTitle = document.createElement('strong'); duckTitle.textContent = 'Duck.ai';
+    duckHead.append(duckTitle);
+    var duckBody = document.createElement('div'); duckBody.className = 'dw-body';
+    var duckText = document.createElement('textarea'); duckText.id = 'duckText'; duckText.placeholder = 'Type your question or remark…'; duckText.setAttribute('aria-label', 'Your question for Duck.ai');
+    var duckSend = document.createElement('button'); duckSend.type = 'button'; duckSend.className = 'dw-send'; duckSend.textContent = 'Send to Duck.ai';
+    var duckNote = document.createElement('p'); duckNote.className = 'dw-note'; duckNote.id = 'duckNote';
+    duckNote.textContent = 'Send copies your text and opens duck.ai in a new tab. Ctrl+Enter sends.';
+    var duckAnsWrap = document.createElement('div'); duckAnsWrap.id = 'duckAnsWrap'; duckAnsWrap.hidden = true;
+    var duckAnsLabel = document.createElement('label'); duckAnsLabel.textContent = 'Answer'; duckAnsLabel.htmlFor = 'duckAnswer';
+    var duckAns = document.createElement('textarea'); duckAns.id = 'duckAnswer'; duckAns.readOnly = true; duckAns.setAttribute('aria-label', 'Duck.ai answer');
+    var duckCopy = document.createElement('button'); duckCopy.type = 'button'; duckCopy.className = 'dw-send'; duckCopy.textContent = 'Copy answer';
+    duckCopy.addEventListener('click', function () { if (navigator.clipboard) navigator.clipboard.writeText(duckAns.value).catch(function () {}); });
+    var duckInsert = document.createElement('button'); duckInsert.type = 'button'; duckInsert.className = 'dw-send'; duckInsert.id = 'duckInsert'; duckInsert.textContent = 'Insert into document';
+    /* Remember the caret before the button takes focus, as the highlight button does. */
+    var duckCaret = null;
+    duckInsert.addEventListener('pointerdown', function () { duckCaret = typeof editingCaret === 'function' ? editingCaret() : null; });
+    duckInsert.addEventListener('click', function () {
+      var text = duckAns.value;
+      if (!text) return;
+      if (typeof activeDoc !== 'function' || !activeDoc()) { duckNote.textContent = 'Open a document first.'; return; }
+      if (typeof busy !== 'undefined' && busy) return;
+      if (typeof isSource === 'function' && isSource()) { duckNote.textContent = 'Switch to the document view to insert the answer.'; return; }
+      var p = duckCaret || (typeof editingCaret === 'function' ? editingCaret() : null);
+      duckCaret = null;
+      if (!p || p.field !== 'body') { duckNote.textContent = 'Click in the document text where the answer should go, then press Insert.'; return; }
+      if (typeof commitPageInputs === 'function') commitPageInputs();
+      var s = p.start, e = p.end, clean = text.replace(/\r\n?/g, '\n');
+      editBody(s, e, clean);
+      var at = s + clean.length;
+      if (typeof focusPageCaret === 'function') focusPageCaret({ field: 'body', start: at, end: at });
+      duckNote.textContent = 'Answer inserted into the document.';
+    });
+    duckAnsWrap.append(duckAnsLabel, duckAns, duckCopy, duckInsert);
+    var duckHist = document.createElement('select'); duckHist.id = 'duckHistory'; duckHist.setAttribute('aria-label', 'Recent Duck.ai conversations');
+    var duckHistRow = document.createElement('div'); duckHistRow.className = 'dw-hist';
+    var duckHistLabel = document.createElement('label'); duckHistLabel.textContent = 'Recent (last 10)'; duckHistLabel.htmlFor = 'duckHistory';
+    duckHistRow.append(duckHistLabel, duckHist);
+    /* Clear: empties the current question and answer. The Recent list is kept. */
+    var duckClear = document.createElement('button'); duckClear.type = 'button'; duckClear.className = 'dw-send'; duckClear.id = 'duckClear'; duckClear.textContent = 'Clear';
+    duckClear.title = 'Clear the question and answer (Recent list is kept)';
+    duckClear.addEventListener('click', function () {
+      duckText.value = ''; duckAns.value = ''; duckAnsWrap.hidden = true;
+      duckNote.textContent = 'Cleared. Type a new question.'; duckText.focus();
+    });
+    var duckRow = document.createElement('div'); duckRow.className = 'dw-row';
+    duckRow.append(duckClear, duckSend);
+    duckBody.append(duckHistRow, duckText, duckRow, duckNote, duckAnsWrap);
+    /* The last 10 conversations are kept in this browser (local storage), newest first. */
+    var HIST_KEY = 'twDuckHistory';
+    function loadHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY) || '[]') || []; } catch (err) { return []; } }
+    function saveHist(list) { try { localStorage.setItem(HIST_KEY, JSON.stringify(list.slice(0, 10))); } catch (err) { /* storage is off: keep only this session */ } }
+    var duckHistList = loadHist();
+    function renderHist() {
+      duckHist.replaceChildren();
+      var first = document.createElement('option');
+      first.value = ''; first.textContent = duckHistList.length ? 'Choose a conversation…' : 'No conversations yet';
+      duckHist.append(first);
+      duckHistList.forEach(function (item, i) {
+        var o = document.createElement('option');
+        o.value = String(i);
+        var when = item.t ? new Date(item.t).toLocaleString([], { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+        o.textContent = (when ? when + ' · ' : '') + item.q.slice(0, 60);
+        duckHist.append(o);
+      });
+    }
+    renderHist();
+    duckHist.addEventListener('change', function () {
+      var item = duckHistList[Number(duckHist.value)];
+      if (!item) return;
+      duckText.value = item.q;
+      duckAns.value = item.a;
+      duckAnsWrap.hidden = false;
+      duckNote.textContent = 'Loaded from recent conversations.';
+      duckHist.value = '';
+    });
+    /* Answers from the Duck.ai bridge extension (duck.ai's text, passed by the extension). Ignored unless asked for. */
+    window.addEventListener('message', function (e) {
+      if (e.source !== window || !e.data || e.data.twDuckAnswer !== true) return;
+      duckAns.value = String(e.data.answer || '');
+      duckAnsWrap.hidden = false;
+      duckNote.textContent = 'Answer received from duck.ai.';
+      var q = String(e.data.question || duckText.value || '').trim();
+      if (q) { duckHistList = [{ q: q, a: duckAns.value, t: Date.now() }].concat(duckHistList.filter(function (h) { return h.q !== q; })).slice(0, 10); saveHist(duckHistList); renderHist(); }
+    });
+    duckWin.append(duckHead, duckBody);
+    panes.duck.append(duckWin);
+    /* Send: the Duck.ai bridge opens duck.ai in a background tab, so the question is answered without switching tabs.
+       Without the bridge the question is copied and the window says what to do. */
+    function openDuck(text) {
+      var q = (text || '').trim();
+      if (!q) { duckNote.textContent = 'Type a question first.'; return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(q).catch(function () {});
+      var acked = false;
+      function onAck(e) {
+        if (e.source !== window || !e.data || e.data.twDuckAck !== true) return;
+        acked = true;
+        window.removeEventListener('message', onAck);
+        duckNote.textContent = 'Working: duck.ai is answering in a background tab. The answer will appear here.';
+      }
+      window.addEventListener('message', onAck);
+      window.postMessage({ twDuckAsk: true, question: q }, '*');
+      duckNote.textContent = 'Sending to duck.ai…';
+      setTimeout(function () {
+        window.removeEventListener('message', onAck);
+        if (!acked) duckNote.textContent = 'The Duck.ai bridge extension is not installed, so the answer cannot come back here. The question is copied: press Maximise and paste (Ctrl+V) into duck.ai.';
+      }, 1500);
+    }
+    duckSend.addEventListener('click', function () { openDuck(duckText.value); });
+    duckText.addEventListener('keydown', function (e) { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); openDuck(duckText.value); } });
+
+    main.insertBefore(sh, main.firstChild);
+
+    var opener = document.createElement('button');
+    opener.type = 'button'; opener.id = 'shoulderopen'; opener.title = 'Show the side panels';
+    opener.setAttribute('aria-label', 'Show the side panels'); opener.textContent = 'Panels ›';
+    main.insertBefore(opener, paper);
+
+    var current = 'duck';
+    function select(id) {
+      current = id;
+      TABS.forEach(function (t) {
+        var on = t.id === id;
+        btns[t.id].setAttribute('aria-selected', String(on));
+        btns[t.id].tabIndex = on ? 0 : -1;
+        panes[t.id].hidden = !on;
+      });
+      if (id === 'find') { var f = document.getElementById('findreplace'); if (f) f.click(); }
+      if (id === 'search') { var s = document.getElementById('searchall'); if (s) s.click(); }
+      /* TabZot and Comments are separate panes now, so each one shows its own part whenever its tab is chosen. */
+      if (id === 'tabzot') { var lib = document.getElementById('tz-lib'); if (lib) lib.hidden = false; }
+      if (id === 'comments') {
+        var com = document.getElementById('tz-com');
+        var src = typeof isSource === 'function' && isSource();
+        if (com && !src) com.hidden = false;
+      }
+    }
+    function openShoulder(id) { sh.hidden = false; opener.hidden = true; select(id || current); }
+    function closeShoulder() { sh.hidden = true; opener.hidden = false; }
+    hide.addEventListener('click', closeShoulder);
+    opener.addEventListener('click', function () { openShoulder(current); });
+    select('duck');
+    sh.hidden = true; opener.hidden = false;
+
+    /* Ctrl+F / Ctrl+H open the Find tab; the Open folder button shows the Folders tab. */
+    document.addEventListener('keydown', function (e) {
+      if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return;
+      var k = e.key.toLowerCase();
+      if ((k !== 'f' && k !== 'h') || document.body.classList.contains('focus-on')) return;
+      if (typeof activeDoc === 'function' && !activeDoc()) return;
+      openShoulder('find');
+    }, true);
+    var of = document.getElementById('openfolder');
+    if (of) of.addEventListener('click', function () { openShoulder('folders'); });
+
+    /* The Comments button and New comment open the Comments tab. */
+    var cb = document.getElementById('commentsbutton');
+    if (cb) cb.addEventListener('click', function () {
+      setTimeout(function () {
+        var d = typeof activeDoc === 'function' ? activeDoc() : null;
+        if (d && d.showComments) openShoulder('comments');
+      }, 0);
+    });
+    var nc = document.getElementById('newcomment');
+    if (nc) nc.addEventListener('click', function () { openShoulder('comments'); });
+
+    /* Consistency findings open the Comments tab where they are listed. */
+    var cp = document.getElementById('consistpanel');
+    if (cp) new MutationObserver(function () { if (!cp.hidden) openShoulder('comments'); })
+      .observe(cp, { attributes: true, attributeFilter: ['hidden'] });
+
+    window.twShoulder = { open: openShoulder, close: closeShoulder, select: select };
+  }
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
