@@ -25,6 +25,11 @@
   var OPEN_MIMES = [GDOC, DOCX, 'application/vnd.oasis.opendocument.text', 'application/msword',
                     'text/plain', 'text/markdown', 'text/html'];
   var OPEN_EXT = /\.(docx|odt|doc|txt|md|markdown|html?)$/i;
+  /* Drive files can have names without an ending; the app reads the format from the ending. */
+  var EXT_OF = {};
+  EXT_OF[DOCX] = '.docx'; EXT_OF['application/vnd.oasis.opendocument.text'] = '.odt';
+  EXT_OF['application/msword'] = '.doc'; EXT_OF['text/plain'] = '.txt';
+  EXT_OF['text/markdown'] = '.md'; EXT_OF['text/html'] = '.html';
   var IDLE_MS = 3000;       /* no typing for this long before a sync starts */
   var DEBOUNCE_MS = 4000;   /* wait this long after the last change */
   var RETRY_MS = 30000;
@@ -137,7 +142,9 @@
   /* What goes up to Drive for this document: its own format, or .docx for a Google Doc. */
   function payload(d) {
     if (isGdoc(d)) return { blob: exportDocx(), name: gdocName(d), mime: DOCX };
-    return { blob: exportCurrent(), name: fileNameOf(d), mime: formatInfo(d.kind).mime };
+    /* keep the Drive name exactly as it was when the app only added an ending to open it */
+    var name = (d.drive && d.drive.driveName) ? d.drive.driveName : fileNameOf(d);
+    return { blob: exportCurrent(), name: name, mime: formatInfo(d.kind).mime };
   }
 
   /* After Drive converts an upload into a Google Doc, its modified time can move once more. */
@@ -354,7 +361,9 @@
         throw e;
       });
     }).then(function (f) { return settledRev(f, tok); }).then(function (f) {
+      var keep = (d.drive && d.drive.id === f.id) ? d.drive.driveName : null;
       d.drive = { id: f.id, rev: f.modifiedTime, at: Date.now(), gdoc: f.mimeType === GDOC };
+      if (keep) d.drive.driveName = keep;
       d.driveDirty = false;
       d.driveConflict = false;
       d.driveError = '';
@@ -441,7 +450,11 @@
 
   function openDriveFile(f) {
     var gdoc = f.mimeType === GDOC;
-    var name = gdoc ? f.name.replace(/\.docx$/i, '') + '.docx' : f.name;
+    var name = gdoc ? f.name.replace(/\.docx$/i, '') + '.docx' : f.name, driveName = null;
+    if (!gdoc && !OPEN_EXT.test(name)) {
+      var ext = EXT_OF[String(f.mimeType || '').split(';')[0]];
+      if (ext) { driveName = f.name; name = f.name + ext; }
+    }
     report('Opening ' + f.name + (gdoc ? ' from Google Docs…' : ' from Google Drive…'));
     getToken().then(function (t) {
       var url = FILES + '/' + encodeURIComponent(f.id) +
@@ -457,6 +470,7 @@
         var d = activeDocument();
         if (d) {
           d.drive = { id: f.id, rev: f.modifiedTime, at: Date.now(), gdoc: gdoc };
+          if (driveName) d.drive.driveName = driveName;
           d.driveDirty = false;
           d.driveConflict = false;
           persistQuiet();
