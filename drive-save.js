@@ -19,7 +19,10 @@
   var FILES = 'https://www.googleapis.com/drive/v3/files';
   var UPLOAD = 'https://www.googleapis.com/upload/drive/v3/files';
   var DOCX = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-  var OPEN_MIMES = [DOCX, 'application/vnd.oasis.opendocument.text', 'application/msword',
+  /* Google Docs: opened by exporting them as .docx; saved back by uploading .docx, which Drive
+     converts into the same Google Doc (same file, same link). */
+  var GDOC = 'application/vnd.google-apps.document';
+  var OPEN_MIMES = [GDOC, DOCX, 'application/vnd.oasis.opendocument.text', 'application/msword',
                     'text/plain', 'text/markdown', 'text/html'];
   var OPEN_EXT = /\.(docx|odt|doc|txt|md|markdown|html?)$/i;
   var IDLE_MS = 3000;       /* no typing for this long before a sync starts */
@@ -104,9 +107,10 @@
     return askToken(silent);
   }
 
-  function upload(blob, fileName, mime, existingId, accessToken) {
+  /* targetMime: the Drive type of a new file. GDOC makes Drive convert the uploaded .docx. */
+  function upload(blob, fileName, mime, existingId, accessToken, targetMime) {
     var boundary = 'twdrive' + Date.now().toString(36) + Math.random().toString(36).slice(2);
-    var meta = existingId ? { name: fileName } : { name: fileName, mimeType: mime };
+    var meta = existingId ? { name: fileName } : { name: fileName, mimeType: targetMime || mime };
     var body = new Blob([
       '--' + boundary + '\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n',
       JSON.stringify(meta),
@@ -115,12 +119,33 @@
       '\r\n--' + boundary + '--'
     ], { type: 'multipart/related; boundary=' + boundary });
     var url = UPLOAD + (existingId ? '/' + encodeURIComponent(existingId) : '') +
-      '?uploadType=multipart&fields=id,name,modifiedTime';
+      '?uploadType=multipart&fields=id,name,modifiedTime,mimeType';
     return fetch(url, {
       method: existingId ? 'PATCH' : 'POST',
       headers: { Authorization: 'Bearer ' + accessToken },
       body: body
     }).then(function (r) { if (r.ok) return r.json(); throw httpError(r); });
+  }
+
+  function isGdoc(d) { return !!(d && d.drive && d.drive.gdoc); }
+
+  /* A Google Doc keeps its plain title on Drive, with no .docx ending. */
+  function gdocName(d) {
+    return String(d.name || d.title || 'Untitled document').replace(/\.(docx?|odt|rtf|txt|md|markdown|html?)$/i, '') || 'Untitled document';
+  }
+
+  /* What goes up to Drive for this document: its own format, or .docx for a Google Doc. */
+  function payload(d) {
+    if (isGdoc(d)) return { blob: exportDocx(), name: gdocName(d), mime: DOCX };
+    return { blob: exportCurrent(), name: fileNameOf(d), mime: formatInfo(d.kind).mime };
+  }
+
+  /* After Drive converts an upload into a Google Doc, its modified time can move once more. */
+  function settledRev(f, t) {
+    if (f.mimeType !== GDOC) return Promise.resolve(f);
+    return fetch(FILES + '/' + encodeURIComponent(f.id) + '?fields=id,name,modifiedTime,mimeType', {
+      headers: { Authorization: 'Bearer ' + t }
+    }).then(function (r) { return r.ok ? r.json() : f; }, function () { return f; });
   }
 
   function fileNameOf(d) {
@@ -161,7 +186,7 @@
     else if (d.driveDirty && signinNeeded) txt = 'Press Drive to reconnect · changes are saved on this device';
     else if (d.driveDirty && d.driveError) txt = 'Not synced to Google Drive yet · will retry';
     else if (d.driveDirty) txt = busy ? 'Syncing to Google Drive…' : 'Changes waiting to sync to Google Drive';
-    else txt = 'Synced to Google Drive' + (d.drive.at ? ' · ' + timeLabel(d.drive.at) : '');
+    else txt = (d.drive.gdoc ? 'Synced to Google Docs' : 'Synced to Google Drive') + (d.drive.at ? ' · ' + timeLabel(d.drive.at) : '');
     stateEl.textContent = txt;
   }
 
@@ -212,6 +237,8 @@
       return r.json().then(function (meta) {
         if (d.drive.rev && meta.modifiedTime !== d.drive.rev) { d.driveConflict = true; return; }
         return upload(blob, fileName, mime, d.drive.id, t).then(function (f) {
+          return settledRev(f, t);
+        }).then(function (f) {
           d.drive.rev = f.modifiedTime;
           d.driveError = '';
           if ((editSeq[d.id] || 0) !== mark) return; /* edited while uploading: stays dirty */
@@ -233,9 +260,9 @@
         var mark = editSeq[d.id] || 0;
         setActive(d.id);
         syncDoc();
-        var info = formatInfo(d.kind);
-        return exportCurrent().then(function (blob) {
-          return pushDoc(d, blob, fileNameOf(d), info.mime, t, mark);
+        var out = payload(d);
+        return out.blob.then(function (blob) {
+          return pushDoc(d, blob, out.name, out.mime, t, mark);
         }).catch(function (e) {
           d.driveError = e.message;
           if (e.status === 401) { token = null; signinNeeded = true; }
@@ -314,16 +341,20 @@
 
   /* ---- Save to Drive (button) ---- */
 
-  function saveDoc(d, blob, fileName, mime) {
+  /* newGdoc: create a new Google Doc instead of a file in the document's own format. */
+  function saveDoc(d, blob, fileName, mime, newGdoc) {
+    var tok;
     return getToken().then(function (t) {
-      var existing = d.drive ? d.drive.id : null;
-      return upload(blob, fileName, mime, existing, t).catch(function (e) {
+      tok = t;
+      var existing = (d.drive && !newGdoc) ? d.drive.id : null;
+      var target = (newGdoc || isGdoc(d)) ? GDOC : null;
+      return upload(blob, fileName, mime, existing, t, target).catch(function (e) {
         if (e.status === 401) { token = null; throw new Error('The sign-in has expired. Press Google Drive again.'); }
-        if (existing && e.status === 404) { d.drive = null; return upload(blob, fileName, mime, null, t); }
+        if (existing && e.status === 404) { d.drive = null; return upload(blob, fileName, mime, null, t, target); }
         throw e;
       });
-    }).then(function (f) {
-      d.drive = { id: f.id, rev: f.modifiedTime, at: Date.now() };
+    }).then(function (f) { return settledRev(f, tok); }).then(function (f) {
+      d.drive = { id: f.id, rev: f.modifiedTime, at: Date.now(), gdoc: f.mimeType === GDOC };
       d.driveDirty = false;
       d.driveConflict = false;
       d.driveError = '';
@@ -382,7 +413,7 @@
     document.head.appendChild(st);
   }
 
-  /* Shows Google's own file chooser, limited to PDFs. Resolves with the chosen file, or null if cancelled. */
+  /* Shows Google's own file chooser, limited to documents and Google Docs. Resolves with the chosen file, or null if cancelled. */
   function openPicker(t) {
     if (!API_KEY || API_KEY.indexOf('PASTE_') === 0) {
       return Promise.reject(new Error('The Picker key is not set in this build.'));
@@ -397,7 +428,7 @@
           .setOAuthToken(t)
           .setDeveloperKey(API_KEY)
           .setAppId(PROJECT_NUMBER)
-          .setTitle('Open a PDF from Google Drive')
+          .setTitle('Open a document or Google Doc from Google Drive')
           .setCallback(function (data) {
             if (data.action === google.picker.Action.PICKED) resolve(data.docs[0]);
             else if (data.action === google.picker.Action.CANCEL) resolve(null);
@@ -409,25 +440,29 @@
   }
 
   function openDriveFile(f) {
-    report('Opening ' + f.name + ' from Google Drive…');
+    var gdoc = f.mimeType === GDOC;
+    var name = gdoc ? f.name.replace(/\.docx$/i, '') + '.docx' : f.name;
+    report('Opening ' + f.name + (gdoc ? ' from Google Docs…' : ' from Google Drive…'));
     getToken().then(function (t) {
-      return fetch(FILES + '/' + encodeURIComponent(f.id) + '?alt=media', { headers: { Authorization: 'Bearer ' + t } });
+      var url = FILES + '/' + encodeURIComponent(f.id) +
+        (gdoc ? '/export?mimeType=' + encodeURIComponent(DOCX) : '?alt=media');
+      return fetch(url, { headers: { Authorization: 'Bearer ' + t } });
     }).then(function (r) {
       if (!r.ok) throw httpError(r);
       return r.blob();
     }).then(function (blob) {
-      var file = new File([blob], f.name, { type: blob.type || '' });
+      var file = new File([blob], name, { type: gdoc ? DOCX : (blob.type || '') });
       return Promise.resolve(window.twOpenFile(file, null)).then(function (ok) {
         if (!ok) return;
         var d = activeDocument();
         if (d) {
-          d.drive = { id: f.id, rev: f.modifiedTime, at: Date.now() };
+          d.drive = { id: f.id, rev: f.modifiedTime, at: Date.now(), gdoc: gdoc };
           d.driveDirty = false;
           d.driveConflict = false;
           persistQuiet();
         }
         refresh();
-        report('Opened from Google Drive · ' + f.name);
+        report((gdoc ? 'Opened from Google Docs · ' : 'Opened from Google Drive · ') + f.name);
       });
     }).catch(function (e) {
       if (e.status === 401) token = null;
@@ -466,18 +501,49 @@
             report('Google Drive save is not available for this document.');
             return;
           }
-          var info = formatInfo(d.kind);
-          report('Saving to Google Drive…');
+          var where = isGdoc(d) ? 'Google Docs' : 'Google Drive', out;
+          report('Saving to ' + where + '…');
           Promise.resolve(typeof handlesReady !== 'undefined' ? handlesReady : null)
-            .then(function () { return exportCurrent(); })
-            .then(function (blob) { return saveDoc(d, blob, fileNameOf(d), info.mime); })
+            .then(function () { out = payload(d); return out.blob; })
+            .then(function (blob) { return saveDoc(d, blob, out.name, out.mime); })
             .then(
               function (r) {
                 refresh();
-                report('Saved to Google Drive · ' + r.name);
+                report('Saved to ' + where + ' · ' + r.name);
                 schedule(1000); /* also brings other changed documents up to date */
               },
               function (e) { report('Not saved to Google Drive: ' + e.message); }
+            );
+        });
+      });
+    }
+
+    /* Save as Google Doc: a new Google Doc made from this document. The tab then stays linked to it. */
+    var gdocBtn = document.getElementById('savegdoc');
+    if (gdocBtn) {
+      gdocBtn.addEventListener('click', function () {
+        requireGis(function () {
+          var d;
+          try {
+            syncDoc();
+            d = activeDocument();
+            if (!d) throw new Error('no document');
+          } catch (e) {
+            report('Save as Google Doc is not available for this document.');
+            return;
+          }
+          if (isGdoc(d)) { report('This tab is already a Google Doc. Use Save to Google Drive.'); return; }
+          report('Saving as a Google Doc…');
+          Promise.resolve(typeof handlesReady !== 'undefined' ? handlesReady : null)
+            .then(function () { return exportDocx(); })
+            .then(function (blob) { return saveDoc(d, blob, gdocName(d), DOCX, true); })
+            .then(
+              function (r) {
+                refresh();
+                report('Saved as a Google Doc · ' + r.name + '. Edits here now sync to it.');
+                schedule(1000);
+              },
+              function (e) { report('Not saved as a Google Doc: ' + e.message); }
             );
         });
       });
@@ -492,7 +558,7 @@
             return openPicker(t).then(function (doc) {
               if (!doc) return;
               report('Opening ' + doc.name + ' from Google Drive…');
-              return fetch(FILES + '/' + encodeURIComponent(doc.id) + '?fields=id,name,modifiedTime', {
+              return fetch(FILES + '/' + encodeURIComponent(doc.id) + '?fields=id,name,modifiedTime,mimeType', {
                 headers: { Authorization: 'Bearer ' + t }
               }).then(function (r) { if (!r.ok) throw httpError(r); return r.json(); })
                 .then(function (meta) { openDriveFile(meta); });
