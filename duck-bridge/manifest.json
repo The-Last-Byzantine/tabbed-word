@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Tabbed Word: Duck.ai bridge",
+  "version": "1.3.3",
+  "description": "Sends a question from Tabbed Word to duck.ai in a background tab, shows the answer as soon as it is ready, and closes the tab. Returns only the answer.",
+  "host_permissions": [
+    "https://duck.ai/*",
+    "https://tabbedword.pages.dev/*",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://duck.ai/*"
+      ],
+      "js": [
+        "duck.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://tabbedword.pages.dev/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "tabbed.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}

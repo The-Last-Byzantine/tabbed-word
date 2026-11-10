@@ -5,6 +5,38 @@
 
 Tabbed Word is a word processor that runs in the browser, with each document in its own tab and a look based on Word 2003 (the Windows XP "Blue" colours, the classic menu row and the beige status bar). You can open, edit, save and export DOCX, ODT, TXT, Markdown and HTML files, and open old Word 97–2003 (.doc) files to read and edit.
 
+**Version 2026.11.110:** Save As… is on the top icon row, right after Save.
+
+**Version 2026.11.109:** Duck.ai works in the background without opening a tab. The Tabbed Word Duck.ai bridge (1.3.0) answers in a hidden frame and returns only the answer.
+
+**Version 2026.11.108:** Duck.ai asks you to install or update the Tabbed Duck.ai Bridge and reload the page when it does not answer.
+
+**Version 2026.11.107:** New app and favicon icon: blue tabs over a stack of document pages with a W.
+
+**Version 2026.11.106:** The folder panel lists DOC and RTF files too, and the Open file input accepts RTF.
+
+**Version 2026.11.105:** Open shows every supported file type by default (DOCX, DOC, ODT, RTF, TXT, MD, HTML) in the file picker.
+
+**Version 2026.11.104:** The Duck.ai answer window shows only duck.ai's answer. The “Duck.ai said” label, the model name, an echoed question and repeated lines or paragraphs are removed.
+
+**Version 2026.11.103:** Windows close when you click outside them: modal dialogs on their grey backdrop, the table size picker, context menus and non-modal dialogs on any other click. The footer's what's-new list is updated.
+
+**Version 2026.11.102:** The Save group is removed from the Home ribbon. Its commands stay in the title bar, the File menu and the start screen.
+
+**Version 2026.11.101:** Reloading the page no longer adds a blank document when a blank document was already open: the restored draft is kept, and a new document opens only when nothing was restored.
+
+**Version 2026.11.100:** New Save group on the Home ribbon (Save, Open and Save to Google Drive, Save all & close, Close without saving, Discard all, Email). Close without saving is in the File menu too. The title bar is Undo, Redo, New, Open, Google Drive open and save, Save, Close without saving, Discard all, Email; Save as PDF stays in the File menu.
+
+**Version 2026.11.99:** The title bar's top-left icons now include Open from Google Drive, Save to Google Drive, Save all & close, Discard all and Email.
+
+**Version 2026.11.98:** Ribbon collapse as in Word: a click on the open tab hides the ribbon, a click on a tab shows it, and a double-click on a tab shows or hides it.
+
+**Version 2026.11.97:** The start screen has Open folder (where the browser supports it), Open from and Save to Google Drive, Save all & close, Discard all and Email.
+
+**Version 2026.11.96:** A new document opens at every start. The start screen has Open from Google Drive and Save to Google Drive beside Open a file. Modern look: flat buttons, fields and dialogs in one light and dark palette, with no bevels or gradients.
+
+**Version 2026.11.95:** Word 365 layout. A title bar (Save, Undo, Redo, Save as PDF; Comments, Share and Search at the right), a tab row (File, Home, Insert, Layout, References, Review, View, Help) and a grouped ribbon. Every ribbon button runs the same command as before. The left panel is the full height of the window, icon tabs at the top, and opens by default on wide screens. The start screen's three buttons sit in the middle of the window.
+
 **Version 2026.11.80:** Open from Google Drive also opens files whose Drive name has no ending (for example a Word file called just "Report"). The format is taken from Drive's file type, and saving keeps the Drive name unchanged.
 
 **Version 2026.11.79:** Google Docs. Open from Google Drive now lists Google Docs too; a Google Doc opens in a tab as a Word document, and Save to Google Drive (and the automatic sync) writes the edits back into the same Google Doc, with the same name and link. File › Save as Google Doc turns any open tab into a new Google Doc that then stays in step. If someone changes the Google Doc in Google Docs meanwhile, the app does not overwrite it silently. Google's conversion keeps text, headings, lists, tables, images, footnotes and comments; layout details can shift slightly, as with any Word-to-Google Docs conversion.

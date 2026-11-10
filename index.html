@@ -20,8 +20,8 @@ header{padding:10px 3%;}header small{font-size:11px}#toolbar{background:var(--ri
 </style>
 <header><div><h1>Tabbed Word</h1><small hidden>Local editing · DOCX · ODT · TXT · MD · HTML</small></div><span id="filename">New document.docx</span></header>
 <style id="header-compact-css">header>div>small,header #filename{display:none!important}</style>
-<div id="appstate"><span id="offlinestate">Local editing</span><button id="updateapp" hidden>Update app</button></div><div id="ribbon-tabs" aria-label="Ribbon sections"><span class="selected">Home</span><span>Insert</span><span>Review</span><span>Session</span><span>View</span><span>About</span></div><nav id="toolbar"><select id="newformat" aria-label="New file type"><option value="docx">New DOCX</option><option value="rtf">New RTF</option><option value="odt">New ODT</option><option value="doc">New DOC</option><option value="txt">New TXT</option><option value="md">New Markdown</option><option value="html">New HTML</option></select><button id="new">New</button><button id="open">Open</button><button id="openfolder" hidden title="Open a folder and choose a file (Chrome and Edge on desktop)">Open folder</button><button id="restoreworkspace" type="button" title="Restore the tabs from a session file, in the order they were saved">Restore session</button><button class="primary" id="save">Save</button><button id="opendrive" type="button" title="Open a file from Google Drive" aria-label="Open from Google Drive">Open Drive</button><button id="savedrive" type="button" title="Save this document to Google Drive. Needs internet; your device copy is not affected." aria-label="Save to Google Drive"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" style="vertical-align:-3px;margin-right:4px"><path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 15.5V10.5m0 0-2.2 2.2M12 10.5l2.2 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Drive</button><button id="savegdoc" type="button" hidden title="Save this document as a new Google Doc. The tab stays linked to it and syncs.">Save as Google Doc</button><button id="saveall" type="button" title="Save every open tab to a file, then close it">Save all &amp; close</button><button id="exportpdf" type="button" title="Save this document as a PDF. Your browser print dialog opens: choose Save as PDF.">Save as PDF</button><span id="morewrap" class="more-wrap"><button type="button" id="moremenu" aria-haspopup="true" aria-expanded="false" aria-controls="morepanel" title="Save As, Export PDF and Email all">More ▾</button><span id="morepanel" class="more-panel" role="menu" hidden><button type="button" id="saveas" role="menuitem">Save As…</button></span></span><button id="consistency" type="button" title="Check this document for repeated words, spacing, punctuation, Greek final sigma, mixed quote styles and spelling variants. Results appear in the right panel.">Check consistency</button><button id="backupworkspace" type="button" title="Save all open tabs, in their order, to one session file">Save session</button><button id="splitdoc" type="button" title="Split at the cursor. The text after the cursor moves to a new tab after this one.">Split</button><button id="compile" type="button" title="Join all open tabs, in tab order, into one Word file. Each tab starts on a new page.">Compile</button><button id="discardall" type="button" title="Close every open tab and delete its draft">Discard all</button><button id="mobiletools" aria-expanded="false">Tools ▾</button><button id="newhtml">New HTML</button><span id="sepfmt" class="tb-sep" aria-hidden="true"></span><select id="paragraphstyle" aria-label="Paragraph style"><option value="normal">Text</option><option value="title">Document title</option><option value="heading1">Heading 1</option><option value="heading2">Heading 2</option><option value="heading3">Heading 3</option><option value="quote">Quote · TNR 11 · 0.5 cm</option></select><select id="pagesize" aria-label="Page size"><option value="a4">A4 page</option><option value="letter">Letter page</option></select><button id="boldtext" type="button" aria-pressed="false"><b>Bold</b></button><button id="italictext" type="button" aria-pressed="false"><i>Italic</i></button><button id="alignjustify" type="button" aria-pressed="false" title="Justify: text reaches both margins">Justify</button><button id="alignleft" type="button" aria-pressed="false" title="Align left">Align left</button><button id="aligncenter" type="button" aria-pressed="false" title="Centre">Centre</button><button id="alignright" type="button" aria-pressed="false" title="Align right">Align right</button><button id="numberlist" aria-pressed="false">1. Numbering</button><button id="bulletlist" aria-pressed="false">• Bullets</button><select id="doclang" aria-label="Document language" title="Language for spelling, Turkish capitals and this document"><option value="el">Ελληνικά</option><option value="en">English</option><option value="tr">Türkçe</option></select><span id="sepfind" class="tb-sep" aria-hidden="true"></span><button id="hltext" type="button" title="Highlight the selected text in yellow">Highlight</button><button id="unhltext" type="button" title="Remove the highlight from the selected text">No highlight</button><button id="findreplace" type="button">Find and replace</button><button id="instable" type="button" title="Insert a table">Table</button><button id="insimage" type="button" title="Insert a JPG or PNG image">Image</button><button id="inshead" type="button" title="Header for every page">Header</button><button id="insfoot" type="button" title="Footer for every page">Footer</button><button id="pagenumbers" type="button" title="Show page numbers at the top or bottom of each page, with a choice of format and alignment">Page numbers</button><button id="insertnote">Footnote</button><button id="insend" type="button" title="Insert an endnote at the cursor">Endnote</button><button id="insremnote" type="button" title="Remove the footnote or endnote mark next to the cursor">Remove note</button><button id="newcomment">New comment</button><button id="commentsbutton">Comments (0)</button><button id="rescomment" type="button" title="Mark the comment at the cursor as resolved">Resolve comment</button><button id="resallcomments" type="button" title="Mark every comment as resolved">Resolve all</button><button id="delallcomments" type="button" title="Delete every comment in the document">Delete all comments</button><button id="devicesave" hidden>Files / Share</button><input id="workspacefile" type="file" accept=".json,application/json" hidden><button id="moveleft" title="Alt + Shift + ←">← Tab</button><button id="moveright" title="Alt + Shift + →">Tab →</button><input type="file" id="file" accept=".docx,.doc,.odt,.txt,.md,.markdown,.html,.htm" multiple hidden><button id="sidebyside" type="button" aria-pressed="false" title="Show two documents side by side. The right one is read only; click it to edit there.">Side by side</button><button id="swapsides" type="button" title="Put the right document on the left and the left one on the right">Tab left and right</button><button id="focusview" type="button" aria-pressed="false" title="Hide the ribbon and side panels. Press Esc to leave.">Focus</button><button id="fullscreenview" type="button" aria-pressed="false" title="Full screen. Press Esc to return.">Full screen</button><button id="paragraphview" type="button" aria-pressed="false" title="Paragraph view: the paragraph at the cursor is shown on a sky-blue band. Press again to turn it off.">Paragraph</button><select id="zoomsel" aria-label="Document zoom" title="Zoom the document"><option value="100">Zoom 100%</option><option value="120">Zoom 120%</option><option value="140">Zoom 140%</option><option value="160">Zoom 160%</option><option value="180">Zoom 180%</option><option value="200">Zoom 200%</option></select><select id="readfont" aria-label="Screen font" title="Screen font. Word layout uses the document's own fonts, as in print and Word. Exported files keep their own font."><option value="word">Word layout (document fonts)</option><option value="literata">Reading font: Literata</option><option value="arial">Arial</option><option value="sans">System sans-serif</option></select><select id="readsize" aria-label="Reading size" title="Text size on screen only. Exported files keep their own size."><option value="100">Text 100%</option><option value="115">Text 115%</option><option value="130">Text 130%</option><option value="150">Text 150%</option></select><button id="viewa4" type="button" aria-pressed="false" title="A4 page size, paged view">A4 Page</button><button id="viewletter" type="button" aria-pressed="false" title="Letter page size, paged view">Letter</button><button id="viewlandscape" type="button" aria-pressed="false" title="Landscape: turn the page sideways. Saved with this document. Press again for portrait.">Landscape</button><button id="viewcontinuous" type="button" aria-pressed="false" title="Continuous text, no pages">Continuous Text</button><button id="zoom100" type="button" aria-pressed="true" title="Show the document at 100%">100%</button><button id="zoom120" type="button" aria-pressed="false" title="Show the document at 120%">120%</button><button id="zoom140" type="button" aria-pressed="false" title="Show the document at 140%">140%</button><button id="zoom160" type="button" aria-pressed="false" title="Show the document at 160%">160%</button><button id="zoom180" type="button" aria-pressed="false" title="Show the document at 180%">180%</button><button id="zoom200" type="button" aria-pressed="false" title="Show the document at 200%">200%</button><button type="button" class="tw-ico" id="aboutshortcuts" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button><button type="button" class="tw-ico" id="aboutbackups" title="Backups and drafts" aria-label="Backups and drafts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9"/><path d="M10 13h4"/></svg></button><button type="button" class="tw-ico" id="aboutinfo" title="About Tabbed Word" aria-label="About Tabbed Word"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg></button></nav>
-<div id="tabs" class="tabs" role="tablist" aria-label="Open documents"></div><main><aside id="folderpanel" aria-label="Folder files" hidden><div class="fp-head"><strong id="fpname">Folder</strong><button type="button" id="fpcollapse" title="Hide the folder panel" aria-label="Hide the folder panel" aria-expanded="true">Hide ‹</button></div><div class="fp-body"><p class="fp-note" id="fpnote"></p><div><button type="button" id="fpchoose">Choose folder</button><button type="button" id="fpallow" hidden>Allow access</button><button type="button" id="fprefresh" hidden>Refresh</button></div><label class="fp-sort" hidden>Sort <select id="fpsort"><option value="name">Name, A–Z</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label><ul id="fplist"></ul></div><button type="button" id="fpexpand" class="fp-expand" title="Show the folder panel" aria-label="Show the folder panel">Folders ›</button></aside><section class="paper" id="paper"><div id="docxtools" class="docx-tools"><button id="pageview">Continuous text</button><span id="pagecount"></span><span id="selectioninfo">Shift + click to select a range of paragraphs</span><span id="pagesizeinfo">A4 · on-screen pagination is approximate</span></div><div id="docpages"></div><section id="notespanel" hidden aria-label="Footnotes"><h2>Footnotes</h2><p id="noteshelp">In DOCX/ODT, footnotes appear at the bottom of their page. Here you edit all notes in one list. Click the number to go to the reference.</p><div id="noteslist"></div></section><p id="sourcehint" hidden></p><div id="htmltools" class="html-tools" hidden><button id="codeview">Code</button><button id="splitview">Code + preview</button><button id="previewview">Preview</button><button id="refreshpreview">Refresh</button><label id="scriptchoice"><input id="runscripts" type="checkbox">Run JavaScript</label></div><label for="title" hidden>Title</label><input id="title" placeholder="Document title" aria-label="Document title"><label for="body" hidden>Text</label><textarea id="body" placeholder="Type or paste your text…" aria-label="Document text" spellcheck="true"></textarea><iframe id="preview" title="HTML preview" sandbox="" referrerpolicy="no-referrer" hidden></iframe></section><textarea id="pagemeter" class="page-measure" tabindex="-1" aria-hidden="true"></textarea><aside><section id="commentspanel" hidden aria-label="TabZot and Comments"><h2>TabZot and Comments</h2><div class="tz-tabs" role="tablist"><button type="button" id="tz-tab-lib" role="tab" class="on" aria-selected="true">TabZot</button><button type="button" id="tz-tab-com" role="tab" aria-selected="false">Comments</button></div><div id="tz-lib" class="tz-pane"><label>Library<select id="tz-lib-sel" aria-label="Library"></select></label><div class="tz-row2"><button type="button" id="tz-newlib">New library</button><button type="button" id="tz-dellib">Delete library</button></div><div class="tz-row2"><button type="button" id="tz-import" disabled>Import…</button><select id="tz-exp-fmt" aria-label="Export format"><option value="ris" selected>RIS</option><option value="bib">BibTeX</option></select><button type="button" id="tz-export">Export</button></div><input type="file" id="tz-file" accept=".ris,.bib,.txt,.json" multiple hidden><label>Citation style<select id="tz-style" aria-label="Citation style"><option value="apa">APA 7th</option><option value="chicago">Chicago author-date</option><option value="chicago-note">Chicago footnotes</option><option value="temp-note">Footnotes for Zotero RTF Scan</option><option value="temp">In-text for Zotero RTF Scan</option></select></label><label style="margin-top:8px"><input type="search" id="tz-search" placeholder="Search author, year or title" aria-label="Search references"></label><div class="tz-row2 tz-fields"><label>Page<input type="text" id="tz-page" placeholder="45-47" aria-label="Page or pages"></label><label>Prefix<input type="text" id="tz-pre" placeholder="see" aria-label="Prefix"></label><label>Suffix<input type="text" id="tz-suf" placeholder="ch. 3" aria-label="Suffix"></label></div><p class="tz-hint">Page, prefix and suffix apply to the next citation you click, then clear.</p><p id="tz-count" class="tz-count"></p><div id="tz-list" class="tz-list"></div><p id="tz-note" class="tz-note" role="status"></p><div class="tz-row2"><button type="button" id="tz-bib" class="primary">Insert reference list</button></div></div><div id="tz-com" class="tz-pane" hidden><div id="commentslist"></div></div></section><h2>COUNT</h2><div id="stats">0 words</div><div id="chars">0 characters</div><label class="countnotes"><input id="countnotes" type="checkbox" checked> Include footnotes in word count</label><hr><div id="docxhelp"><h2>EXPORT FORMAT</h2>Times New Roman · 12 pt<br>Line spacing 1.5 · justified<br>Bold title<br><span id="pagesizehelp">A4 · 21.00 × 29.70 cm</span><br>Top/bottom: 2.54 cm<br>Left/right: 3.175 cm<br>After paragraph: 10 pt<p id="odtinfo" hidden>ODT: text, headings, simple lists, comments and footnotes are supported. Replies appear as separate comments in other editors. Tables, images, headers and complex layout are not supported.</p></div><div id="htmlhelp" hidden><h2>HTML</h2>The source code opens first. Save keeps the HTML as a UTF-8 file.<p>The preview supports embedded CSS and data images. Files from neighbouring folders and external libraries are not loaded. JavaScript is optional. Features such as localStorage are not available in the preview.</p></div><hr><h2 class="tw-nospell">WRITING</h2><div id="autocapbox" class="tw-nospell"><label><input id="autocapon" type="checkbox" checked><span>Capitalise the first letter of each sentence</span></label></div><h2 class="tw-nospell">SPELLING</h2><div id="spellbox" class="tw-nospell"><label><input id="spellon" type="checkbox"><span>Check spelling in English, Greek and Turkish</span></label><select id="spellmode" hidden aria-label="Spelling language on phones"><option value="auto">Language: auto</option><option value="en">Greek and English</option><option value="tr">Turkish</option></select><span id="spellstate" role="status" aria-live="polite">Off</span><ul id="spelllist" aria-label="Possible misspellings"></ul><section id="consistpanel" hidden aria-label="Consistency findings"><h2>CONSISTENCY</h2><p id="consiststate" role="status" aria-live="polite"></p><ul id="consistlist" aria-label="Consistency findings"></ul></section></div><hr><h2>SHORTCUTS</h2><p>Ctrl (Windows) or ⌘ (Mac) with:<br>B Bold · I Italic · F Find<br>Alt+1 Open · Alt+2 New<br>Alt+3 Save · Alt+4 Close · Alt+5 Save As</p><span id="autosave" role="status" aria-live="polite">Automatic draft saving is on</span><span id="status" role="status" aria-live="polite">Ready</span><details class="aside-help"><summary>On your computer: files, backups and drafts</summary><p>No document is uploaded. In DOCX, pasting keeps the text and applies the template format.</p><p>In DOCX, each line break in the body creates a Word paragraph.</p><p id="mode"></p><p>Tabs come back in the same browser with the same app file. Save stores the DOCX or HTML separately. Clearing browser data deletes the drafts.</p><p>Open folder works only in Chromium browsers (Chrome and Edge) on desktop. In other browsers it is hidden and Open still works.</p></details></aside></main><footer>Version 2026.11.80 · For text documents. Tables and JPG/PNG images are supported. Other complex elements are not.<p class="whatsnew"><strong>New in 2026.11.75</strong></p><ul class="whatsnew"><li>Drive sync: linked documents upload to Google Drive automatically after you pause typing, and sync when you are back online. The bottom bar shows the sync state.</li><li>Google Drive: save, open from Drive (icon and File menu), and Email all saves every open tab to Drive before opening Gmail. Google sign-in loads only when you press a Drive button.</li><li>Insert › Page break (a real page break in Word files) and Insert › Table of contents (a list of your Heading 1–3 paragraphs; delete the old list before inserting an updated one).</li><li>File › New from template: academic article, memo, letter and press release.</li><li>File › Save version and File › Versions: named copies of a document that you can restore or delete. They are kept in this browser only.</li><li>Tools › Start dictation: speech into the text. It needs a browser with speech recognition (Chrome, Edge or Safari; Brave often blocks it). The language is set in View › Settings.</li><li>View › Settings: light, dark or system theme, and read the document aloud.</li></ul><p class="credit">Made by The Last Byzantine, MMXXVI. Sharing is love!</p><p class="contact">For any bug or suggestion, please contact me at <a href="mailto:thelastbyzantine@proton.me">thelastbyzantine@proton.me</a>.</p><p class="contact">Source code and updates: <a href="https://github.com/The-Last-Byzantine/tabbed-word" target="_blank" rel="noopener">github.com/The-Last-Byzantine/tabbed-word</a></p><details id="mobilehelp"><summary>Backups and drafts</summary><p>Open chooses a DOCX, ODT, TXT, Markdown or HTML file. Save downloads a file and does not replace the original automatically. “Files / Share” offers more save options.</p><p>Named versions (File › Versions) are kept in this browser only and are not included in the JSON backup.</p><p>Drafts stay on this device and in this installation. Importing drafts adds documents from another installation without removing the ones that are open.</p><p>The JSON backup contains your text and comments and is not encrypted. Keep it somewhere safe. Also keep your regular DOCX files, because browser data may be cleared. The app does not sync between devices automatically.</p><p>On touch screens, move the active tab with the ← Tab / Tab → buttons. To format, select the paragraph and choose the style under Tools.</p></details></footer>
+<div id="appstate"><span id="offlinestate">Local editing</span><button id="updateapp" hidden>Update app</button></div><div id="ribbon-tabs" aria-label="Ribbon sections"><span class="selected">Home</span><span>Insert</span><span>Review</span><span>Session</span><span>View</span><span>About</span></div><nav id="toolbar"><select id="newformat" aria-label="New file type"><option value="docx">New DOCX</option><option value="rtf">New RTF</option><option value="odt">New ODT</option><option value="doc">New DOC</option><option value="txt">New TXT</option><option value="md">New Markdown</option><option value="html">New HTML</option></select><button id="new">New</button><button id="open">Open</button><button id="openfolder" hidden title="Open a folder and choose a file (Chrome and Edge on desktop)">Open folder</button><button id="restoreworkspace" type="button" title="Restore the tabs from a session file, in the order they were saved">Restore session</button><button class="primary" id="save">Save</button><button id="opendrive" type="button" title="Open a file from Google Drive" aria-label="Open from Google Drive">Open Drive</button><button id="savedrive" type="button" title="Save this document to Google Drive. Needs internet; your device copy is not affected." aria-label="Save to Google Drive"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" style="vertical-align:-3px;margin-right:4px"><path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 15.5V10.5m0 0-2.2 2.2M12 10.5l2.2 2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Drive</button><button id="savegdoc" type="button" hidden title="Save this document as a new Google Doc. The tab stays linked to it and syncs.">Save as Google Doc</button><button id="saveall" type="button" title="Save every open tab to a file, then close it">Save all &amp; close</button><button id="exportpdf" type="button" title="Save this document as a PDF. Your browser print dialog opens: choose Save as PDF.">Save as PDF</button><span id="morewrap" class="more-wrap"><button type="button" id="moremenu" aria-haspopup="true" aria-expanded="false" aria-controls="morepanel" title="Save As, Export PDF and Email all">More ▾</button><span id="morepanel" class="more-panel" role="menu" hidden><button type="button" id="saveas" role="menuitem">Save As…</button></span></span><button id="consistency" type="button" title="Check this document for repeated words, spacing, punctuation, Greek final sigma, mixed quote styles and spelling variants. Results appear in the right panel.">Check consistency</button><button id="backupworkspace" type="button" title="Save all open tabs, in their order, to one session file">Save session</button><button id="splitdoc" type="button" title="Split at the cursor. The text after the cursor moves to a new tab after this one.">Split</button><button id="compile" type="button" title="Join all open tabs, in tab order, into one Word file. Each tab starts on a new page.">Compile</button><button id="discardall" type="button" title="Close every open tab and delete its draft">Discard all</button><button id="mobiletools" aria-expanded="false">Tools ▾</button><button id="newhtml">New HTML</button><span id="sepfmt" class="tb-sep" aria-hidden="true"></span><select id="paragraphstyle" aria-label="Paragraph style"><option value="normal">Text</option><option value="title">Document title</option><option value="heading1">Heading 1</option><option value="heading2">Heading 2</option><option value="heading3">Heading 3</option><option value="quote">Quote · TNR 11 · 0.5 cm</option></select><select id="pagesize" aria-label="Page size"><option value="a4">A4 page</option><option value="letter">Letter page</option></select><button id="boldtext" type="button" aria-pressed="false"><b>Bold</b></button><button id="italictext" type="button" aria-pressed="false"><i>Italic</i></button><button id="underlinetext" type="button" aria-pressed="false" title="Underline the selected text"><u>Underline</u></button><button id="alignjustify" type="button" aria-pressed="false" title="Justify: text reaches both margins">Justify</button><button id="alignleft" type="button" aria-pressed="false" title="Align left">Align left</button><button id="aligncenter" type="button" aria-pressed="false" title="Centre">Centre</button><button id="alignright" type="button" aria-pressed="false" title="Align right">Align right</button><button id="numberlist" aria-pressed="false">1. Numbering</button><button id="bulletlist" aria-pressed="false">• Bullets</button><select id="doclang" aria-label="Document language" title="Language for spelling, Turkish capitals and this document"><option value="el">Ελληνικά</option><option value="en">English</option><option value="tr">Türkçe</option></select><span id="sepfind" class="tb-sep" aria-hidden="true"></span><button id="hltext" type="button" title="Highlight the selected text in yellow">Highlight</button><button id="unhltext" type="button" title="Remove the highlight from the selected text">No highlight</button><button id="findreplace" type="button">Find and replace</button><button id="instable" type="button" title="Insert a table">Table</button><button id="insimage" type="button" title="Insert a JPG or PNG image">Image</button><button id="inshead" type="button" title="Header for every page">Header</button><button id="insfoot" type="button" title="Footer for every page">Footer</button><button id="pagenumbers" type="button" title="Show page numbers at the top or bottom of each page, with a choice of format and alignment">Page numbers</button><button id="insertnote">Footnote</button><button id="insend" type="button" title="Insert an endnote at the cursor">Endnote</button><button id="insremnote" type="button" title="Remove the footnote or endnote mark next to the cursor">Remove note</button><button id="newcomment">New comment</button><button id="commentsbutton">Comments (0)</button><button id="rescomment" type="button" title="Mark the comment at the cursor as resolved">Resolve comment</button><button id="resallcomments" type="button" title="Mark every comment as resolved">Resolve all</button><button id="delallcomments" type="button" title="Delete every comment in the document">Delete all comments</button><button id="devicesave" hidden>Files / Share</button><input id="workspacefile" type="file" accept=".json,application/json" hidden><button id="moveleft" title="Alt + Shift + ←">← Tab</button><button id="moveright" title="Alt + Shift + →">Tab →</button><input type="file" id="file" accept=".docx,.doc,.odt,.rtf,.txt,.md,.markdown,.html,.htm" multiple hidden><button id="sidebyside" type="button" aria-pressed="false" title="Show two documents side by side. The right one is read only; click it to edit there.">Side by side</button><button id="swapsides" type="button" title="Put the right document on the left and the left one on the right">Tab left and right</button><button id="focusview" type="button" aria-pressed="false" title="Hide the ribbon and side panels. Press Esc to leave.">Focus</button><button id="fullscreenview" type="button" aria-pressed="false" title="Full screen. Press Esc to return.">Full screen</button><button id="paragraphview" type="button" aria-pressed="false" title="Paragraph view: the paragraph at the cursor is shown on a sky-blue band. Press again to turn it off.">Paragraph</button><select id="zoomsel" aria-label="Document zoom" title="Zoom the document"><option value="100">Zoom 100%</option><option value="120">Zoom 120%</option><option value="140">Zoom 140%</option><option value="160">Zoom 160%</option><option value="180">Zoom 180%</option><option value="200">Zoom 200%</option></select><select id="readfont" aria-label="Screen font" title="Screen font. Word layout uses the document's own fonts, as in print and Word. Exported files keep their own font."><option value="word">Word layout (document fonts)</option><option value="literata">Reading font: Literata</option><option value="arial">Arial</option><option value="sans">System sans-serif</option></select><select id="readsize" aria-label="Reading size" title="Text size on screen only. Exported files keep their own size."><option value="100">Text 100%</option><option value="115">Text 115%</option><option value="130">Text 130%</option><option value="150">Text 150%</option></select><button id="viewa4" type="button" aria-pressed="false" title="A4 page size, paged view">A4 Page</button><button id="viewletter" type="button" aria-pressed="false" title="Letter page size, paged view">Letter</button><button id="viewlandscape" type="button" aria-pressed="false" title="Landscape: turn the page sideways. Saved with this document. Press again for portrait.">Landscape</button><button id="viewcontinuous" type="button" aria-pressed="false" title="Continuous text, no pages">Continuous Text</button><button id="zoom100" type="button" aria-pressed="true" title="Show the document at 100%">100%</button><button id="zoom120" type="button" aria-pressed="false" title="Show the document at 120%">120%</button><button id="zoom140" type="button" aria-pressed="false" title="Show the document at 140%">140%</button><button id="zoom160" type="button" aria-pressed="false" title="Show the document at 160%">160%</button><button id="zoom180" type="button" aria-pressed="false" title="Show the document at 180%">180%</button><button id="zoom200" type="button" aria-pressed="false" title="Show the document at 200%">200%</button><button type="button" class="tw-ico" id="aboutshortcuts" title="Keyboard shortcuts" aria-label="Keyboard shortcuts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg></button><button type="button" class="tw-ico" id="aboutbackups" title="Backups and drafts" aria-label="Backups and drafts"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9"/><path d="M10 13h4"/></svg></button><button type="button" class="tw-ico" id="aboutinfo" title="About Tabbed Word" aria-label="About Tabbed Word"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 7.5h.01"/></svg></button></nav>
+<div id="tabs" class="tabs" role="tablist" aria-label="Open documents"></div><main><aside id="folderpanel" aria-label="Folder files" hidden><div class="fp-head"><strong id="fpname">Folder</strong><button type="button" id="fpcollapse" title="Hide the folder panel" aria-label="Hide the folder panel" aria-expanded="true">Hide ‹</button></div><div class="fp-body"><p class="fp-note" id="fpnote"></p><div><button type="button" id="fpchoose">Choose folder</button><button type="button" id="fpallow" hidden>Allow access</button><button type="button" id="fprefresh" hidden>Refresh</button></div><label class="fp-sort" hidden>Sort <select id="fpsort"><option value="name">Name, A–Z</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label><ul id="fplist"></ul></div><button type="button" id="fpexpand" class="fp-expand" title="Show the folder panel" aria-label="Show the folder panel">Folders ›</button></aside><section class="paper" id="paper"><div id="docxtools" class="docx-tools"><button id="pageview">Continuous text</button><span id="pagecount"></span><span id="selectioninfo">Shift + click to select a range of paragraphs</span><span id="pagesizeinfo">A4 · on-screen pagination is approximate</span></div><div id="docpages"></div><section id="notespanel" hidden aria-label="Footnotes"><h2>Footnotes</h2><p id="noteshelp">In DOCX/ODT, footnotes appear at the bottom of their page. Here you edit all notes in one list. Click the number to go to the reference.</p><div id="noteslist"></div></section><p id="sourcehint" hidden></p><div id="htmltools" class="html-tools" hidden><button id="codeview">Code</button><button id="splitview">Code + preview</button><button id="previewview">Preview</button><button id="refreshpreview">Refresh</button><label id="scriptchoice"><input id="runscripts" type="checkbox">Run JavaScript</label></div><label for="title" hidden>Title</label><input id="title" placeholder="Document title" aria-label="Document title"><label for="body" hidden>Text</label><textarea id="body" placeholder="Type or paste your text…" aria-label="Document text" spellcheck="true"></textarea><iframe id="preview" title="HTML preview" sandbox="" referrerpolicy="no-referrer" hidden></iframe></section><textarea id="pagemeter" class="page-measure" tabindex="-1" aria-hidden="true"></textarea><aside><section id="commentspanel" hidden aria-label="TabZot and Comments"><h2>TabZot and Comments</h2><div class="tz-tabs" role="tablist"><button type="button" id="tz-tab-lib" role="tab" class="on" aria-selected="true">TabZot</button><button type="button" id="tz-tab-com" role="tab" aria-selected="false">Comments</button></div><div id="tz-lib" class="tz-pane"><label>Library<select id="tz-lib-sel" aria-label="Library"></select></label><div class="tz-row2"><button type="button" id="tz-newlib">New library</button><button type="button" id="tz-dellib">Delete library</button></div><div class="tz-row2"><button type="button" id="tz-import" disabled>Import…</button><select id="tz-exp-fmt" aria-label="Export format"><option value="ris" selected>RIS</option><option value="bib">BibTeX</option></select><button type="button" id="tz-export">Export</button></div><input type="file" id="tz-file" accept=".ris,.bib,.txt,.json" multiple hidden><label>Citation style<select id="tz-style" aria-label="Citation style"><option value="apa">APA 7th</option><option value="chicago">Chicago author-date</option><option value="chicago-note">Chicago footnotes</option><option value="temp-note">Footnotes for Zotero RTF Scan</option><option value="temp">In-text for Zotero RTF Scan</option></select></label><label style="margin-top:8px"><input type="search" id="tz-search" placeholder="Search author, year or title" aria-label="Search references"></label><div class="tz-row2 tz-fields"><label>Page<input type="text" id="tz-page" placeholder="45-47" aria-label="Page or pages"></label><label>Prefix<input type="text" id="tz-pre" placeholder="see" aria-label="Prefix"></label><label>Suffix<input type="text" id="tz-suf" placeholder="ch. 3" aria-label="Suffix"></label></div><p class="tz-hint">Page, prefix and suffix apply to the next citation you click, then clear.</p><p id="tz-count" class="tz-count"></p><div id="tz-list" class="tz-list"></div><p id="tz-note" class="tz-note" role="status"></p><div class="tz-row2"><button type="button" id="tz-bib" class="primary">Insert reference list</button></div></div><div id="tz-com" class="tz-pane" hidden><div id="commentslist"></div></div></section><h2>COUNT</h2><div id="stats">0 words</div><div id="chars">0 characters</div><label class="countnotes"><input id="countnotes" type="checkbox" checked> Include footnotes in word count</label><hr><div id="docxhelp"><h2>EXPORT FORMAT</h2>Times New Roman · 12 pt<br>Line spacing 1.5 · justified<br>Bold title<br><span id="pagesizehelp">A4 · 21.00 × 29.70 cm</span><br>Top/bottom: 2.54 cm<br>Left/right: 3.175 cm<br>After paragraph: 10 pt<p id="odtinfo" hidden>ODT: text, headings, simple lists, comments and footnotes are supported. Replies appear as separate comments in other editors. Tables, images, headers and complex layout are not supported.</p></div><div id="htmlhelp" hidden><h2>HTML</h2>The source code opens first. Save keeps the HTML as a UTF-8 file.<p>The preview supports embedded CSS and data images. Files from neighbouring folders and external libraries are not loaded. JavaScript is optional. Features such as localStorage are not available in the preview.</p></div><hr><h2 class="tw-nospell">WRITING</h2><div id="autocapbox" class="tw-nospell"><label><input id="autocapon" type="checkbox" checked><span>Capitalise the first letter of each sentence</span></label></div><h2 class="tw-nospell">SPELLING</h2><div id="spellbox" class="tw-nospell"><label><input id="spellon" type="checkbox"><span>Check spelling in English, Greek and Turkish</span></label><select id="spellmode" hidden aria-label="Spelling language on phones"><option value="auto">Language: auto</option><option value="en">Greek and English</option><option value="tr">Turkish</option></select><span id="spellstate" role="status" aria-live="polite">Off</span><ul id="spelllist" aria-label="Possible misspellings"></ul><section id="consistpanel" hidden aria-label="Consistency findings"><h2>CONSISTENCY</h2><p id="consiststate" role="status" aria-live="polite"></p><ul id="consistlist" aria-label="Consistency findings"></ul></section></div><hr><h2>SHORTCUTS</h2><p>Ctrl (Windows) or ⌘ (Mac) with:<br>B Bold · I Italic · U Underline · F Find<br>Alt+1 Open · Alt+2 New<br>Alt+3 Save · Alt+4 Close · Alt+5 Save As</p><span id="autosave" role="status" aria-live="polite">Automatic draft saving is on</span><span id="status" role="status" aria-live="polite">Ready</span><details class="aside-help"><summary>On your computer: files, backups and drafts</summary><p>No document is uploaded. In DOCX, pasting keeps the text and applies the template format.</p><p>In DOCX, each line break in the body creates a Word paragraph.</p><p id="mode"></p><p>Tabs come back in the same browser with the same app file. Save stores the DOCX or HTML separately. Clearing browser data deletes the drafts.</p><p>Open folder works only in Chromium browsers (Chrome and Edge) on desktop. In other browsers it is hidden and Open still works.</p></details></aside></main><footer>Version 2026.11.110 · For text documents. Tables and JPG/PNG images are supported. Other complex elements are not.<p class="whatsnew"><strong>New in 2026.11.110</strong></p><ul class="whatsnew"><li>Save As… is on the icon row, right after Save.</li><li>Duck.ai works in the background without opening a tab: the Tabbed Word Duck.ai bridge (1.3.0) asks duck.ai and returns only the answer.</li><li>New app icon: blue tabs over a stack of pages with a W.</li><li>Open and the folder panel show every supported type: DOCX, DOC, ODT, RTF, TXT, MD and HTML, not only DOCX.</li><li>Duck.ai answer window: shows only the answer, without the “Duck.ai said” label, the model name or repeated text.</li></ul><p class="credit">Made by The Last Byzantine, MMXXVI. Sharing is love!</p><p class="contact">For any bug or suggestion, please contact me at <a href="mailto:thelastbyzantine@proton.me">thelastbyzantine@proton.me</a>.</p><p class="contact">Source code and updates: <a href="https://github.com/The-Last-Byzantine/tabbed-word" target="_blank" rel="noopener">github.com/The-Last-Byzantine/tabbed-word</a></p><details id="mobilehelp"><summary>Backups and drafts</summary><p>Open chooses a DOCX, ODT, TXT, Markdown or HTML file. Save downloads a file and does not replace the original automatically. “Files / Share” offers more save options.</p><p>Named versions (File › Versions) are kept in this browser only and are not included in the JSON backup.</p><p>Drafts stay on this device and in this installation. Importing drafts adds documents from another installation without removing the ones that are open.</p><p>The JSON backup contains your text and comments and is not encrypted. Keep it somewhere safe. Also keep your regular DOCX files, because browser data may be cleared. The app does not sync between devices automatically.</p><p>On touch screens, move the active tab with the ← Tab / Tab → buttons. To format, select the paragraph and choose the style under Tools.</p></details></footer>
 <dialog id="naming"><form method="dialog"><b>Save copy</b><input id="newname" aria-label="File name" required><button value="cancel" formnovalidate>Cancel</button> <button value="save" class="primary">Save</button></form></dialog>
 <dialog id="notedialog" class="footnote-dialog"><form method="dialog"><h2 id="notedialogtitle">New footnote</h2><p>Type the footnote text.</p><textarea id="notetext" aria-label="Footnote text" required></textarea><button value="cancel" formnovalidate>Cancel</button> <button class="primary" value="save">Insert / Save</button></form></dialog><dialog id="commentdialog" class="footnote-dialog"><form method="dialog"><h2 id="commentdialogtitle">Comment</h2><label for="commentauthor">Commenter name</label><input id="commentauthor" required><textarea id="commenttext" aria-label="Comment or reply text" required></textarea><button value="cancel" formnovalidate>Cancel</button><button class="primary" value="save">Save</button></form></dialog><dialog id="devicesavedialog" class="devicesave-dialog"><h2>Save to device</h2><small id="devicesavename"></small><p>Tap “Open menu” and choose “Save to Files” if it appears. You can also download the file directly.</p><button id="shareprepared" class="primary">Open menu</button><button id="downloadprepared">Download file</button><form method="dialog"><button value="cancel">Close</button></form></dialog><script id="para-spacing-v2026122-js">
 /* 2026.11.22: paragraph indents and line spacing. Each paragraph may carry pf = {l, f, b, a, ln}:
@@ -254,7 +254,7 @@ async function hdbSync(map){const db=await hdbOpen();return new Promise((res,rej
    Model: d.fmt is a list of runs {s, e, f} in body offsets. f is a bit set:
    FB_ON / FI_ON force bold / italic on, FB_OFF / FI_OFF force it off (for example bold removed from a heading).
    Without a flag the paragraph style decides, so a heading stays bold until the user removes bold. */
-var FB_ON = 1, FI_ON = 2, FB_OFF = 4, FI_OFF = 8, HL_ON = 16, REV_INS = 32, REV_DEL = 64;
+var FB_ON = 1, FI_ON = 2, FB_OFF = 4, FI_OFF = 8, HL_ON = 16, REV_INS = 32, REV_DEL = 64, U_ON = 128;
 var typingFmt = null;   // {at, b, i}: bold/italic pending for the next typed text at a collapsed caret
 
 function normFlag(f) { if (f & FB_ON) f &= ~FB_OFF; if (f & FI_ON) f &= ~FI_OFF; return f; }
@@ -286,7 +286,7 @@ function sanitizeFmt(list, len) {
   for (const r of Array.isArray(list) ? list : []) {
     if (!r || !Number.isInteger(r.s) || !Number.isInteger(r.e) || !Number.isInteger(r.f)) continue;
     const e = Math.min(r.e, a.length);
-    for (let k = Math.max(0, r.s); k < e; k++) a[k] |= (r.f & 127);
+    for (let k = Math.max(0, r.s); k < e; k++) a[k] |= (r.f & 255);
   }
   return runsOf(a);
 }
@@ -396,6 +396,7 @@ function wrapFlags(node, f) {
   if (f & FI_OFF) { const el = document.createElement('span'); el.className = 'tw-ni'; el.append(n); n = el; }
   if (f & FB_ON) { const el = document.createElement('b'); el.append(n); n = el; }
   if (f & HL_ON) { const el = document.createElement('mark'); el.append(n); n = el; }
+  if (f & U_ON) { const el = document.createElement('u'); el.append(n); n = el; }
   if (f & FB_OFF) { const el = document.createElement('span'); el.className = 'tw-nb'; el.append(n); n = el; }
   if (f & REV_DEL) { const el = document.createElement('del'); el.className = 'tw-rev-del'; el.append(n); n = el; }
   if (f & REV_INS) { const el = document.createElement('ins'); el.className = 'tw-rev-ins'; el.append(n); n = el; }
@@ -419,6 +420,7 @@ function nextFlag(el, f) {
   if (t === 'INS') return f | REV_INS;
   if (t === 'DEL') return f | REV_DEL;
   if (t === 'MARK') return f | HL_ON;
+  if (t === 'U') return f | U_ON;
   if (t === 'B' || t === 'STRONG') return (f & ~FB_OFF) | FB_ON;
   if (t === 'I' || t === 'EM') return (f & ~FI_OFF) | FI_ON;
   if (cl && cl.contains('tw-nb')) return (f & ~FB_ON) | FB_OFF;
@@ -462,6 +464,7 @@ function inlineControlState() {
   }
   bb.setAttribute('aria-pressed', String(v.b));
   ii.setAttribute('aria-pressed', String(v.i));
+  if (typeof window.twUnderlineSync === 'function') window.twUnderlineSync();
 }
 
 // Find and replace: the replacement keeps the formatting of the first replaced character.
@@ -507,7 +510,7 @@ function odRuns(text, fl, base) {
 
 function odTextStyles() {
   let out = '';
-  for (let f = 1; f < 32; f++) {
+  for (let f = 1; f < 256; f++) {
     if (normFlag(f) !== f) continue;
     const attrs = [];
     if (f & FB_ON) attrs.push('fo:font-weight="bold"');
@@ -515,6 +518,7 @@ function odTextStyles() {
     if (f & FI_ON) attrs.push('fo:font-style="italic"');
     if (f & FI_OFF) attrs.push('fo:font-style="normal"');
     if (f & HL_ON) attrs.push('fo:background-color="#ffff00"');
+    if (f & U_ON) attrs.push('style:text-underline-style="solid" style:text-underline-width="auto" style:text-underline-color="font-color"');
     out += '<style:style style:name="TF_' + f + '" style:family="text"><style:text-properties ' + attrs.join(' ') + '/></style:style>';
   }
   return out;
@@ -530,6 +534,7 @@ function odSpanBits(n, psf, f, styleMap) {
   if (fw) g = setVis(g, psf, 'b', fw === 'bold' || Number(fw) >= 600);
   if (fs) g = setVis(g, psf, 'i', fs === 'italic' || fs === 'oblique');
   const bg = oa(tp, 'fo', 'background-color'); if (bg && bg !== 'transparent') g |= HL_ON;
+  const ul = oa(tp, 'style', 'text-underline-style'); if (ul && ul !== 'none') g |= U_ON;
   return g;
 }
 
@@ -543,6 +548,7 @@ function docxRunBits(n, pst) {
   if (bEl) { const v = attr(bEl, 'val'); f = setVis(f, sf, 'b', !(v === '0' || v === 'false')); }
   if (iEl) { const v = attr(iEl, 'val'); f = setVis(f, sf, 'i', !(v === '0' || v === 'false')); }
   const hl = child(rpr, 'highlight'); if (hl && attr(hl, 'val') && attr(hl, 'val') !== 'none') f |= HL_ON;
+  const ul = child(rpr, 'u'); if (ul && attr(ul, 'val') && attr(ul, 'val') !== 'none') f |= U_ON;
   return f;
 }
 
@@ -600,7 +606,7 @@ function closeDoc(id){syncDoc();const d=docs.find(d=>d.id===id);if(!d)return;if(
 function persistDrafts(){clearTimeout(draftTimer);syncDoc();handlesReady.then(()=>{const m={};docs.forEach(d=>{if(d.handle)m[d.id]=d.handle});hdbSync(m).catch(()=>{})});const payload={version:2,viewDefault:2,activeId,savedAt:Date.now(),docs:docs.map(({handle,...d})=>d)};let mirrored=false;try{localStorage.setItem(STORE,JSON.stringify(payload));mirrored=true}catch(e){}const failed=()=>{draftFailed=true;$('autosave').className='error';$('autosave').textContent='Saving drafts failed. Use Save for the file.';return false};const ok=()=>{draftPending=false;draftFailed=false;$('autosave').className='';$('autosave').textContent='Drafts saved · '+new Date().toLocaleTimeString('el',{hour:'2-digit',minute:'2-digit',second:'2-digit'});return true};if(window.twDraftPut){draftPending=true;window.twDraftPut(payload).then(ok,()=>{if(mirrored)ok();else failed()});return true}return mirrored?ok():failed()} function queueDraft(){draftPending=true;$('autosave').textContent='Saving drafts…';clearTimeout(draftTimer);draftTimer=setTimeout(persistDrafts,650)}
 function restoreWorkspace(){try{const raw=window.twDraftRaw!==undefined?window.twDraftRaw:localStorage.getItem(STORE);if(raw){const data=JSON.parse(raw);if(data.version!==2||!Array.isArray(data.docs)||!data.docs.every(d=>typeof d.id==='string'&&typeof d.title==='string'&&typeof d.body==='string'&&typeof d.name==='string'))throw Error('invalid workspace');docs=data.docs.map(d=>({...d,kind:['docx','odt','txt','md','html'].includes(d.kind)?d.kind:kindForName(d.name),view:['code','split','preview'].includes(d.view)?d.view:'code',scripts:false,notes:Array.isArray(d.notes)?d.notes.filter(n=>Number.isInteger(n.id)&&n.id>0&&typeof n.marker==='string'&&/^⁽ᵉ?[⁰¹²³⁴⁵⁶⁷⁸⁹]+⁾$/u.test(n.marker)&&typeof n.text==='string'):[],autoName:typeof d.autoName==='boolean'?d.autoName:d.name==='New document.docx',handle:null,dirty:!!d.dirty,continuous:data.viewDefault===2&&d.continuous===true}));activeId=docs.some(d=>d.id===data.activeId)?data.activeId:docs[0].id;handlesReady=hdbAll().then(m=>{docs.forEach(d=>{if(m[d.id]&&!d.handle)d.handle=m[d.id]});const cur=activeDoc();if(cur&&cur.handle&&!handle)handle=cur.handle}).catch(()=>{})}}catch(e){draftFailed=true;$('autosave').className='error';$('autosave').textContent='Could not restore drafts. Use Save.'}if(!docs.length){docs=[];activeId=null;showEmptyState()}else{const d=docs.find(d=>d.id===activeId)||docs[0];activeId=d.id;({name,handle,dirty}=d);title.value=d.title;body.value=d.body;update()}}
 
-const wordOptions={types:[{description:'Word document',accept:{[MIME]:['.docx']}}]},htmlOptions={types:[{description:'HTML',accept:{'text/html':['.html','.htm']}}]},options={types:[...wordOptions.types,...htmlOptions.types,{description:'Rich Text',accept:{'application/rtf':['.rtf']}},{description:'Text and Markdown',accept:{'text/plain':['.txt','.md','.markdown']}},{description:'OpenDocument',accept:{'application/vnd.oasis.opendocument.text':['.odt']}}]};
+const wordOptions={types:[{description:'Word document',accept:{[MIME]:['.docx']}}]},htmlOptions={types:[{description:'HTML',accept:{'text/html':['.html','.htm']}}]},options={types:[{description:'All supported files',accept:{[MIME]:['.docx'],'application/msword':['.doc'],'application/vnd.oasis.opendocument.text':['.odt'],'text/html':['.html','.htm'],'text/rtf':['.rtf'],'application/rtf':['.rtf'],'text/plain':['.txt','.md','.markdown']}},...wordOptions.types,{description:'Word 97-2003',accept:{'application/msword':['.doc']}},...htmlOptions.types,{description:'Rich Text',accept:{'application/rtf':['.rtf']}},{description:'Text and Markdown',accept:{'text/plain':['.txt','.md','.markdown']}},{description:'OpenDocument',accept:{'application/vnd.oasis.opendocument.text':['.odt']}}]};
 const native=!!(window.showOpenFilePicker&&window.showSaveFilePicker);
 $('mode').textContent=native?'Save updates the selected file. Save As creates a copy.':'The browser saves by downloading a file. Save does not replace the original file automatically.';
 function status(s){$('status').textContent=s}
@@ -698,7 +704,7 @@ function richSnapshot(){const d=activeDoc();return JSON.stringify([title.value,b
 function recordPageHistory(force=false){const id=activeId;let h=pageHistory.get(id);if(!h){h={undo:[],redo:[],last:0};pageHistory.set(id,h)}if(force||!h.undo.length||Date.now()-h.last>700)h.undo.push({state:richSnapshot(),caret:pageState()});h.last=Date.now();h.redo=[];if(h.undo.length>80)h.undo.shift()}
 function applyParagraphStyle(style){if(busy||isSource()||!STYLE[style])return;syncDoc();recordPageHistory(true);const d=activeDoc(),p=editingCaret();if(p.field==='title')d.titleMeta={...d.titleMeta,style};else{const [a,b]=selectedBlocks(p);for(let i=a;i<=b;i++)d.blocks[i]={...d.blocks[i],style}}dirty=true;pageKey='';update();renderPages(p);queueDraft();status('Applied '+STYLE[style].label)}
 function toggleList(type){if(busy||isSource())return;syncDoc();const p=editingCaret();if(p.field==='title'){status('Lists apply to the document body.');return}recordPageHistory(true);const d=activeDoc(),[a,b]=selectedBlocks(p),remove=d.blocks.slice(a,b+1).every(m=>m.list===type);let group=d.blocks[a-1]?.list===type?d.blocks[a-1].listId:crypto.randomUUID();for(let i=a;i<=b;i++)d.blocks[i]={...d.blocks[i],list:remove?null:type,listId:remove?null:group,level:0,start:1};dirty=true;pageKey='';update();renderPages(p);queueDraft();status(remove?'List removed':'List applied')}
-$('paragraphstyle').onchange=()=>applyParagraphStyle($('paragraphstyle').value);$('numberlist').onclick=()=>toggleList('number');$('bulletlist').onclick=()=>toggleList('bullet');let selectionIdle;document.addEventListener('selectionchange',()=>{clearTimeout(selectionIdle);selectionIdle=setTimeout(rememberRichCaret,180)});for(const id of ['paragraphstyle','numberlist','bulletlist','boldtext','italictext','alignjustify','alignleft','aligncenter','alignright','newcomment'])$(id).addEventListener('mousedown',rememberRichCaret);
+$('paragraphstyle').onchange=()=>applyParagraphStyle($('paragraphstyle').value);$('numberlist').onclick=()=>toggleList('number');$('bulletlist').onclick=()=>toggleList('bullet');let selectionIdle;document.addEventListener('selectionchange',()=>{clearTimeout(selectionIdle);selectionIdle=setTimeout(rememberRichCaret,180)});for(const id of ['paragraphstyle','numberlist','bulletlist','boldtext','italictext','underlinetext','alignjustify','alignleft','aligncenter','alignright','newcomment'])$(id).addEventListener('mousedown',rememberRichCaret);
 function screenFontSize(st){return (window.innerWidth<=600?Math.max(16,st.size*4/3):st.size*4/3)*(window.twReadScale||1)}
 function styledHeight(text,width,m){const st=STYLE[m.style]||STYLE.normal,meter=$('pagemeter');meter.style.width=Math.max(50,width)+'px';meter.style.fontFamily=twFontFor(st);meter.style.fontSize=screenFontSize(st)+'px';meter.style.fontWeight=st.bold?'bold':'normal';meter.style.fontStyle=st.italic?'italic':'normal';meter.style.lineHeight=screenFontSize(st)*st.line+'px';meter.value=text||' ';return Math.max(screenFontSize(st)*st.line,meter.scrollHeight)}
 function styledFit(text,width,height,m){if(!text)return 0;if(styledHeight(text,width,m)<=height)return text.length;let a=0,b=text.length;while(a<b){const mid=Math.ceil((a+b)/2);if(styledHeight(text.slice(0,mid),width,m)<=height)a=mid;else b=mid-1}if(a&&/[\uD800-\uDBFF]/.test(text[a-1]))a--;const word=text.slice(0,a).search(/\s+\S*$/);if(word>a*.65)a=word+1;return a}
@@ -753,7 +759,7 @@ async function commentEditor(parentId=null){if(busy||isSource())return;syncDoc()
 function renderComments(){const d=activeDoc();if(!d)return;if(window.tzSync)tzSync();ensureRich(d);const html=isSource();$('commentsbutton').disabled=html;$('newcomment').disabled=html;$('paragraphstyle').disabled=html;$('numberlist').disabled=html;$('bulletlist').disabled=html;$('commentsbutton').textContent='Comments ('+d.comments.length+')';$('commentspanel').hidden=false;const key=JSON.stringify([d.id,d.comments,title.value,body.value]);if(key===commentsPanelKey)return;commentsPanelKey=key;const list=$('commentslist');list.replaceChildren();if(!d.comments.length){const p=document.createElement('p');p.textContent='No comments. Select text and click “New comment”.';list.append(p);return}const raw=title.value+'\n'+body.value;function card(c,depth=0){const row=document.createElement('article');row.className='comment-card';row.style.marginLeft=Math.min(depth,3)*16+'px';const heading=document.createElement('strong');heading.textContent=c.author||'Unnamed';row.append(heading);if(c.date){const date=document.createElement('small');const parsed=new Date(c.date);date.textContent=Number.isNaN(parsed.getTime())?c.date:parsed.toLocaleString('el');row.append(date)}if(c.done){const state=document.createElement('small');state.textContent='Resolved';row.append(state)}if(c.anchor){const jump=document.createElement('button');jump.className='comment-anchor';const snippet=raw.slice(c.anchor.start,c.anchor.end);jump.textContent=snippet?snippet.slice(0,160):'Go to the comment';jump.onclick=()=>jumpComment(c);row.append(jump)}const text=document.createElement('p');text.textContent=c.text;row.append(text);const reply=document.createElement('button');reply.textContent='Reply';reply.onclick=()=>commentEditor(c.id);const del=document.createElement('button');del.textContent='Delete';del.onclick=()=>deleteComment(c.id);if(c.parentId==null)row.append(twResolveButton(c));row.append(reply,del);list.append(row);for(const child of d.comments.filter(x=>x.parentId===c.id))card(child,depth+1)}const validIds=new Set(d.comments.map(c=>c.id));for(const c of d.comments.filter(c=>c.parentId==null||!validIds.has(c.parentId)))card(c)}
 $('commentsbutton').onclick=()=>{if(isSource())return;activeDoc().showComments=!activeDoc().showComments;renderComments();if(activeDoc().showComments)$('commentspanel').scrollIntoView({behavior:'smooth',block:'nearest'})};$('newcomment').onclick=()=>commentEditor();
 function styleId(style){return ({normal:'Normal',title:'Title',heading1:'Heading1',heading2:'Heading2',heading3:'Heading3',quote:'Quote'})[style]||'Normal'}
-function richRPr(m,f=0){const st=STYLE[m.style]||STYLE.normal,vb=f&FB_ON?true:f&FB_OFF?false:!!st.bold,vi=f&FI_ON?true:f&FI_OFF?false:!!st.italic;return '<w:rPr><w:rFonts w:ascii="'+st.font+'" w:hAnsi="'+st.font+'" w:cs="'+st.font+'"/><w:b w:val="'+(vb?'1':'0')+'"/><w:i w:val="'+(vi?'1':'0')+'"/><w:color w:val="'+st.color+'"/><w:sz w:val="'+st.size*2+'"/><w:szCs w:val="'+st.size*2+'"/>'+(f&HL_ON?'<w:highlight w:val="yellow"/>':'')+'</w:rPr>'}
+function richRPr(m,f=0){const st=STYLE[m.style]||STYLE.normal,vb=f&FB_ON?true:f&FB_OFF?false:!!st.bold,vi=f&FI_ON?true:f&FI_OFF?false:!!st.italic;return '<w:rPr><w:rFonts w:ascii="'+st.font+'" w:hAnsi="'+st.font+'" w:cs="'+st.font+'"/><w:b w:val="'+(vb?'1':'0')+'"/><w:i w:val="'+(vi?'1':'0')+'"/><w:color w:val="'+st.color+'"/><w:sz w:val="'+st.size*2+'"/><w:szCs w:val="'+st.size*2+'"/>'+(f&HL_ON?'<w:highlight w:val="yellow"/>':'')+(f&U_ON?'<w:u w:val="single"/>':'')+'</w:rPr>'}
 function richRun(text,m,f=0){return '<w:r>'+richRPr(m,f)+text.split(/(\t|\u2028)/).map(t=>t==='\t'?'<w:tab/>':t==='\u2028'?'<w:br/>':'<w:t xml:space="preserve">'+esc(t)+'</w:t>').join('')+'</w:r>'}
 function paragraphProperties(m,numId=null){const st=STYLE[m.style]||STYLE.normal,heading=/^heading([123])$/.exec(m.style);return '<w:pPr><w:pStyle w:val="'+styleId(m.style)+'"/>'+(heading?'<w:keepNext/><w:keepLines/><w:outlineLvl w:val="'+(Number(heading[1])-1)+'"/>':'')+(numId?'<w:numPr><w:ilvl w:val="'+m.level+'"/><w:numId w:val="'+numId+'"/></w:numPr>':'')+twDocxSpacing(m,st)+twDocxInd(m,numId,st)+'<w:jc w:val="'+twDocxJc(m)+'"/></w:pPr>'}
 function richParagraph(text,m,notes,offset,roots,numId,last=false,fl=null){const len=text.length,end=offset+len,starts=new Map(),ends=new Map();for(const c of roots){if(!c.anchor)continue;const at=(map,position)=>{const k=Math.max(0,Math.min(len,position-offset));if(!map.has(k))map.set(k,[]);map.get(k).push(c)};if(c.anchor.start>=offset&&(c.anchor.start<=end))at(starts,c.anchor.start);if(c.anchor.end>=offset&&(c.anchor.end<=end))at(ends,c.anchor.end)}let out='',plain='',i=0,ps=0;const flush=()=>{if(plain){out+=richRuns(plain,m,fl,offset+ps);plain=''}};while(i<=len){if(starts.has(i)){flush();for(const c of starts.get(i))out+='<w:commentRangeStart w:id="'+c.exportId+'"/>'}if(ends.has(i)){flush();for(const c of ends.get(i))out+='<w:commentRangeEnd w:id="'+c.exportId+'"/><w:r><w:commentReference w:id="'+c.exportId+'"/></w:r>'}if(i===len)break;const n=notes.find(n=>text.startsWith(n.marker,i));if(n){flush();out+='<w:r><w:rPr><w:vertAlign w:val="superscript"/></w:rPr>'+(n.kind==='end'?'<w:endnoteReference w:id="'+n.id+'"/>':'<w:footnoteReference w:id="'+n.id+'"/>')+'</w:r>';i+=n.marker.length}else{if(!plain)ps=i;plain+=text[i++]}}flush();return '<w:p>'+paragraphProperties(m,numId)+out+'</w:p>'}
@@ -851,7 +857,7 @@ $('updateapp').onclick=()=>{if(!hostedRegistration?.waiting)return;if(!persistDr
 </style>
 <script id="edition-v12-behaviour">
 (()=>{
-const groups={Home:['newformat','new','open','opendrive','savedrive','openfolder','save','saveall','saveas','exportpdf','emailall','morewrap','sepfmt','paragraphstyle','doclang','boldtext','italictext','alignjustify','alignleft','aligncenter','alignright','hltext','unhltext','numberlist','bulletlist','sepfind','findreplace','searchall',],Insert:['instable','insimage','inshead','insfoot','pagenumbers'],Review:['consistency','insertnote','insend','insremnote','newcomment','commentsbutton','rescomment','resallcomments','delallcomments','citebutton'],View:['outlineview','outlinelevel','outlinefirst','outlinepromote','outlinedemote','outlineup','outlinedown','outlineshow','sidebyside','focusview','fullscreenview','paragraphview','zoomsel','readfont','readsize','viewa4','viewletter','viewlandscape','viewcontinuous','moveleft','moveright'],Session:['backupworkspace','restoreworkspace','discardall','splitdoc','compile'],About:['aboutshortcuts','aboutinfo','aboutbackups']};
+const groups={Home:['newformat','new','open','opendrive','savedrive','openfolder','save','saveall','saveas','exportpdf','emailall','morewrap','sepfmt','paragraphstyle','doclang','boldtext','italictext','underlinetext','alignjustify','alignleft','aligncenter','alignright','hltext','unhltext','numberlist','bulletlist','sepfind','findreplace','searchall',],Insert:['instable','insimage','inshead','insfoot','pagenumbers'],Review:['consistency','insertnote','insend','insremnote','newcomment','commentsbutton','rescomment','resallcomments','delallcomments','citebutton'],View:['outlineview','outlinelevel','outlinefirst','outlinepromote','outlinedemote','outlineup','outlinedown','outlineshow','sidebyside','focusview','fullscreenview','paragraphview','zoomsel','readfont','readsize','viewa4','viewletter','viewlandscape','viewcontinuous','moveleft','moveright'],Session:['backupworkspace','restoreworkspace','discardall','splitdoc','compile'],About:['aboutshortcuts','aboutinfo','aboutbackups']};
 const tabs=document.getElementById('ribbon-tabs'),bar=document.getElementById('toolbar');if(!tabs||!bar)return;
 const old=Array.from(tabs.children).map(x=>x.textContent.trim()).filter(x=>groups[x]);tabs.replaceChildren();
 const label=document.createElement('span');label.id='ribbon-caption';label.textContent='Tabbed Word';
@@ -2253,7 +2259,7 @@ renderPages();
   var supported = typeof window.showDirectoryPicker === 'function';
   var openBtn = document.getElementById('openfolder');
   var wide = window.matchMedia('(min-width: 900px)');
-  var EXT = /\.(docx|odt|txt|md|html?)$/i, ZIP = /\.zip$/i;
+  var EXT = /\.(docx|doc|odt|rtf|txt|md|markdown|html?)$/i, ZIP = /\.zip$/i;
   var folder = null, items = [], collapsed = false;
   function $p(id) { return document.getElementById(id); }
   collapsed = true; /* the folder panel always starts collapsed */
@@ -3478,7 +3484,7 @@ function askPicks(which,replace){
 function chooseFileInput(){
  return new Promise(resolve=>{
   const i=document.createElement('input');
-  i.type='file';i.accept='.docx,.doc,.odt,.txt,.md,.markdown,.html,.htm,.rtf';
+  i.type='file';i.accept='.docx,.doc,.odt,.rtf,.txt,.md,.markdown,.html,.htm';
   i.onchange=()=>resolve(i.files[0]||null);
   i.oncancel=()=>resolve(null);
   i.click();
@@ -4141,6 +4147,60 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 })();
 
 
+// Underline and remove underline for the selected text (flag 128, shown as <u>, saved in DOCX as a single underline).
+// Ctrl+U and the ribbon, quick-row, Format menu and Font dialog all use the same button.
+(function () {
+  var pendingCaret = null; // the selection as it was when the button was pressed (a mouse press clears it)
+  document.addEventListener('pointerdown', function (e) {
+    if (e.target && e.target.closest && e.target.closest('#underlinetext')) pendingCaret = { caret: editingCaret(), id: activeId };
+  }, true);
+  function change(on) {
+    if (typeof busy !== 'undefined' && busy) return;
+    if (typeof isSource === 'function' && isSource()) { status('Underline works in the document view.'); return; }
+    var d = typeof activeDoc === 'function' ? activeDoc() : null;
+    if (!d) return;
+    if (typeof commitPageInputs === 'function') commitPageInputs();
+    var p = (pendingCaret && pendingCaret.id === activeId) ? pendingCaret.caret : editingCaret();
+    pendingCaret = null;
+    if (!p || p.field !== 'body') { status('Select text in the document to underline it.'); return; }
+    if (p.start === p.end) { status('Select the text to underline first.'); return; }
+    var s = p.start, e = p.end, len = body.value.length;
+    var flags = flagsOf(d, len);
+    /* null means toggle: underline unless every character is already underlined. */
+    if (on === null) { on = false; for (var j = s; j < e; j++) if (!(flags[j] & U_ON)) { on = true; break; } }
+    recordPageHistory(true);
+    for (var i = s; i < e; i++) flags[i] = on ? (flags[i] | U_ON) : (flags[i] & ~U_ON);
+    d.fmt = runsOf(flags);
+    dirty = true; pageKey = ''; update();
+    renderPages({ field: 'body', start: s, end: e });
+    queueDraft();
+    status(on ? 'Underline added.' : 'Underline removed.');
+  }
+  // Ribbon button state: pressed when the selection is underlined (or the caret sits in underlined text).
+  function sync() {
+    var b = document.getElementById('underlinetext');
+    if (!b) return;
+    var on = false, d = typeof activeDoc === 'function' ? activeDoc() : null, p = typeof editingCaret === 'function' ? editingCaret() : null;
+    if (d && p && p.field === 'body' && typeof body !== 'undefined' && body) {
+      var fl = flagsOf(d, body.value.length);
+      if (p.start < p.end) { on = true; for (var k = p.start; k < p.end; k++) if (!(fl[k] & U_ON)) { on = false; break; } }
+      else if (p.start > 0) on = !!(fl[p.start - 1] & U_ON);
+    }
+    b.setAttribute('aria-pressed', String(on));
+  }
+  window.twUnderlineSync = sync;
+  document.addEventListener('keydown', function (e) {
+    if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey || !e.key || e.key.toLowerCase() !== 'u') return;
+    e.preventDefault(); // stops the browser's view-source shortcut
+    change(null);
+  }, true);
+  function build() {
+    var a = document.getElementById('underlinetext');
+    if (a) a.addEventListener('click', function () { change(null); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build); else build();
+})();
+
 // v2.96: Export PDF. Prints a clean A4 copy of the document (bold, italic, highlight, footnotes) through the browser's
 // print dialog, where the user chooses Save as PDF.
 (function () {
@@ -4149,13 +4209,14 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     var body = d.body || '', blocks = d.blocks || [], runs = d.fmt || [];
     var num = 0, links = d.links || [];
     function linkAt(pos) { for (var x = 0; x < links.length; x++) if (pos >= links[x].s && pos < links[x].e) return x; return -1; }
-    var len = body.length, bold = new Int8Array(len + 1).fill(-1), ital = new Int8Array(len + 1).fill(-1), hl = new Uint8Array(len + 1);
+    var len = body.length, bold = new Int8Array(len + 1).fill(-1), ital = new Int8Array(len + 1).fill(-1), hl = new Uint8Array(len + 1), ul = new Uint8Array(len + 1);
     runs.forEach(function (r) {
       var s = Math.max(0, r.s | 0), e = Math.min(len, r.e | 0);
       for (var i = s; i < e; i++) {
         if (r.f & FB_ON) bold[i] = 1; else if (r.f & FB_OFF) bold[i] = 0;
         if (r.f & FI_ON) ital[i] = 1; else if (r.f & FI_OFF) ital[i] = 0;
         if (r.f & 16) hl[i] = 1;
+        if (r.f & 128) ul[i] = 1;
       }
     });
     var out = '', off = 0;
@@ -4164,13 +4225,13 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
       var style = String(m.style || 'normal').replace(/[^a-z0-9]/gi, '');
       var styleBold = /^(title|heading)/.test(style), styleItal = style === 'quote';
       var html = '', cur = null, buf = '';
-      function flush() { if (!buf) return; var t = esc(buf); if (cur.h) t = '<mark>' + t + '</mark>'; if (cur.i) t = '<i>' + t + '</i>'; if (cur.b) t = '<b>' + t + '</b>'; if (cur.l >= 0) t = '<a href="' + esc(links[cur.l].url) + '">' + t + '</a>'; html += t; buf = ''; }
+      function flush() { if (!buf) return; var t = esc(buf); if (cur.h) t = '<mark>' + t + '</mark>'; if (cur.u) t = '<u>' + t + '</u>'; if (cur.i) t = '<i>' + t + '</i>'; if (cur.b) t = '<b>' + t + '</b>'; if (cur.l >= 0) t = '<a href="' + esc(links[cur.l].url) + '">' + t + '</a>'; html += t; buf = ''; }
       for (var k = 0; k < line.length; k++) {
         var pos = off + k;
-        var key = { b: bold[pos] === -1 ? styleBold : bold[pos] === 1, i: ital[pos] === -1 ? styleItal : ital[pos] === 1, h: !!hl[pos] };
+        var key = { b: bold[pos] === -1 ? styleBold : bold[pos] === 1, i: ital[pos] === -1 ? styleItal : ital[pos] === 1, h: !!hl[pos], u: !!ul[pos] };
         key.l = linkAt(pos);
-        var id = (key.b ? 'b' : '') + (key.i ? 'i' : '') + (key.h ? 'h' : '') + (key.l >= 0 ? 'l' + key.l : '');
-        if (cur === null || id !== cur.id) { flush(); cur = { b: key.b, i: key.i, h: key.h, l: key.l, id: id }; }
+        var id = (key.b ? 'b' : '') + (key.i ? 'i' : '') + (key.h ? 'h' : '') + (key.u ? 'u' : '') + (key.l >= 0 ? 'l' + key.l : '');
+        if (cur === null || id !== cur.id) { flush(); cur = { b: key.b, i: key.i, h: key.h, u: key.u, l: key.l, id: id }; }
         buf += line[k];
       }
       flush();
@@ -4301,12 +4362,22 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
     if (empty && !$i('emptychoices')) {
       choices = document.createElement('div');
       choices.id = 'emptychoices';
-      choices.innerHTML = '<button type="button" id="ecnew" class="primary">Create a document</button><button type="button" id="ecopen">Open a file</button><button type="button" id="ecrestore">Restore a session</button>';
+      choices.innerHTML = '<button type="button" id="ecnew" class="primary">Create a document</button><button type="button" id="ecopen">Open a file</button><button type="button" id="ecopenfolder">Open folder</button><button type="button" id="ecopendrive">Open from Google Drive</button><button type="button" id="ecsavedrive">Save to Google Drive</button><button type="button" id="ecsaveall">Save all &amp; close</button><button type="button" id="ecclose">Close without saving</button><button type="button" id="ecdiscard">Discard all</button><button type="button" id="ecemail">Email</button><button type="button" id="ecrestore">Restore a session</button>';
       empty.append(choices);
       $i('ecnew').addEventListener('click', function () { if (window.twNewDocx) window.twNewDocx(); });
       $i('ecopen').addEventListener('click', function () { $i('open').click(); });
+      $i('ecopendrive').addEventListener('click', function () { $i('opendrive').click(); });
+      $i('ecsavedrive').addEventListener('click', function () { $i('savedrive').click(); });
+      $i('ecopenfolder').addEventListener('click', function () { $i('openfolder').click(); });
+      $i('ecsaveall').addEventListener('click', function () { $i('saveall').click(); });
+      $i('ecdiscard').addEventListener('click', function () { $i('discardall').click(); });
+      $i('ecclose').disabled = true;
+      $i('ecclose').addEventListener('click', function () { if (window.twCloseNoSave) window.twCloseNoSave(); });
+      $i('ecemail').addEventListener('click', function () { $i('emailall').click(); });
       $i('ecrestore').addEventListener('click', function () { $i('restoreworkspace').click(); });
     }
+    var ef = $i('ecopenfolder'), of0 = $i('openfolder');
+    if (ef && of0) ef.hidden = of0.hidden;
   }).observe(document.body, { childList: true, subtree: true });
   // Labelled control for the right panel.
   function labelSide() {
@@ -5686,6 +5757,7 @@ twActiveTabRename();
     discardall:'<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>',
     boldtext:'<path d="M7 5h6a3.5 3.5 0 0 1 0 7H7zM7 12h7a3.5 3.5 0 0 1 0 7H7z" stroke-width="2.2"/>',
     italictext:'<path d="M14 5h-4M14 19h-4M14.5 5l-5 14"/>',
+    underlinetext:'<path d="M7 4v7a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/>',
     alignjustify:'<path d="M4 6h16M4 10h16M4 14h16M4 18h16"/>',
     alignleft:'<path d="M4 6h16M4 10h10M4 14h16M4 18h10"/>',
     aligncenter:'<path d="M4 6h16M7 10h10M4 14h16M7 18h10"/>',
@@ -6633,6 +6705,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
       { sep: true },
       { label: 'Bold', key: K('Ctrl+B', '\u2318B'), checked: pressed('boldtext'), disabled: dis('boldtext'), run: function () { click('boldtext'); } },
       { label: 'Italic', key: K('Ctrl+I', '\u2318I'), checked: pressed('italictext'), disabled: dis('italictext'), run: function () { click('italictext'); } },
+      { label: 'Underline', key: K('Ctrl+U', '\u2318U'), checked: pressed('underlinetext'), disabled: dis('underlinetext'), run: function () { click('underlinetext'); } },
     ];
   }
   document.addEventListener('focusin', function (e) { if (inside(e.target)) last = e.target; }, true);
@@ -6788,7 +6861,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
       { label: 'Comment', id: 'newcomment' }
     ] },
     { name: 'Format', items: [
-      { label: 'Bold', id: 'boldtext', key: K('Ctrl+B', '⌘B'), check: 'boldtext' }, { label: 'Italic', id: 'italictext', key: K('Ctrl+I', '⌘I'), check: 'italictext' },
+      { label: 'Bold', id: 'boldtext', key: K('Ctrl+B', '⌘B'), check: 'boldtext' }, { label: 'Italic', id: 'italictext', key: K('Ctrl+I', '⌘I'), check: 'italictext' }, { label: 'Underline', id: 'underlinetext', key: K('Ctrl+U', '⌘U'), check: 'underlinetext' },
       { label: 'Highlight', id: 'hltext' }, { sep: true },
       { label: 'Justify', id: 'alignjustify', check: 'alignjustify' }, { label: 'Align left', id: 'alignleft', check: 'alignleft' },
       { label: 'Centre', id: 'aligncenter', check: 'aligncenter' }, { label: 'Align right', id: 'alignright', check: 'alignright' }, { sep: true },
@@ -6912,6 +6985,7 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
     emailall: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
     boldtext: '<path d="M6 4h8a4 4 0 0 1 0 8H6zM6 12h9a4 4 0 0 1 0 8H6z"/>',
     italictext: '<path d="M19 4h-9M14 20H5M15 4L9 20"/>',
+    underlinetext: '<path d="M7 4v7a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/>',
     alignjustify: '<path d="M3 6h18M3 10h18M3 14h18M3 18h18"/>',
     alignleft: '<path d="M3 6h18M3 10h12M3 14h18M3 18h12"/>',
     aligncenter: '<path d="M3 6h18M7 10h10M3 14h18M7 18h10"/>',
@@ -6925,21 +6999,22 @@ html{scroll-padding-top:calc(var(--tw-ribbon-h,103px) + 12px)}
     save: '<path d="M5 3h11l3 3v13H5z"/><path d="M8 3v5h7V3M8 21v-7h8v7"/>',
     opendrive: '<path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z"/><path d="M12 10.5v5m0 0-2.2-2.2M12 15.5l2.2-2.2"/>',
     savedrive: '<path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z"/><path d="M12 15.5V10.5m0 0-2.2 2.2M12 10.5l2.2 2.2"/>',
-    saveall: '<path d="M4 4h8l3 3v3"/><path d="M4 4v10h8"/><path d="M9 9h8l3 3v8H9z"/><path d="M14.5 12v5m-2-2 2 2 2-2"/>'
+    saveall: '<path d="M4 4h8l3 3v3"/><path d="M4 4v10h8"/><path d="M9 9h8l3 3v8H9z"/><path d="M14.5 12v5m-2-2 2 2 2-2"/>',
+    saveas: '<path d="M5 3h11l3 3v7"/><path d="M5 3v18h7"/><path d="M8 3v5h7V3"/><path d="M13.5 21l1-3.5 5.5-5.5 2.5 2.5-5.5 5.5z"/>'
   };
   var TITLE = {
     sidebyside: 'Side by side', fullscreenview: 'Full screen (Esc returns)', paragraphview: 'Paragraph view',
     pagenumbers: 'Page numbers', hltext: 'Highlight: press again on the same text to remove it', findreplace: 'Find and replace',
-    searchall: 'Search all', emailall: 'Email', boldtext: 'Bold', italictext: 'Italic', alignjustify: 'Justify',
+    searchall: 'Search all', emailall: 'Email', boldtext: 'Bold', italictext: 'Italic', underlinetext: 'Underline', alignjustify: 'Justify',
     alignleft: 'Align left', aligncenter: 'Centre', alignright: 'Align right', numberlist: 'Numbering', bulletlist: 'Bullets',
-    open: 'Open', save: 'Save', opendrive: 'Open from Google Drive', savedrive: 'Save to Google Drive', saveall: 'Save all & close', new: 'New', undo: 'Undo (Ctrl+Z)', redo: 'Redo (Ctrl+Y)'
+    open: 'Open', save: 'Save', saveas: 'Save As…', opendrive: 'Open from Google Drive', savedrive: 'Save to Google Drive', saveall: 'Save all & close', new: 'New', undo: 'Undo (Ctrl+Z)', redo: 'Redo (Ctrl+Y)'
   };
   var ROWS = [
-    ['new', 'open', 'opendrive', 'savedrive', 'save', 'saveall', 'emailall'],
+    ['new', 'open', 'opendrive', 'savedrive', 'save', 'saveas', 'saveall', 'emailall'],
     ['undo', 'redo'],
     ['findreplace', 'searchall'],
     ['sidebyside', 'fullscreenview', 'paragraphview', 'pagenumbers'],
-    ['|style|', 'boldtext', 'italictext', 'hltext', 'alignjustify', 'alignleft', 'aligncenter', 'alignright', 'numberlist', 'bulletlist']
+    ['|style|', 'boldtext', 'italictext', 'underlinetext', 'hltext', 'alignjustify', 'alignleft', 'aligncenter', 'alignright', 'numberlist', 'bulletlist']
   ];
   var row = document.createElement('div');
   row.id = 'quickrow';
@@ -7238,7 +7313,7 @@ function exportDoc(){
     while(k<line.length){
       const f=flags[pos+k];let e=k+1;while(e<line.length&&flags[pos+e]===f)e++;
       let t=docEsc(line.slice(k,e));
-      if(f&FB_ON)t='<b>'+t+'</b>';if(f&FI_ON)t='<i>'+t+'</i>';if(f&HL_ON)t='<span style="background:#ffff00">'+t+'</span>';
+      if(f&FB_ON)t='<b>'+t+'</b>';if(f&FI_ON)t='<i>'+t+'</i>';if(f&HL_ON)t='<span style="background:#ffff00">'+t+'</span>';if(f&U_ON)t='<u>'+t+'</u>';
       html+=t;k=e;
     }
     if(m.list==='number'){num++;html=num+'. '+html}else{num=0;if(m.list==='bullet')html='&bull; '+html}
@@ -7333,18 +7408,20 @@ async function loadDoc(file,nextHandle){
       '<fieldset><legend>Font style and effects</legend>' +
       '<label><input type="checkbox" id="o3-bold"> Bold</label>' +
       '<label><input type="checkbox" id="o3-italic"> Italic</label>' +
+      '<label><input type="checkbox" id="o3-u"> Underline</label>' +
       '<label><input type="checkbox" id="o3-hl"> Highlight</label></fieldset>';
     var dlg = makeDialog('Font', inner, function (d) {
       var f = d.querySelector('#o3-font'), z = d.querySelector('#o3-size');
       if (rf && f.value !== rf.value) { rf.value = f.value; rf.dispatchEvent(new Event('change', { bubbles: true })); }
       if (rs && z.value !== rs.value) { rs.value = z.value; rs.dispatchEvent(new Event('change', { bubbles: true })); }
-      [['o3-bold', 'boldtext'], ['o3-italic', 'italictext'], ['o3-hl', 'hltext']].forEach(function (pair) {
+      [['o3-bold', 'boldtext'], ['o3-italic', 'italictext'], ['o3-u', 'underlinetext'], ['o3-hl', 'hltext']].forEach(function (pair) {
         var box = d.querySelector('#' + pair[0]);
         if (box.checked !== pressed(pair[1])) { var b = document.getElementById(pair[1]); if (b) b.click(); }
       });
     });
     dlg.querySelector('#o3-bold').checked = pressed('boldtext');
     dlg.querySelector('#o3-italic').checked = pressed('italictext');
+    dlg.querySelector('#o3-u').checked = pressed('underlinetext');
     dlg.querySelector('#o3-hl').checked = pressed('hltext');
     if (rf) dlg.querySelector('#o3-font').value = rf.value;
     if (rs) dlg.querySelector('#o3-size').value = rs.value;
@@ -10017,3 +10094,892 @@ html[data-theme="dark"] body #tabs [role="tab"]{box-shadow:none!important;border
 html[data-theme="dark"] body #toolbar [aria-pressed="true"],html[data-theme="dark"] body #toolbar .on,html[data-theme="dark"] body #toolbar .selected{background:#34506e!important;color:#fff!important;border-color:#5b7ba3!important}
 html[data-theme="dark"] body #toolbar [aria-pressed="true"] svg{stroke:#fff!important}
 </style>
+<style id="shoulder-css">
+main{display:flex!important;align-items:flex-start;justify-content:center;grid-template-columns:none!important;position:relative}
+main:has(#shoulder:not([hidden])){justify-content:flex-start}
+main>aside{display:none!important}
+#shoulder{flex:0 0 300px;width:300px;min-width:0;display:flex;flex-direction:column;background:#d4d0c8;border:1px solid #808080;position:sticky;top:8px;align-self:flex-start;max-height:calc(100vh - 24px);overflow:hidden;margin:0 12px 0 0;font:11px Tahoma,sans-serif;color:#000}
+#shoulder[hidden],#shoulderopen[hidden],#shoulder .sh-pane[hidden]{display:none!important}
+#shoulder .sh-head{flex:none;display:flex;justify-content:flex-end;padding:3px 4px;background:#d4d0c8}
+#shoulder .sh-head button,#shoulderopen{font:11px Tahoma,sans-serif;padding:2px 8px;background:#e9e7e1;border:1px solid #808080;border-radius:3px;color:#000;cursor:pointer}
+#shoulderopen{position:absolute;left:0;top:8px;z-index:2;writing-mode:vertical-rl;padding:10px 4px;margin:0}
+#shoulder .sh-tabs{flex:none;display:flex;flex-wrap:wrap;gap:2px;padding:4px 4px 0;background:#d4d0c8;border-bottom:1px solid #808080}
+#shoulder .sh-tabs button{flex:1 1 auto;border:1px solid #808080;border-bottom:0;background:#e9e7e1;padding:3px 5px;font:11px Tahoma,sans-serif;color:#000;cursor:pointer;border-radius:3px 3px 0 0;white-space:nowrap}
+#shoulder .sh-tabs button[aria-selected="true"]{background:#fff;font-weight:700;margin-bottom:-1px}
+#shoulder .sh-pane{flex:1 1 auto;min-height:0;overflow:auto;background:#fff;padding:8px;font:13px system-ui,sans-serif;color:#1f2834}
+#shoulder #folderpanel{position:static;max-height:none;border:0;box-shadow:none;padding:0;background:#fff;align-self:auto;overflow:visible;width:auto;display:block!important}
+#shoulder #folderpanel .fp-head{display:flex!important}
+#shoulder #folderpanel .fp-body{display:block!important}
+#shoulder #folderpanel #fplist:not([hidden]){display:block}
+#shoulder #folderpanel .fp-expand,#shoulder #fpcollapse{display:none!important}
+#shoulder dialog.findreplace-dialog{position:static!important;inset:auto!important;top:auto!important;right:auto!important;bottom:auto!important;left:auto!important;margin:0!important;width:100%!important;max-width:none!important;box-shadow:none!important;border:0!important;padding:0!important;background:transparent!important}
+#shoulder .tz-tabs{display:none!important}
+#commentspanel{display:none!important}
+#shoulder #tz-lib,#shoulder #tz-com{margin:0}
+#shoulder #consistpanel{margin-top:10px}
+@media (max-width:800px){main{flex-direction:column}#shoulder{width:100%;flex-basis:auto;position:static;max-height:60vh;margin:0 0 8px}#shoulderopen{position:static;writing-mode:horizontal-tb;margin:0 0 8px}}
+body.focus-on #shoulder,body.focus-on #shoulderopen{display:none!important}
+#duckwin{position:fixed;right:24px;bottom:56px;width:320px;max-width:calc(100vw - 32px);z-index:60;background:#d4d0c8;border:1px solid #808080;box-shadow:2px 3px 10px #0004;font:12px Tahoma,sans-serif;color:#000}
+#duckwin[hidden]{display:none!important}
+#duckwin .dw-head{display:flex;align-items:center;gap:4px;padding:4px 4px 4px 8px;background:linear-gradient(90deg,#1e3a8a,#7aa6d8);color:#fff;cursor:move;user-select:none;touch-action:none}
+#duckwin .dw-head strong{flex:1;font-size:12px}
+#duckwin .dw-head button{font:13px system-ui,sans-serif;line-height:1;width:24px;height:22px;padding:0;background:#e9e7e1;border:1px solid #808080;border-radius:3px;cursor:pointer;color:#000}
+#duckwin .dw-body{padding:8px;display:flex;flex-direction:column;gap:6px}
+#duckwin textarea{width:100%;height:110px;box-sizing:border-box;font:13px system-ui,sans-serif;padding:6px;border:1px solid #808080;background:#fff;resize:vertical}
+#duckwin .dw-send{align-self:flex-end;font:12px Tahoma,sans-serif;padding:4px 10px;background:#e9e7e1;border:1px solid #808080;border-radius:3px;cursor:pointer}
+#duckwin .dw-note{margin:0;color:#333;font-size:11px}
+#duckwin .dw-row{display:flex;justify-content:flex-end;gap:6px}
+#shoulder .dw-pane{font:13px system-ui,sans-serif}
+#shoulder .dw-pane p{margin:0 0 10px}
+#shoulder .dw-pane button{font:12px Tahoma,sans-serif;padding:4px 10px;background:#e9e7e1;border:1px solid #808080;border-radius:3px;cursor:pointer}
+#duckwin{width:360px}
+#shoulder #duckwin{position:static;width:auto;max-width:none;box-shadow:none;border:0;background:transparent;z-index:auto;padding:0}
+#shoulder #duckwin .dw-head{cursor:default;border-radius:0;padding:4px 6px}
+#shoulder #duckwin .dw-body{max-height:none;overflow:visible;padding:8px 6px}
+#shoulder #duckwin textarea{height:110px}
+#duckwin .dw-body{max-height:calc(100vh - 110px);overflow-y:auto}
+#duckwin #duckAnswer{height:220px;min-height:0;flex:none;overflow-y:auto;white-space:pre-wrap}
+#duckwin #duckText{min-height:0}
+#duckAnsWrap{display:flex;flex-direction:column;gap:6px}
+#duckAnsWrap[hidden]{display:none!important}
+#duckwin .dw-hist{display:flex;align-items:center;gap:6px;font:12px Tahoma,sans-serif}
+#duckwin .dw-hist label{white-space:nowrap}
+#duckwin #duckHistory{flex:1;min-width:0;font:12px system-ui,sans-serif;padding:3px}
+body.focus-on #duckwin{display:none!important}
+</style>
+<script id="shoulder-js">
+/* Side shoulder (left, one panel with tabs): Folders, Find and replace, Universal search, TabZot, Comments.
+   Hidden when the app loads; "Panels ›" opens it. The panels are moved, not copied, so their ids and logic stay. */
+(function () {
+  var TABS = [
+    { id: 'duck', label: 'Duck.ai', icon: '<circle cx="12" cy="12" r="8"/><path d="M9 10h.01M15 10h.01M9 14c1.5 1.5 4.5 1.5 6 0"/>' },
+    { id: 'folders', label: 'Folders', icon: '<rect x="7" y="3" width="11" height="14" rx="1"/><path d="M4 7v12a1 1 0 0 0 1 1h11"/>' },
+    { id: 'find', label: 'Find and replace', icon: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/>' },
+    { id: 'search', label: 'Universal search', icon: '<circle cx="14" cy="12" r="5.5"/><path d="M18 16l3.5 3.5M2 9h5M2 12h3M2 15h5"/>' },
+    { id: 'tabzot', label: 'TabZot', icon: '<path d="M4 5h4v14H4zM9 5h4v14H9z"/><path d="M15 6l4-1 2 13-4 1z"/>' },
+    { id: 'comments', label: 'Comments', icon: '<path d="M4 5h16v11H9l-5 4z"/>' }
+  ];
+  /* Dialogs inside the shoulder open inline, not as modal windows. */
+  var nativeShowModal = HTMLDialogElement.prototype.showModal;
+  HTMLDialogElement.prototype.showModal = function () {
+    if (this.closest && this.closest('#shoulder')) { if (!this.open) this.show(); return; }
+    return nativeShowModal.apply(this, arguments);
+  };
+  function init() {
+    var main = document.querySelector('main'), paper = document.getElementById('paper');
+    if (!main || !paper || document.getElementById('shoulder')) return;
+    var sh = document.createElement('section');
+    sh.id = 'shoulder'; sh.setAttribute('aria-label', 'Side panels'); sh.hidden = true;
+    /* A control inside the shoulder must never submit a form or follow a link and reload the page. */
+    sh.addEventListener('submit', function (e) { e.preventDefault(); }, true);
+    sh.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]:not([download])') : null;
+      if (a) e.preventDefault();
+    }, true);
+    var head = document.createElement('div'); head.className = 'sh-head';
+    var hide = document.createElement('button');
+    hide.type = 'button'; hide.id = 'shoulderhide'; hide.title = 'Hide the side panels';
+    hide.setAttribute('aria-label', 'Hide the side panels'); hide.textContent = '×';
+    var shTitle = document.createElement('span'); shTitle.className = 'sh-title'; shTitle.id = 'shoulderTitle';
+    head.append(shTitle, hide);
+    var bar = document.createElement('div'); bar.className = 'sh-tabs'; bar.setAttribute('role', 'tablist'); bar.setAttribute('aria-label', 'Side panels');
+    sh.append(head, bar);
+    var panes = {}, btns = {};
+    TABS.forEach(function (t) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.id = 'sh-tab-' + t.id; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', 'false'); b.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + t.icon + '</svg>'; b.title = t.label; b.setAttribute('aria-label', t.label);
+      b.addEventListener('click', function () { select(t.id); });
+      bar.append(b); btns[t.id] = b;
+      var p = document.createElement('div');
+      p.className = 'sh-pane'; p.id = 'sh-pane-' + t.id; p.setAttribute('role', 'tabpanel'); p.setAttribute('aria-labelledby', b.id); p.hidden = true;
+      sh.append(p); panes[t.id] = p;
+    });
+    function move(id, pane) { var n = document.getElementById(id); if (n) panes[pane].append(n); }
+    move('folderpanel', 'folders');
+    move('findreplacedialog', 'find');
+    move('searchalldialog', 'search');
+    move('tz-lib', 'tabzot');
+    move('tz-com', 'comments');
+    move('consistpanel', 'comments');
+    /* Duck.ai: a tab in the left shoulder. Send hands the question to the bridge extension (duck.ai answers in a background tab);
+       the answer comes back here. */
+    var DUCK_URL = 'https://duck.ai/';
+    var DUCK_QUERY = 'q';   /* if duck.ai does not take the question in the address, the clipboard still has it */
+    var duckWin = document.createElement('div');
+    duckWin.id = 'duckwin'; duckWin.setAttribute('role', 'region'); duckWin.setAttribute('aria-label', 'Duck.ai');
+    var duckHead = document.createElement('div'); duckHead.className = 'dw-head';
+    var duckTitle = document.createElement('strong'); duckTitle.textContent = 'Duck.ai';
+    duckHead.append(duckTitle);
+    var duckBody = document.createElement('div'); duckBody.className = 'dw-body';
+    var duckText = document.createElement('textarea'); duckText.id = 'duckText'; duckText.placeholder = 'Type your question or remark…'; duckText.setAttribute('aria-label', 'Your question for Duck.ai');
+    var duckSend = document.createElement('button'); duckSend.type = 'button'; duckSend.className = 'dw-send'; duckSend.textContent = 'Send to Duck.ai';
+    var duckNote = document.createElement('p'); duckNote.className = 'dw-note'; duckNote.id = 'duckNote';
+    duckNote.textContent = 'Send asks duck.ai in the background; the answer appears here. Ctrl+Enter sends.';
+    var duckAnsWrap = document.createElement('div'); duckAnsWrap.id = 'duckAnsWrap'; duckAnsWrap.hidden = true;
+    var duckAnsLabel = document.createElement('label'); duckAnsLabel.textContent = 'Answer'; duckAnsLabel.htmlFor = 'duckAnswer';
+    var duckAns = document.createElement('textarea'); duckAns.id = 'duckAnswer'; duckAns.readOnly = true; duckAns.setAttribute('aria-label', 'Duck.ai answer');
+    var duckCopy = document.createElement('button'); duckCopy.type = 'button'; duckCopy.className = 'dw-send'; duckCopy.textContent = 'Copy answer';
+    duckCopy.addEventListener('click', function () { if (navigator.clipboard) navigator.clipboard.writeText(duckAns.value).catch(function () {}); });
+    var duckInsert = document.createElement('button'); duckInsert.type = 'button'; duckInsert.className = 'dw-send'; duckInsert.id = 'duckInsert'; duckInsert.textContent = 'Insert into document';
+    /* Remember the caret before the button takes focus, as the highlight button does. */
+    var duckCaret = null;
+    duckInsert.addEventListener('pointerdown', function () { duckCaret = typeof editingCaret === 'function' ? editingCaret() : null; });
+    duckInsert.addEventListener('click', function () {
+      var text = duckAns.value;
+      if (!text) return;
+      if (typeof activeDoc !== 'function' || !activeDoc()) { duckNote.textContent = 'Open a document first.'; return; }
+      if (typeof busy !== 'undefined' && busy) return;
+      if (typeof isSource === 'function' && isSource()) { duckNote.textContent = 'Switch to the document view to insert the answer.'; return; }
+      var p = duckCaret || (typeof editingCaret === 'function' ? editingCaret() : null);
+      duckCaret = null;
+      if (!p || p.field !== 'body') { duckNote.textContent = 'Click in the document text where the answer should go, then press Insert.'; return; }
+      if (typeof commitPageInputs === 'function') commitPageInputs();
+      var s = p.start, e = p.end, clean = text.replace(/\r\n?/g, '\n');
+      editBody(s, e, clean);
+      var at = s + clean.length;
+      if (typeof focusPageCaret === 'function') focusPageCaret({ field: 'body', start: at, end: at });
+      duckNote.textContent = 'Answer inserted into the document.';
+    });
+    duckAnsWrap.append(duckAnsLabel, duckAns, duckCopy, duckInsert);
+    var duckHist = document.createElement('select'); duckHist.id = 'duckHistory'; duckHist.setAttribute('aria-label', 'Recent Duck.ai conversations');
+    var duckHistRow = document.createElement('div'); duckHistRow.className = 'dw-hist';
+    var duckHistLabel = document.createElement('label'); duckHistLabel.textContent = 'Recent (last 10)'; duckHistLabel.htmlFor = 'duckHistory';
+    duckHistRow.append(duckHistLabel, duckHist);
+    /* Clear: empties the current question and answer. The Recent list is kept. */
+    var duckClear = document.createElement('button'); duckClear.type = 'button'; duckClear.className = 'dw-send'; duckClear.id = 'duckClear'; duckClear.textContent = 'Clear';
+    duckClear.title = 'Clear the question and answer (Recent list is kept)';
+    duckClear.addEventListener('click', function () {
+      duckText.value = ''; duckAns.value = ''; duckAnsWrap.hidden = true;
+      duckNote.textContent = 'Cleared. Type a new question.'; duckText.focus();
+    });
+    var duckRow = document.createElement('div'); duckRow.className = 'dw-row';
+    duckRow.append(duckClear, duckSend);
+    duckBody.append(duckHistRow, duckText, duckRow, duckNote, duckAnsWrap);
+    /* The last 10 conversations are kept in this browser (local storage), newest first. */
+    var HIST_KEY = 'twDuckHistory';
+    function loadHist() { try { return JSON.parse(localStorage.getItem(HIST_KEY) || '[]') || []; } catch (err) { return []; } }
+    function saveHist(list) { try { localStorage.setItem(HIST_KEY, JSON.stringify(list.slice(0, 10))); } catch (err) { /* storage is off: keep only this session */ } }
+    var duckHistList = loadHist();
+    function renderHist() {
+      duckHist.replaceChildren();
+      var first = document.createElement('option');
+      first.value = ''; first.textContent = duckHistList.length ? 'Choose a conversation…' : 'No conversations yet';
+      duckHist.append(first);
+      duckHistList.forEach(function (item, i) {
+        var o = document.createElement('option');
+        o.value = String(i);
+        var when = item.t ? new Date(item.t).toLocaleString([], { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
+        o.textContent = (when ? when + ' · ' : '') + item.q.slice(0, 60);
+        duckHist.append(o);
+      });
+    }
+    renderHist();
+    duckHist.addEventListener('change', function () {
+      var item = duckHistList[Number(duckHist.value)];
+      if (!item) return;
+      duckText.value = item.q;
+      duckAns.value = item.a;
+      duckAnsWrap.hidden = false;
+      duckNote.textContent = 'Loaded from recent conversations.';
+      duckHist.value = '';
+    });
+    /* Answers from the Duck.ai bridge extension (duck.ai's text, passed by the extension). Ignored unless asked for. */
+    /* Keeps only duck.ai's answer: drops the "Duck.ai said" label, the model name line, an echoed question,
+       and repeated lines or paragraphs (Tabbed Word 2026.11.104). */
+    var twCleanDuck = function (answer, question) {
+      var norm = function (x) { return String(x).replace(/\s+/g, ' ').trim().toLowerCase(); };
+      var labelRe = /^duck\.ai said:?$/i;
+      var modelRe = /^(gpt|claude|llama|mistral|gemini|qwen|o\d)[\w .\-]{0,30}$/i;
+      var lines = String(answer || '').replace(/\r/g, '').split('\n').map(function (l) { return l.trim(); });
+      var i = 0;
+      while (i < lines.length && i < 5 && (lines[i] === '' || labelRe.test(lines[i]) || modelRe.test(lines[i]))) i++;
+      lines = lines.slice(i);
+      var qn = norm(question || '');
+      if (qn) {
+        var acc = '', k = 0;
+        while (k < lines.length && acc.length < qn.length) { acc += (acc ? ' ' : '') + norm(lines[k]); k++; }
+        if (acc === qn) lines = lines.slice(k);
+      }
+      var out = [], seen = {}, afterLabel = false;
+      lines.forEach(function (l) {
+        if (afterLabel && l !== '' && modelRe.test(l)) { afterLabel = false; return; }
+        afterLabel = labelRe.test(l);
+        if (afterLabel) return;
+        if (l === '') { if (out.length && out[out.length - 1] !== '') out.push(''); return; }
+        var key = norm(l);
+        if (key.length >= 8) { if (seen[key]) return; seen[key] = true; }
+        out.push(l);
+      });
+      var paras = out.join('\n').split(/\n\s*\n/), pseen = {}, keep = [];
+      paras.forEach(function (p) {
+        var key = norm(p);
+        if (!key) return;
+        if (key.length >= 8) { if (pseen[key]) return; pseen[key] = true; }
+        keep.push(p.trim());
+      });
+      return keep.join('\n\n').trim();
+    };
+    window.twCleanDuck = twCleanDuck;
+    window.addEventListener('message', function (e) {
+      if (e.source !== window || !e.data || e.data.twDuckAnswer !== true) return;
+      var q0 = String(e.data.question || duckText.value || '').trim();
+      duckAns.value = twCleanDuck(String(e.data.answer || ''), q0);
+      duckAnsWrap.hidden = false;
+      duckNote.textContent = 'Answer received from duck.ai.';
+      var q = q0;
+      if (q) { duckHistList = [{ q: q, a: duckAns.value, t: Date.now() }].concat(duckHistList.filter(function (h) { return h.q !== q; })).slice(0, 10); saveHist(duckHistList); renderHist(); }
+    });
+    duckWin.append(duckHead, duckBody);
+    panes.duck.append(duckWin);
+    /* Send: the Duck.ai bridge opens duck.ai in a background tab, so the question is answered without switching tabs.
+       Without the bridge the question is copied and the window says what to do. */
+    function openDuck(text) {
+      var q = (text || '').trim();
+      if (!q) { duckNote.textContent = 'Type a question first.'; return; }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(q).catch(function () {});
+      var acked = false;
+      function onAck(e) {
+        if (e.source !== window || !e.data || e.data.twDuckAck !== true) return;
+        acked = true;
+        window.removeEventListener('message', onAck);
+        duckNote.textContent = 'Working: duck.ai is answering in the background. The answer will appear here.';
+      }
+      window.addEventListener('message', onAck);
+      window.postMessage({ twDuckAsk: true, question: q }, '*');
+      duckNote.textContent = 'Sending to duck.ai…';
+      setTimeout(function () {
+        window.removeEventListener('message', onAck);
+        if (!acked) duckNote.textContent = 'The Tabbed Word Duck.ai bridge did not answer. Install or update the extension, then reload this page. The question is copied, so you can also open duck.ai and paste it (Ctrl+V).';
+      }, 1500);
+    }
+    duckSend.addEventListener('click', function () { openDuck(duckText.value); });
+    duckText.addEventListener('keydown', function (e) { if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) { e.preventDefault(); openDuck(duckText.value); } });
+
+    main.insertBefore(sh, main.firstChild);
+
+    var opener = document.createElement('button');
+    opener.type = 'button'; opener.id = 'shoulderopen'; opener.title = 'Show the side panels';
+    opener.setAttribute('aria-label', 'Show the side panels'); opener.textContent = 'Panels ›';
+    main.insertBefore(opener, paper);
+
+    var current = 'duck';
+    function select(id) {
+      current = id;
+      shTitle.textContent = (TABS.filter(function (t) { return t.id === id; })[0] || {}).label || '';
+      TABS.forEach(function (t) {
+        var on = t.id === id;
+        btns[t.id].setAttribute('aria-selected', String(on));
+        btns[t.id].tabIndex = on ? 0 : -1;
+        panes[t.id].hidden = !on;
+      });
+      if (id === 'find') { var f = document.getElementById('findreplace'); if (f) f.click(); }
+      if (id === 'search') { var s = document.getElementById('searchall'); if (s) s.click(); }
+      /* TabZot and Comments are separate panes now, so each one shows its own part whenever its tab is chosen. */
+      if (id === 'tabzot') { var lib = document.getElementById('tz-lib'); if (lib) lib.hidden = false; }
+      if (id === 'comments') {
+        var com = document.getElementById('tz-com');
+        var src = typeof isSource === 'function' && isSource();
+        if (com && !src) com.hidden = false;
+      }
+    }
+    function openShoulder(id) { sh.hidden = false; opener.hidden = true; select(id || current); }
+    function closeShoulder() { sh.hidden = true; opener.hidden = false; }
+    hide.addEventListener('click', closeShoulder);
+    opener.addEventListener('click', function () { openShoulder(current); });
+    select('duck');
+    var wideScreen = window.matchMedia('(min-width: 801px)').matches;
+    sh.hidden = !wideScreen; opener.hidden = wideScreen;
+
+    /* Ctrl+F / Ctrl+H open the Find tab; the Open folder button shows the Folders tab. */
+    document.addEventListener('keydown', function (e) {
+      if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return;
+      var k = e.key.toLowerCase();
+      if ((k !== 'f' && k !== 'h') || document.body.classList.contains('focus-on')) return;
+      if (typeof activeDoc === 'function' && !activeDoc()) return;
+      openShoulder('find');
+    }, true);
+    var of = document.getElementById('openfolder');
+    if (of) of.addEventListener('click', function () { openShoulder('folders'); });
+
+    /* The Comments button and New comment open the Comments tab. */
+    var cb = document.getElementById('commentsbutton');
+    if (cb) cb.addEventListener('click', function () {
+      setTimeout(function () {
+        var d = typeof activeDoc === 'function' ? activeDoc() : null;
+        if (d && d.showComments) openShoulder('comments');
+      }, 0);
+    });
+    var nc = document.getElementById('newcomment');
+    if (nc) nc.addEventListener('click', function () { openShoulder('comments'); });
+
+    /* Consistency findings open the Comments tab where they are listed. */
+    var cp = document.getElementById('consistpanel');
+    if (cp) new MutationObserver(function () { if (!cp.hidden) openShoulder('comments'); })
+      .observe(cp, { attributes: true, attributeFilter: ['hidden'] });
+
+    window.twShoulder = { open: openShoulder, close: closeShoulder, select: select };
+  }
+  document.addEventListener('DOMContentLoaded', init);
+})();
+</script>
+<style id="tw-word365-css">
+:root{--tw-bar:#f3f3f3;--tw-ribbon:#f9f9f9;--tw-line:#d6d6d6;--tw-ink:#242424;--tw-ink2:#5c5c5c;--tw-accent:#185abd;--tw-canvas:#e4e4e4;--tw-hover:#e8e8e8;--tw-press:#d8d8d8;--tw-sel:#dce8fb;--tw-field:#ffffff}
+html[data-theme="dark"]{--tw-bar:#2c2c2c;--tw-ribbon:#333333;--tw-line:#474747;--tw-ink:#f2f2f2;--tw-ink2:#b5b5b5;--tw-accent:#7fb2ff;--tw-canvas:#1f1f1f;--tw-hover:#3e3e3e;--tw-press:#4b4b4b;--tw-sel:#2e4262;--tw-field:#3a3a3a}
+body>header,#appstate,#officemenu,#officemenu-pop,#quickrow,#toolbar,#ribbon-tabs{display:none!important}
+#tw-chrome{position:relative;z-index:50;background:var(--tw-bar);border-bottom:1px solid var(--tw-line);font:13px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;color:var(--tw-ink)}
+#tw-titlebar{display:grid;grid-template-columns:1fr minmax(0,auto) 1fr;align-items:center;gap:8px;height:40px;padding:0 10px}
+.tw-qat{display:flex;align-items:center;gap:2px;justify-self:start}
+.tw-titlecenter{justify-self:center;max-width:44vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;font-weight:600;color:var(--tw-ink)}
+.tw-titleright{justify-self:end;display:flex;align-items:center;gap:8px;min-width:0}
+.tw-tb{width:28px;height:28px;display:inline-grid;place-items:center;border:0;border-radius:6px;background:transparent;color:var(--tw-ink);cursor:pointer;padding:0}
+.tw-tb svg,.tw-pill svg,.tw-big svg,.tw-sm svg{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tw-tb svg{width:18px;height:18px}
+.tw-tb:hover:not(:disabled){background:var(--tw-hover)}
+.tw-tb:disabled{opacity:.35;cursor:default}
+.tw-pill{height:28px;display:inline-flex;align-items:center;gap:6px;padding:0 10px;border:1px solid var(--tw-line);border-radius:6px;background:var(--tw-field);color:var(--tw-ink);font:13px system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.tw-pill svg{width:16px;height:16px}
+.tw-pill:hover:not(:disabled){background:var(--tw-hover)}
+.tw-pill.tw-share{background:var(--tw-accent);border-color:var(--tw-accent);color:#fff}
+.tw-pill.tw-share:hover{background:var(--tw-accent);filter:brightness(1.08)}
+.tw-pill.tw-search{min-width:150px;color:var(--tw-ink2)}
+#tw-tabrow{display:flex;align-items:stretch;gap:2px;height:32px;padding:0 8px;overflow-x:auto;scrollbar-width:none}
+#tw-tabrow::-webkit-scrollbar{display:none}
+.tw-tab{position:relative;flex:none;border:0;background:transparent;padding:0 11px;font:500 13px system-ui,sans-serif;color:var(--tw-ink);cursor:pointer;white-space:nowrap;border-radius:4px 4px 0 0}
+.tw-tab:hover{background:var(--tw-hover)}
+.tw-tab[aria-selected="true"]{color:var(--tw-accent);font-weight:600}
+.tw-tab[aria-selected="true"]::after{content:"";position:absolute;left:8px;right:8px;bottom:0;height:2px;border-radius:2px;background:var(--tw-accent)}
+.tw-tab[aria-expanded="true"]{background:var(--tw-hover)}
+#tw-ribbon{background:var(--tw-ribbon);border-top:1px solid var(--tw-line);border-bottom:1px solid var(--tw-line);overflow-x:auto;overflow-y:hidden;scrollbar-width:thin}
+.tw-panel{display:flex;align-items:stretch;min-height:98px;padding:4px 4px 0}
+.tw-panel[hidden]{display:none}
+.tw-group{display:flex;flex-direction:column;justify-content:space-between;padding:3px 9px 0;border-right:1px solid var(--tw-line);flex:none}
+.tw-gbody{display:flex;align-items:stretch;gap:6px;height:72px}
+.tw-col{display:flex;flex-direction:column;justify-content:center;gap:3px;flex:none}
+.tw-gname{font-size:11px;color:var(--tw-ink2);text-align:center;white-space:nowrap;padding:2px 0 3px}
+.tw-big{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:58px;height:68px;padding:4px 6px;border:1px solid transparent;border-radius:5px;background:transparent;color:var(--tw-ink);font:12px/1.15 system-ui,sans-serif;text-align:center;cursor:pointer}
+.tw-big svg{width:24px;height:24px}
+.tw-sm{display:inline-flex;align-items:center;gap:5px;height:23px;padding:0 6px;border:1px solid transparent;border-radius:4px;background:transparent;color:var(--tw-ink);font:12px system-ui,sans-serif;white-space:nowrap;cursor:pointer}
+.tw-sm svg{width:16px;height:16px;flex:none}
+.tw-sm.tw-ico{width:26px;justify-content:center;padding:0}
+.tw-big:hover:not(:disabled),.tw-sm:hover:not(:disabled){background:var(--tw-hover);border-color:var(--tw-line)}
+.tw-big:active:not(:disabled),.tw-sm:active:not(:disabled){background:var(--tw-press)}
+.tw-big[aria-pressed="true"],.tw-sm[aria-pressed="true"]{background:var(--tw-sel);border-color:#9fbde8}
+.tw-big:disabled,.tw-sm:disabled{opacity:.4;cursor:default}
+.tw-selwrap{display:flex;align-items:center;height:72px}
+.tw-selwrap select{height:24px;min-width:150px;max-width:190px;border:1px solid #bdbdbd;border-radius:3px;background:var(--tw-field);color:var(--tw-ink);font:12px system-ui,sans-serif;padding:0 4px}
+#tw-file-pop{position:fixed;z-index:200;min-width:280px;max-height:70vh;overflow:auto;background:#fff;color:#242424;border:1px solid #c8c8c8;border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:4px;display:flex;flex-direction:column}
+#tw-file-pop button{display:flex;justify-content:space-between;gap:24px;border:0;background:transparent;text-align:left;padding:6px 10px;font:13px system-ui,sans-serif;color:inherit;border-radius:4px;cursor:pointer}
+#tw-file-pop button:hover{background:var(--tw-accent);color:#fff}
+#tw-file-pop .k{opacity:.6;font-size:12px}
+#tw-file-pop hr{border:0;height:1px;background:#e1e1e1;margin:4px 6px}
+html[data-theme="dark"] #tw-file-pop{background:#2b2b2b;color:#eee;border-color:#474747}
+#tw-chrome #tabs{display:flex;align-items:flex-end;gap:4px;min-height:28px;padding:3px 8px 0!important;background:var(--tw-bar)!important;border-top:1px solid var(--tw-line);position:static!important;top:auto!important;overflow-x:auto;margin:0}
+body.focus-on #tw-chrome{display:none!important}
+main{margin-top:0!important;background:var(--tw-canvas)!important}
+body{background:var(--tw-canvas)!important}
+section.paper{background:transparent!important;box-shadow:none!important}
+#statusbar{background:var(--tw-bar)!important;color:var(--tw-ink)!important;border-top:1px solid var(--tw-line)!important;box-shadow:none!important;height:26px!important;font-size:12px!important}
+#statusbar .sb-btn:hover{background:var(--tw-hover)!important}
+#docpages:has(> .empty-state){display:flex!important;flex-direction:column;justify-content:center;align-items:center;min-height:calc(100vh - var(--chrome-h,200px) - 26px - 56px)}
+#docpages > .empty-state{margin:0!important;padding:24px 16px!important;width:100%;display:block!important;text-align:center!important;color:var(--tw-ink)!important;font:15px/1.5 system-ui,sans-serif!important;background:transparent!important}
+#emptychoices{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px}
+#emptychoices button{height:36px;min-width:150px;padding:0 16px;border:1px solid #b7b7b7;border-radius:4px;background:var(--tw-field);color:var(--tw-ink);font:14px system-ui,sans-serif;cursor:pointer}
+#emptychoices button:hover{background:var(--tw-hover)}
+#emptychoices button.primary{background:var(--tw-accent);border-color:var(--tw-accent);color:#fff}
+@media (min-width:801px){
+  #tw-chrome{position:sticky!important;top:0}
+  main{align-items:stretch!important}
+  #shoulder{position:sticky!important;top:var(--chrome-h,200px)!important;flex:0 0 300px!important;width:300px!important;height:calc(100vh - var(--chrome-h,200px) - 26px)!important;max-height:none!important;align-self:flex-start!important;margin:0!important;border:0!important;border-right:1px solid var(--tw-line)!important;border-radius:0!important;box-shadow:none!important;background:var(--tw-bar)!important;overflow:hidden;display:flex!important;flex-direction:column}
+  #shoulder .sh-head{display:flex;align-items:center;justify-content:space-between;padding:6px 8px 4px 12px;background:var(--tw-bar)}
+  #shoulder .sh-title{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--tw-ink2)}
+  #shoulder .sh-title::before{content:"\25BE\00A0"}
+  #shoulder .sh-head button{border:0!important;background:transparent!important;font-size:16px!important;line-height:1;width:26px;height:26px;border-radius:4px;color:var(--tw-ink2)!important}
+  #shoulder .sh-head button:hover{background:var(--tw-hover)!important}
+  #shoulder .sh-tabs{display:flex!important;flex-wrap:nowrap!important;gap:2px;padding:4px 6px;background:var(--tw-bar);border-bottom:1px solid var(--tw-line)}
+  #shoulder .sh-tabs button{flex:1 1 0;min-width:0;height:34px;padding:0!important;border:0!important;border-radius:5px!important;background:transparent!important;display:grid;place-items:center;color:var(--tw-ink)}
+  #shoulder .sh-tabs button:hover{background:var(--tw-hover)!important}
+  #shoulder .sh-tabs button[aria-selected="true"]{background:var(--tw-field)!important;box-shadow:inset 0 0 0 1px #bdbdbd}
+  #shoulder .sh-tabs button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  #shoulder .sh-pane{flex:1 1 auto;min-height:0;overflow:auto;background:var(--tw-field);color:var(--tw-ink);padding:10px 12px;border:0}
+  #shoulderopen{top:8px}
+}
+@media (max-width:800px){
+  #tw-titlebar{height:auto;min-height:40px;grid-template-columns:auto 1fr;gap:4px;padding:0 6px}
+  .tw-titlecenter{display:none}
+  .tw-pill.tw-search,#tw-titlebar .tw-qat .tw-extra{display:none}
+  .tw-titleright{justify-self:end;gap:4px}
+  #tw-chrome{position:relative}
+}
+</style>
+<script id="tw-word365-js">
+/* Tabbed Word 2026.11.95: Word 365 layout. A title bar, a tab row (File, Home, Insert, Layout, References, Review, View, Help),
+   a ribbon whose buttons run the same controls as before (each fires the original control by its id, or the menu action),
+   and the document tabs under the ribbon. The original controls stay in the page, hidden, so nothing is removed. */
+(function () {
+  if (window.__twWord365) return;
+  window.__twWord365 = true;
+  var body = document.body;
+  function el(id) { return document.getElementById(id); }
+  function svg(p) { return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + p + '</svg>'; }
+  var I = {
+    new: '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/>',
+    open: '<path d="M3 7h6l2 2h10v9H3z"/>',
+    save: '<path d="M5 3h11l3 3v13H5z"/><path d="M8 3v5h7V3M8 21v-7h8v7"/>',
+    undo: '<path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-4"/>',
+    redo: '<path d="M15 14l5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h4"/>',
+    print: '<path d="M7 9V3h10v6"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+    share: '<path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 12v8h12v-8"/>',
+    comment: '<path d="M4 5h16v11H9l-5 4z"/>',
+    search: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/>',
+    searchall: '<circle cx="14" cy="12" r="5.5"/><path d="M18 16l3.5 3.5M2 9h5M2 12h3M2 15h5"/>',
+    paste: '<rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V2.5h6V4M9 10h6M9 14h6"/>',
+    cut: '<circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8 7.5L19 18M8 16.5L19 6"/>',
+    copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>',
+    font: '<path d="M3 19L9 5l6 14M5.5 14h7"/><path d="M15 19l3-8 3 8M16 16.5h4"/>',
+    eraser: '<path d="M4 17l8-9 7 7-5 5H8z"/><path d="M11 8l7 7M4 21h16"/>',
+    bold: '<path d="M6 4h8a4 4 0 0 1 0 8H6zM6 12h9a4 4 0 0 1 0 8H6z"/>',
+    italic: '<path d="M19 4h-9M14 20H5M15 4L9 20"/>',
+    underline: '<path d="M7 4v7a5 5 0 0 0 10 0V4"/><path d="M5 20h14"/>',
+    hl: '<path d="M8 6l9 9-4.5 4.5H7L3.5 16.5z"/><path d="M3 20.5h9"/>',
+    bullets: '<path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4.5" cy="6" r="1.2" fill="currentColor"/><circle cx="4.5" cy="12" r="1.2" fill="currentColor"/><circle cx="4.5" cy="18" r="1.2" fill="currentColor"/>',
+    numbers: '<path d="M9 6h12M9 12h12M9 18h12"/><path d="M3.5 4.5h1.5v4M3 13.5c.5-1 2.5-1 2.5.3 0 1.4-2.5 1.6-2.5 3.2h2.6M3 18l1.5 1.2"/>',
+    alL: '<path d="M3 6h18M3 10h12M3 14h18M3 18h12"/>',
+    alC: '<path d="M3 6h18M7 10h10M3 14h18M7 18h10"/>',
+    alR: '<path d="M3 6h18M9 10h12M3 14h18M9 18h12"/>',
+    alJ: '<path d="M3 6h18M3 10h18M3 14h18M3 18h18"/>',
+    mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+    pagebreak: '<path d="M3 12h18" stroke-dasharray="2 2"/><path d="M6 4h12v5H6zM6 15h12v5H6z"/>',
+    table: '<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18M3 15h18M9 4v16M15 4v16"/>',
+    image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/>',
+    link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
+    header: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 8h16M7 5.5h6"/>',
+    footer: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M4 16h16M7 18.5h6"/>',
+    pagenum: '<path d="M9 4L7 20M17 4l-2 16M4 9h16M3 15h16"/>',
+    cols: '<rect x="3" y="5" width="5" height="14" rx="1"/><rect x="9.5" y="5" width="5" height="14" rx="1"/><rect x="16" y="5" width="5" height="14" rx="1"/>',
+    para: '<path d="M13 4v16M17 4v16M19 4H9.5a4.5 4.5 0 0 0 0 9H13"/>',
+    toc: '<path d="M4 6h3M9 6h11M4 11h3M9 11h11M4 16h3M9 16h8"/>',
+    footnote: '<text x="12" y="17" text-anchor="middle" font-size="13" fill="currentColor" stroke="none" font-family="serif">1</text><path d="M3 5h12M3 9h8"/>',
+    endnote: '<text x="12" y="17" text-anchor="middle" font-size="13" fill="currentColor" stroke="none" font-family="serif">i</text><path d="M3 5h12M3 9h8"/>',
+    noteremove: '<path d="M4 5h16M4 10h10M4 15h7"/><path d="M15 14l6 6M21 14l-6 6"/>',
+    cite: '<path d="M4 5h4v14H4zM9 5h4v14H9z"/><path d="M15 6l4-1 2 13-4 1z"/>',
+    spell: '<text x="12" y="11" text-anchor="middle" font-size="8" fill="currentColor" stroke="none" font-family="sans-serif">abc</text><path d="M4 18l3 3 6-6"/>',
+    consistency: '<path d="M4 6h16M4 12h10M4 18h13"/><path d="M16 15l2 2 4-4"/>',
+    check: '<path d="M5 12l4 4 10-10"/>',
+    trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
+    track: '<path d="M4 20l4-1L19 8l-3-3L5 16z"/>',
+    reject: '<path d="M6 6l12 12M18 6L6 18"/>',
+    continuous: '<rect x="5" y="3" width="14" height="18" rx="1"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+    outline: '<path d="M4 6h4M4 12h4M4 18h4M11 6h9M13 12h7M13 18h7"/>',
+    sidebyside: '<rect x="3" y="4" width="8" height="16" rx="1"/><rect x="13" y="4" width="8" height="16" rx="1"/>',
+    focus: '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5"/>',
+    fullscreen: '<path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/>',
+    para2: '<rect x="4" y="3" width="16" height="18" rx="2"/><rect x="6.5" y="8" width="11" height="8" rx="3" fill="currentColor" fill-opacity=".22"/><path d="M8.5 11.5h7M8.5 13.5h4.5"/>',
+    zoomin: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6"/>',
+    zoomout: '<circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21M7.5 10.5h6"/>',
+    zoom100: '<rect x="2.5" y="6" width="19" height="12" rx="2"/><text x="12" y="15" text-anchor="middle" font-size="7" fill="currentColor" stroke="none">100%</text>',
+    left: '<path d="M14 7l-5 5 5 5"/>',
+    right: '<path d="M10 7l5 5-5 5"/>',
+    swap: '<path d="M7 7h12l-3-3M17 17H5l3 3"/>',
+    keyboard: '<rect x="2.5" y="6" width="19" height="12" rx="2"/><path d="M6 10h.5M10 10h.5M14 10h.5M18 10h.5M7 14h10"/>',
+    backup: '<circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
+    gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
+    pagenumbers: '<path d="M9 4L7 20M17 4l-2 16M4 9h16M3 15h16"/>',
+    opendrive: '<path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z"/><path d="M12 10.5v5m0 0-2.2-2.2M12 15.5l2.2-2.2"/>',
+    savedrive: '<path d="M7 18h10.5a4 4 0 0 0 .6-7.96A6 6 0 0 0 6.6 9.2 4.8 4.8 0 0 0 7 18z"/><path d="M12 15.5v-5m0 0-2.2 2.2M12 10.5l2.2 2.2"/>',
+    saveall: '<path d="M4 4h8l3 3v3"/><path d="M4 4v10h8"/><path d="M9 9h8l3 3v8H9z"/>',
+    saveas: '<path d="M5 3h11l3 3v7"/><path d="M5 3v18h7"/><path d="M8 3v5h7V3"/><path d="M13.5 21l1-3.5 5.5-5.5 2.5 2.5-5.5 5.5z"/>',
+    discardall: '<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>',
+    emailall: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+    closenosave: '<path d="M14 4H6v16h8"/><path d="M10 12h10M17 9l3 3-3 3"/>'
+  };
+  /* Commands: a control id (the original button, fired), or ['Menu', 'Label'] (the menu item, which may run an action). */
+  function menuItem(menu, label) {
+    var m = (window.twMenus || []).filter(function (q) { return q.name === menu; })[0];
+    if (!m || !m.items) return null;
+    return m.items.filter(function (q) { return q.label === label; })[0] || null;
+  }
+  function fire(id) {
+    var b = el(id);
+    if (!b || b.disabled) return;
+    if (b.type === 'checkbox') { b.checked = !b.checked; b.dispatchEvent(new Event('change', { bubbles: true })); return; }
+    b.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true }));
+    b.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+    b.click();
+  }
+  function run(x) {
+    if (typeof x === 'string') { fire(x); return; }
+    var it = menuItem(x[0], x[1]);
+    if (!it) return;
+    if (it.act) it.act(); else if (it.id) fire(it.id);
+  }
+  /* Keeps each ribbon button's disabled and pressed state in step with the original control. */
+  var pairs = [];
+  function makeBtn(s) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = s.cls;
+    b.title = s.t;
+    b.setAttribute('aria-label', s.t);
+    var lbl = document.createElement('span');
+    lbl.className = 'tw-lbl';
+    lbl.textContent = s.t;
+    b.innerHTML = s.i ? svg(I[s.i] || '') : '';
+    if (s.cls.indexOf('tw-ico') === -1 && s.cls.indexOf('tw-tb') === -1) b.append(lbl);
+    b.addEventListener('click', function () {
+      run(s.x);
+      /* The table-size picker is placed under its (hidden) original button; move it under the ribbon button instead */
+      if (s.x === 'instable') requestAnimationFrame(function () {
+        var box = el('twpicker'), r = b.getBoundingClientRect();
+        if (box) { box.style.left = Math.max(8, Math.min(r.left, window.innerWidth - 260)) + 'px'; box.style.top = (r.bottom + 6) + 'px'; }
+      });
+    });
+    if (typeof s.x === 'string') pairs.push({ btn: b, id: s.x, lbl: lbl, live: !!s.live });
+    return b;
+  }
+  function B(t, i, x) { return { t: t, i: i, x: x, cls: 'tw-big' }; }
+  function S(t, i, x) { return { t: t, i: i, x: x, cls: 'tw-sm' }; }
+  function N(t, i, x) { return { t: t, i: i, x: x, cls: 'tw-sm tw-ico' }; }
+  function T(t, x) { return { t: t, i: null, x: x, cls: 'tw-sm' }; }
+  function Q(sel) { return { sel: sel }; }
+  function G(name, cols) { return { name: name, cols: cols }; }
+  function selWrap(id) {
+    var w = document.createElement('div');
+    w.className = 'tw-selwrap';
+    var s = el(id);
+    if (s) {
+      w.append(s);
+      if (!s.__twRemember) {
+        s.__twRemember = true;
+        s.addEventListener('mousedown', function () { if (typeof rememberRichCaret === 'function') rememberRichCaret(); });
+      }
+    }
+    return w;
+  }
+  function renderGroup(g) {
+    var wrap = document.createElement('div'); wrap.className = 'tw-group';
+    var bodyEl = document.createElement('div'); bodyEl.className = 'tw-gbody';
+    g.cols.forEach(function (items) {
+      var col = document.createElement('div'); col.className = 'tw-col';
+      items.forEach(function (s) { col.append(s.sel ? selWrap(s.sel) : makeBtn(s)); });
+      bodyEl.append(col);
+    });
+    var name = document.createElement('div'); name.className = 'tw-gname'; name.textContent = g.name;
+    wrap.append(bodyEl, name);
+    return wrap;
+  }
+  var PANELS = {
+    home: [
+      G('Clipboard', [[B('Paste', 'paste', ['Edit', 'Paste'])], [S('Cut', 'cut', ['Edit', 'Cut']), S('Copy', 'copy', ['Edit', 'Copy'])]]),
+      G('Font', [[S('Font…', 'font', ['Format', 'Font…']), S('Clear Styles', 'eraser', ['Format', 'Clear Styles'])],
+                 [N('Bold', 'bold', 'boldtext'), N('Italic', 'italic', 'italictext'), N('Underline', 'underline', 'underlinetext')],
+                 [N('Highlight', 'hl', 'hltext')]]),
+      G('Paragraph', [[N('Bullets', 'bullets', 'bulletlist'), N('Numbering', 'numbers', 'numberlist')],
+                      [N('Align left', 'alL', 'alignleft'), N('Centre', 'alC', 'aligncenter')],
+                      [N('Align right', 'alR', 'alignright'), N('Justify', 'alJ', 'alignjustify')]]),
+      G('Styles', [[Q('paragraphstyle')]]),
+      G('Editing', [[B('Find', 'search', 'findreplace')], [S('Search all', 'searchall', 'searchall')]]),
+      G('Voice', [[B('Dictate', 'mic', ['Tools', 'Start dictation'])]])
+    ],
+    insert: [
+      G('Pages', [[B('Page break', 'pagebreak', ['Insert', 'Page break'])]]),
+      G('Tables', [[B('Table', 'table', 'instable')]]),
+      G('Illustrations', [[B('Image', 'image', 'insimage')]]),
+      G('Links', [[B('Hyperlink', 'link', ['Insert', 'Hyperlink…'])]]),
+      G('Header & Footer', [[B('Header', 'header', 'inshead')], [B('Footer', 'footer', 'insfoot')], [B('Page number', 'pagenumbers', 'pagenumbers')]]),
+      G('Comments', [[B('New comment', 'comment', 'newcomment')]])
+    ],
+    layout: [
+      G('Page Setup', [[Q('pagesize')], [T('A4', 'viewa4'), T('Letter', 'viewletter')], [T('Landscape', 'viewlandscape')]]),
+      G('Columns', [[B('Columns', 'cols', ['Format', 'Columns…'])]]),
+      G('Paragraph', [[B('Paragraph', 'para', ['Format', 'Paragraph…'])]])
+    ],
+    references: [
+      G('Table of Contents', [[B('Table of contents', 'toc', ['Insert', 'Table of contents'])]]),
+      G('Footnotes', [[B('Footnote', 'footnote', 'insertnote')], [S('Endnote', 'endnote', 'insend'), S('Remove', 'noteremove', 'insremnote')]]),
+      G('Citations', [[B('Insert citation', 'cite', ['Tools', 'TabZot citations'])]])
+    ],
+    review: [
+      G('Proofing', [[B('Spelling & Grammar', 'spell', ['Tools', 'Spelling and Grammar…'])], [S('Consistency', 'consistency', 'consistency')]]),
+      G('Comments', [[B('New comment', 'comment', 'newcomment')], [S('Resolve', 'check', 'rescomment'), S('Resolve all', 'check', 'resallcomments')], [S('Delete all', 'trash', 'delallcomments')]]),
+      G('Tracking', [[B('Track changes', 'track', ['Tools', 'Track changes'])], [S('Accept', 'check', ['Tools', 'Accept change at cursor']), S('Reject', 'reject', ['Tools', 'Reject change at cursor'])], [S('Accept all', 'check', ['Tools', 'Accept all changes']), S('Reject all', 'reject', ['Tools', 'Reject all changes'])]])
+    ],
+    view: [
+      G('Views', [[B('Continuous', 'continuous', 'viewcontinuous')], [B('Outline', 'outline', 'outlineview')], [B('Side by side', 'sidebyside', 'sidebyside')], [S('Focus', 'focus', 'focusview'), S('Full screen', 'fullscreen', 'fullscreenview'), S('Paragraph view', 'para2', 'paragraphview')]]),
+      G('Zoom', [[B('Zoom in', 'zoomin', ['View', 'Zoom in'])], [B('Zoom out', 'zoomout', ['View', 'Zoom out'])], [B('100%', 'zoom100', 'zoom100')]]),
+      G('Reading', [[Q('readfont')], [Q('readsize')]]),
+      G('Window', [[B('Tab left', 'left', 'moveleft')], [B('Tab right', 'right', 'moveright')], [B('Swap sides', 'swap', 'swapsides')]])
+    ],
+    help: [
+      G('Help', [[B('Shortcuts', 'keyboard', 'aboutshortcuts')], [B('Backups & drafts', 'backup', 'aboutbackups')], [B('About', 'info', 'aboutinfo')], [B('Settings', 'gear', ['View', 'Settings…'])]])
+    ]
+  };
+  /* Close without saving: the active document, with the app's own confirmation if it has unsaved changes */
+  window.twCloseNoSave = function () {
+    if (typeof busy !== 'undefined' && busy) return;
+    if (typeof activeDoc !== 'function' || !activeDoc()) return;
+    closeDoc(activeDoc().id);
+  };
+  var fileMenu = (window.twMenus || []).filter(function (q) { return q.name === 'File'; })[0];
+  if (fileMenu && !fileMenu.items.some(function (it) { return it.label === 'Close without saving'; })) {
+    var at = fileMenu.items.map(function (it) { return it.id; }).indexOf('saveall');
+    fileMenu.items.splice(at + 1, 0, { label: 'Close without saving', act: function () { window.twCloseNoSave(); } });
+  }
+  var TABS = [['home', 'Home'], ['insert', 'Insert'], ['layout', 'Layout'], ['references', 'References'], ['review', 'Review'], ['view', 'View'], ['help', 'Help']];
+  function TB(t, i, x) { return { t: t, i: i, x: x, cls: 'tw-tb' }; }
+
+  /* Build the chrome */
+  var chrome = document.createElement('div'); chrome.id = 'tw-chrome';
+  var tbar = document.createElement('div'); tbar.id = 'tw-titlebar';
+  var qat = document.createElement('div'); qat.className = 'tw-qat';
+  [TB('Undo', 'undo', ['Edit', 'Undo']), TB('Redo', 'redo', ['Edit', 'Redo']),
+   TB('New', 'new', ['File', 'Create .docx']), TB('Open', 'open', 'open'),
+   TB('Open from Google Drive', 'opendrive', 'opendrive'), TB('Save to Google Drive', 'savedrive', 'savedrive'),
+   TB('Save', 'save', 'save'), TB('Save As…', 'saveas', 'saveas'), TB('Close without saving', 'closenosave', ['File', 'Close without saving']),
+   TB('Discard all', 'discardall', 'discardall'), TB('Email', 'emailall', 'emailall')
+  ].forEach(function (s) {
+    if (['opendrive', 'savedrive', 'closenosave', 'discardall', 'emailall'].indexOf(s.x) !== -1 || (Array.isArray(s.x) && s.x[1] === 'Close without saving')) s.cls += ' tw-extra';
+    qat.append(makeBtn(s));
+  });
+  var tc = document.createElement('div'); tc.className = 'tw-titlecenter';
+  var fn = el('filename'); if (fn) tc.append(fn);
+  var tr = document.createElement('div'); tr.className = 'tw-titleright';
+  var ua = el('updateapp'); if (ua) tr.append(ua);
+  tr.append(
+    makeBtn({ t: 'Comments', i: 'comment', x: 'commentsbutton', cls: 'tw-pill', live: true }),
+    makeBtn({ t: 'Share', i: 'share', x: 'devicesave', cls: 'tw-pill tw-share' }),
+    makeBtn({ t: 'Search', i: 'search', x: 'searchall', cls: 'tw-pill tw-search' })
+  );
+  tbar.append(qat, tc, tr);
+
+  var tabrow = document.createElement('div'); tabrow.id = 'tw-tabrow'; tabrow.setAttribute('role', 'tablist'); tabrow.setAttribute('aria-label', 'Ribbon tabs');
+  var fileTab = document.createElement('button');
+  fileTab.type = 'button'; fileTab.className = 'tw-tab'; fileTab.id = 'tw-tab-file';
+  fileTab.textContent = 'File'; fileTab.setAttribute('aria-haspopup', 'menu'); fileTab.setAttribute('aria-expanded', 'false');
+  tabrow.append(fileTab);
+  var tabBtns = {};
+  TABS.forEach(function (t) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'tw-tab'; b.setAttribute('role', 'tab');
+    b.textContent = t[1]; b.setAttribute('aria-selected', String(t[0] === 'home'));
+    tabrow.append(b); tabBtns[t[0]] = b;
+  });
+
+  var ribbon = document.createElement('div'); ribbon.id = 'tw-ribbon';
+  var panels = {};
+  TABS.forEach(function (t) {
+    var p = document.createElement('div');
+    p.className = 'tw-panel'; p.setAttribute('role', 'tabpanel'); p.dataset.panel = t[0];
+    p.hidden = t[0] !== 'home';
+    (PANELS[t[0]] || []).forEach(function (g) { p.append(renderGroup(g)); });
+    ribbon.append(p); panels[t[0]] = p;
+  });
+  var collapsed = false, wasCollapsed = false, curTab = 'home';
+  function setCollapsed(v) { collapsed = v; ribbon.hidden = v; chrome.classList.toggle('tw-collapsed', v); }
+  function showTab(k) {
+    curTab = k;
+    Object.keys(tabBtns).forEach(function (n) {
+      tabBtns[n].setAttribute('aria-selected', String(n === k));
+      panels[n].hidden = n !== k;
+    });
+  }
+  /* Word behaviour: a click on the open tab hides the ribbon, a click on a tab shows it, a double-click toggles it */
+  TABS.forEach(function (t) {
+    var k = t[0], tb = tabBtns[k];
+    tb.addEventListener('mousedown', function (e) { if (e.detail === 1) wasCollapsed = collapsed; });
+    tb.addEventListener('click', function (e) {
+      closePop();
+      if (e.detail > 1) return;
+      if (collapsed) { setCollapsed(false); showTab(k); return; }
+      if (curTab === k) { setCollapsed(true); return; }
+      showTab(k);
+    });
+    tb.addEventListener('dblclick', function () {
+      if (wasCollapsed) { setCollapsed(false); showTab(k); } else setCollapsed(true);
+    });
+  });
+
+  /* File tab: the File menu, as a drop-down */
+  var pop = null;
+  function closePop() {
+    if (pop) { pop.remove(); pop = null; }
+    fileTab.setAttribute('aria-expanded', 'false');
+  }
+  function openFilePop() {
+    closePop();
+    fileTab.setAttribute('aria-expanded', 'true');
+    pop = document.createElement('div');
+    pop.id = 'tw-file-pop'; pop.setAttribute('role', 'menu');
+    var m = (window.twMenus || []).filter(function (q) { return q.name === 'File'; })[0];
+    ((m && m.items) || []).forEach(function (it) {
+      if (it.sep) { pop.append(document.createElement('hr')); return; }
+      var bt = document.createElement('button');
+      bt.type = 'button'; bt.setAttribute('role', 'menuitem');
+      var a = document.createElement('span'); a.textContent = it.label;
+      var k = document.createElement('span'); k.className = 'k'; k.textContent = it.key || '';
+      bt.append(a, k);
+      bt.addEventListener('click', function () {
+        closePop();
+        if (it.act) it.act(); else if (it.id) fire(it.id);
+      });
+      pop.append(bt);
+    });
+    document.body.append(pop);
+    var r = fileTab.getBoundingClientRect();
+    pop.style.left = Math.max(4, r.left) + 'px';
+    pop.style.top = r.bottom + 'px';
+  }
+  fileTab.addEventListener('click', function () { if (pop) closePop(); else openFilePop(); });
+  document.addEventListener('mousedown', function (e) {
+    if (pop && !pop.contains(e.target) && e.target !== fileTab) closePop();
+  }, true);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+
+  chrome.append(tbar, tabrow, ribbon);
+  var dtabs = el('tabs'); if (dtabs) chrome.append(dtabs);
+  body.insertBefore(chrome, body.firstChild);
+  /* Ribbon controls keep focus in the document: a press does not move the caret, except in the selects and the document tabs */
+  chrome.addEventListener('mousedown', function (e) {
+    if (e.target.closest && e.target.closest('select, input, textarea, #tabs')) return;
+    e.preventDefault();
+  });
+
+  /* State sync with the original controls */
+  function sync() {
+    pairs.forEach(function (p) {
+      var o = el(p.id), b = p.btn;
+      if (!o) { if (!b.disabled) b.disabled = true; return; }
+      if (b.disabled !== !!o.disabled) b.disabled = !!o.disabled;
+      var pressed = o.type === 'checkbox' ? String(o.checked) : (o.hasAttribute('aria-pressed') ? o.getAttribute('aria-pressed') : null);
+      if (pressed === null) { if (b.hasAttribute('aria-pressed')) b.removeAttribute('aria-pressed'); }
+      else if (b.getAttribute('aria-pressed') !== pressed) b.setAttribute('aria-pressed', pressed);
+      if (p.live) {
+        var t = o.textContent.replace(/\s+/g, ' ').trim();
+        if (p.lbl.textContent !== t) p.lbl.textContent = t;
+      }
+    });
+  }
+  var raf = 0;
+  function queue() { if (!raf) raf = requestAnimationFrame(function () { raf = 0; sync(); }); }
+  document.addEventListener('selectionchange', queue);
+  document.addEventListener('click', queue, true);
+  document.addEventListener('keyup', queue, true);
+  var tb = el('toolbar');
+  if (tb && window.MutationObserver) new MutationObserver(queue).observe(tb, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ['disabled', 'aria-pressed'] });
+  sync();
+
+  /* The chrome's height sets where the left shoulder and the start screen begin */
+  function setChromeH() { document.documentElement.style.setProperty('--chrome-h', chrome.getBoundingClientRect().height + 'px'); }
+  setChromeH();
+  window.addEventListener('resize', setChromeH);
+  if (window.ResizeObserver) new ResizeObserver(setChromeH).observe(chrome);
+})();
+</script>
+<style id="tw-modern-css">
+/* Tabbed Word 2026.11.96: modern surfaces. One palette (light and dark), flat controls, no bevels or gradients. */
+:root{--tw-bar:#f5f5f7;--tw-ribbon:#fbfbfc;--tw-line:#dcdde2;--tw-ink:#1d1d1f;--tw-ink2:#6b6e76;--tw-accent:#1a64d6;--tw-canvas:#eeeff2;--tw-hover:#ebedf1;--tw-press:#dfe2e8;--tw-sel:#e4edfc;--tw-field:#ffffff;--m-radius:8px;--m-shadow:0 10px 30px rgba(20,24,35,.14)}
+html[data-theme="dark"]{--tw-bar:#2a2a2e;--tw-ribbon:#2e2e33;--tw-line:#3c3c42;--tw-ink:#f0f0f2;--tw-ink2:#a3a6ae;--tw-accent:#6ea8ff;--tw-canvas:#1c1c1f;--tw-hover:#3a3a40;--tw-press:#46464d;--tw-sel:#23375a;--tw-field:#262629;--m-shadow:0 10px 30px rgba(0,0,0,.45)}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;color:var(--tw-ink)!important}
+
+/* Buttons and fields in the panels, the dialogs, the start screen and the status bar */
+dialog button,dialog select,dialog input:not([type=checkbox]):not([type=radio]),dialog textarea,
+#shoulder button,#shoulder select,#shoulder input:not([type=checkbox]):not([type=radio]),#shoulder textarea,
+#folderpanel button,#docpages button,#emptychoices button,#statusbar button,#statusbar select,
+#tw-chrome select,#tw-file-pop,.more-panel,[role=menu],#twpicker,#twctx,.tw-ctx{
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;font-size:13px!important;color:var(--tw-ink)!important;
+  background:var(--tw-field)!important;border:1px solid #c9cbd2!important;border-radius:var(--m-radius)!important;box-shadow:none!important;
+  background-image:none!important}
+dialog button,#shoulder button,#folderpanel button,#docpages button,#statusbar button,.more-panel button{padding:6px 12px!important;min-height:30px;cursor:pointer}
+dialog button:hover:not(:disabled),#shoulder button:hover:not(:disabled),#folderpanel button:hover:not(:disabled),#docpages button:hover:not(:disabled),#statusbar button:hover:not(:disabled),.more-panel button:hover:not(:disabled){background:var(--tw-hover)!important}
+dialog button:active:not(:disabled),#shoulder button:active:not(:disabled),#folderpanel button:active:not(:disabled){background:var(--tw-press)!important}
+dialog button:disabled,#shoulder button:disabled,#folderpanel button:disabled,#docpages button:disabled{opacity:.45!important;cursor:default}
+dialog button.primary,dialog button[type=submit]:not(.secondary),#shoulder button.dw-send.primary,#emptychoices button.primary{background:var(--tw-accent)!important;border-color:var(--tw-accent)!important;color:#fff!important}
+dialog input:focus,dialog select:focus,dialog textarea:focus,#shoulder input:focus,#shoulder select:focus,#shoulder textarea:focus,#statusbar select:focus{outline:2px solid var(--tw-accent);outline-offset:0}
+button:focus-visible{outline:2px solid var(--tw-accent)!important;outline-offset:2px}
+#emptychoices button{height:36px;min-width:156px;padding:0 18px!important;font-size:14px!important;font-weight:500}
+#emptychoices button.primary{background:var(--tw-accent)!important;border-color:var(--tw-accent)!important;color:#fff!important}
+#emptychoices button:not(.primary):hover{background:var(--tw-hover)!important}
+
+/* Dialogs: rounded, floating, a plain title row */
+dialog{background:var(--tw-field)!important;color:var(--tw-ink)!important;border:1px solid var(--tw-line)!important;border-radius:14px!important;box-shadow:var(--m-shadow)!important}
+dialog::backdrop{background:rgba(10,12,18,.28)}
+dialog>header,dialog.tw-dialog>header{background:var(--tw-bar)!important;color:var(--tw-ink)!important;border-bottom:1px solid var(--tw-line)!important;border-radius:14px 14px 0 0;padding:12px 16px!important;font-weight:600}
+dialog h2,#shoulder h2,.findreplace-dialog h2{background:none!important;color:var(--tw-ink)!important;font-size:14px!important;font-weight:600!important;padding:2px 0 8px!important;border:0!important;margin:0 0 6px!important}
+
+/* Shoulder panels */
+#shoulder .sh-pane button,#shoulder .sh-pane select,#shoulder .sh-pane input,#shoulder .sh-pane textarea{font-size:13px!important}
+#shoulder #duckwin .dw-head,#duckwin .dw-head{background:var(--tw-bar)!important;color:var(--tw-ink)!important;border-bottom:1px solid var(--tw-line);border-radius:0;font-weight:600;padding:8px 10px!important}
+#duckwin{background:var(--tw-field)!important;border:0!important;box-shadow:none!important}
+#duckwin .dw-body{padding:10px!important}
+#duckwin .dw-note,#duckwin .dw-hist label,#shoulder label{color:var(--tw-ink2)!important;font-size:12px!important}
+#shoulder .sh-title{color:var(--tw-ink2)!important}
+#folderpanel .fp-head{background:var(--tw-bar);border-bottom:1px solid var(--tw-line)}
+#folderpanel{border:0!important;box-shadow:none!important}
+
+/* Document tabs: flat, the active one lifted with the accent line */
+#tw-chrome #tabs .tab-wrap{background:transparent!important;border:0!important;border-bottom:2px solid transparent!important;border-radius:6px 6px 0 0!important;padding:0 2px;color:var(--tw-ink)}
+#tw-chrome #tabs .tab-wrap:hover{background:var(--tw-hover)!important}
+#tw-chrome #tabs .tab-wrap.active{background:var(--tw-field)!important;border-bottom-color:var(--tw-accent)!important}
+#tw-chrome #tabs .tab-wrap button,#tw-chrome #tabs .tab-wrap .close{background:transparent!important;border:0!important;color:var(--tw-ink)!important;font-family:system-ui,sans-serif!important;padding:6px 8px!important}
+#tw-chrome #tabs .tab-wrap.tab-add{border:1px dashed var(--tw-line)!important;background:transparent!important;border-radius:6px!important}
+#tw-chrome #tabs .tab-wrap.tab-add button{font-size:18px!important;color:var(--tw-accent)!important;font-weight:500!important;padding:2px 12px!important}
+
+/* Status bar and popups */
+#statusbar{font-family:system-ui,sans-serif!important}
+#tw-file-pop{background:var(--tw-field)!important;color:var(--tw-ink)!important;border:1px solid var(--tw-line)!important;border-radius:10px!important;box-shadow:var(--m-shadow)!important;padding:6px!important}
+#tw-file-pop button{border:0!important;background:transparent!important;border-radius:6px!important;color:var(--tw-ink)!important;padding:7px 12px!important;min-height:0}
+#tw-file-pop button:hover{background:var(--tw-accent)!important;color:#fff!important}
+#twpicker{padding:12px!important}
+#twpicker .tw-cell{border:1px solid var(--tw-line)!important;background:var(--tw-field)!important;border-radius:3px!important}
+#twpicker .tw-cell.on{background:var(--tw-accent)!important;border-color:var(--tw-accent)!important}
+#twpicker .tw-label{color:var(--tw-ink)!important}
+
+/* Document canvas and ribbon polish */
+#tw-ribbon{background:var(--tw-ribbon)}
+.tw-big:hover:not(:disabled),.tw-sm:hover:not(:disabled){background:var(--tw-hover)}
+.tw-big[aria-pressed="true"],.tw-sm[aria-pressed="true"]{background:var(--tw-sel)!important;border-color:transparent!important;color:var(--tw-accent)!important}
+#tw-chrome{box-shadow:0 1px 0 var(--tw-line)}
+.tw-pill{border-radius:999px!important;padding:0 12px!important}
+.tw-pill.tw-share{background:var(--tw-accent)!important;border-color:var(--tw-accent)!important;color:#fff!important}
+.tw-titlecenter{font-weight:600;color:var(--tw-ink)}
+</style>
+<script id="tw-startup-js">
+/* Tabbed Word 2026.11.101: a new document opens at start only when no document was restored (a blank draft from the last visit is kept, not doubled). */
+(function () {
+  function start() {
+    var t0 = Date.now();
+    (function wait() {
+      if (typeof docs !== 'undefined' && docs.length) return;
+      if (Date.now() - t0 < 1500) { setTimeout(wait, 100); return; }
+      if (window.twNewDocx) window.twNewDocx();
+    })();
+  }
+  if (document.readyState === 'complete') setTimeout(start, 250);
+  else window.addEventListener('load', function () { setTimeout(start, 250); });
+})();
+</script>
+<script id="tw-windows-js">
+/* Tabbed Word 2026.11.104: a window closes when you click outside it. A modal dialog closes when its grey backdrop is clicked;
+   the table size picker, the context menu and other non-modal dialogs close on any click elsewhere. Panels inside the side shoulder stay. */
+(function () {
+  if (window.__twWindows) return;
+  window.__twWindows = true;
+  document.addEventListener('click', function (e) {
+    var d = e.target;
+    if (d && d.tagName === 'DIALOG' && d.open && d.matches(':modal')) {
+      var r = d.getBoundingClientRect();
+      var inside = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
+      if (!inside) d.close();
+    }
+  }, true);
+  document.addEventListener('mousedown', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    if (t.closest('[aria-label="Table"], #tw-tab-file')) return;
+    document.querySelectorAll('#twpicker, #twctx, .tw-ctx, dialog[open]:not(:modal)').forEach(function (w) {
+      if (w.closest('#shoulder') || w.contains(t)) return;
+      if (w.tagName === 'DIALOG') w.close(); else w.remove();
+    });
+  }, true);
+})();
+</script>
