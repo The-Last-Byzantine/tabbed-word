@@ -3,7 +3,7 @@
    Nothing leaves the device: the file passes between two browser tabs. */
 (function () {
   'use strict';
-  var FOLDERS = ['https://tabbedfolders.pages.dev'];
+  var FOLDERS = ['https://tabbedfolders.pages.dev','https://tabbedorganizer.pages.dev'];
   var LOCAL = /^(127\.0\.0\.1|localhost)$/;
   function allowed(origin) {
     if (FOLDERS.indexOf(origin) >= 0) return true;

@@ -11,3 +11,12 @@
 
 /
   Cache-Control: no-cache
+
+/organizer-client.js
+  Cache-Control: no-cache
+
+/word-suite.js
+  Cache-Control: no-cache
+
+/word-suite.css
+  Cache-Control: no-cache

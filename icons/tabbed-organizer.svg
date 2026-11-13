@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B5E59"/>
+      <stop offset="1" stop-color="#3CC9AE"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- sheet tab, top-left: the Tabbed family mark -->
+  <rect x="9" y="11" width="16" height="7" rx="2.5" fill="#D7F3EC"/>
+  <!-- sheet -->
+  <rect x="7" y="16" width="50" height="41" rx="4" fill="#ffffff"/>
+  <!-- header band: rendezvous calendar -->
+  <rect x="7" y="16" width="50" height="10" rx="4" fill="#0B6E69"/>
+  <rect x="7" y="22" width="50" height="4" fill="#0B6E69"/>
+  <!-- three rows: a checked note, a dated rendezvous, a file line -->
+  <path d="M14 33 l3 3 l6 -6" fill="none" stroke="#0B6E69" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="27" y="31" width="22" height="3.6" rx="1.8" fill="#9FDCCB"/>
+  <circle cx="16" cy="43" r="2.6" fill="#2AA892"/>
+  <rect x="23" y="41.2" width="26" height="3.6" rx="1.8" fill="#C9D3D0"/>
+  <rect x="14" y="50" width="30" height="3.6" rx="1.8" fill="#C9D3D0"/>
+  <rect x="48" y="48" width="6" height="6" rx="1.5" fill="#2AA892"/>
+</svg>

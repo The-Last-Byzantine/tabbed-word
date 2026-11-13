@@ -856,3 +856,12 @@ From the Citation Style Language project, licensed under Creative Commons
 Attribution-ShareAlike 3.0.
 Sources: https://github.com/citation-style-language/styles and
 https://github.com/citation-style-language/locales
+
+Open-source fonts added to the Font list (SIL Open Font License 1.1; licence texts in fonts/ttf/):
+- Source Serif 4 (Adobe): fonts/ttf/SourceSerif4-*.ttf, OFL-SourceSerif4.txt
+- Source Sans 3 (Adobe): fonts/ttf/SourceSans3-*.ttf, OFL-SourceSans3.txt
+- Inter (Rasmus Andersson and The Inter Project Authors): fonts/ttf/Inter-*.ttf, OFL-Inter.txt
+- JetBrains Mono (The JetBrains Mono Project Authors): fonts/ttf/JetBrainsMono-Regular.ttf, OFL-JetBrainsMono.txt
+Files copied from the WordCraft repository (storytold/wordcraft, assets/fonts), which lists them under OFL-1.1 in its ATTRIBUTION.md.
+
+WordCraft (storytold/wordcraft, MIT OR Apache-2.0): the ribbon's tab and group structure and its typography and colour values follow WordCraft's interface. No WordCraft source code is included. Copyright (c) the WordCraft authors; full licence texts are in the WordCraft repository (LICENSE-MIT and LICENSE-APACHE).

@@ -1,0 +1,43 @@
+/* Panel visibility wins over legacy desktop and three-column rules. */
+main.tw-three.writing-workspace{display:grid!important;grid-template-columns:minmax(0,1fr)!important;justify-content:center!important;gap:12px!important;padding:12px!important}
+main.tw-three.writing-workspace>#sectionrail{display:none!important;grid-column:1!important;grid-row:1!important}
+main.tw-three.writing-workspace>.paper{grid-column:1!important;grid-row:1!important;width:100%!important;max-width:800px!important}
+main.tw-three.writing-workspace>#shoulder{grid-column:1!important;grid-row:2!important;max-width:320px!important;justify-self:center!important}
+main.tw-three.writing-workspace>#shoulder[hidden]{display:none!important}
+main.writing-workspace>#shoulderopen,main.writing-workspace>aside{display:none!important}
+main.tw-three.writing-workspace.show-left>#sectionrail{display:block!important}
+@media(min-width:1000px){
+main.tw-three.writing-workspace.show-left{grid-template-columns:200px minmax(0,800px)!important}
+main.tw-three.writing-workspace.show-right{grid-template-columns:minmax(0,800px) 300px!important}
+main.tw-three.writing-workspace.show-left.show-right{grid-template-columns:200px minmax(0,800px) 300px!important}
+main.tw-three.writing-workspace.show-left>.paper{grid-column:2!important}
+main.tw-three.writing-workspace.show-right>#shoulder{grid-column:2!important;grid-row:1!important}
+main.tw-three.writing-workspace.show-left.show-right>#shoulder{grid-column:3!important}
+}
+@media(max-width:999px){main.tw-three.writing-workspace.show-left>#sectionrail{grid-row:1!important;height:auto!important;max-height:220px!important;padding-top:0!important}main.tw-three.writing-workspace.show-left>.paper{grid-row:2!important}main.tw-three.writing-workspace.show-left>#shoulder{grid-row:3!important}main.tw-three.writing-workspace>#shoulder{height:auto!important;max-height:55vh!important;max-width:100%!important}}
+#writing-commands,#writing-statistics{background:var(--tw-field,#fff);color:var(--tw-ink,#222);border:1px solid var(--tw-line,#ccc);border-radius:12px;padding:20px;width:min(560px,calc(100vw - 48px));max-height:75vh;box-sizing:border-box}
+#writing-commands::backdrop,#writing-statistics::backdrop{background:#0005}
+.writing-dialog-head{display:flex;align-items:center;justify-content:space-between}.writing-dialog-head h2{margin:0 0 14px;font-size:20px}
+#writing-command-query{display:block;width:100%;box-sizing:border-box;padding:10px;margin:8px 0 12px;font:inherit}
+.writing-command-results{display:flex;flex-direction:column;gap:4px;max-height:45vh;overflow:auto}.writing-command-results button{text-align:left;justify-content:flex-start;padding:10px;white-space:normal}
+.tw-titleright{flex-wrap:wrap}#tw-titlebar{height:auto!important;min-height:40px}body.focus-on main.writing-workspace>#sectionrail{display:none!important}
+@media print{main.writing-workspace>#sectionrail,main.writing-workspace>#shoulder{display:none!important}main.tw-three.writing-workspace{display:block!important}}
+
+/* Fixed symmetric shoulders: visibility never changes the central document column. */
+main.tw-three.writing-workspace,
+main.tw-three.writing-workspace.show-left,
+main.tw-three.writing-workspace.show-right,
+main.tw-three.writing-workspace.show-left.show-right{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,800px) minmax(0,1fr)!important;grid-template-rows:40px auto!important;column-gap:12px!important;row-gap:0!important;align-items:start!important;padding:8px 12px!important;width:100%!important;max-width:none!important}
+main.tw-three.writing-workspace>.paper,
+main.tw-three.writing-workspace.show-left>.paper{grid-column:2!important;grid-row:1 / span 2!important;align-self:start!important;width:100%!important;max-width:800px!important;margin:0 auto!important}
+main.tw-three.writing-workspace>#sectionrail,
+main.tw-three.writing-workspace.show-left>#sectionrail{grid-column:1!important;grid-row:2!important;width:100%!important;max-width:none!important;min-width:0!important;padding-top:0!important;height:calc(100vh - var(--chrome-h,200px) - 80px)!important;max-height:none!important;position:sticky!important;top:calc(var(--chrome-h,200px) + 48px)!important;overflow:auto!important}
+main.tw-three.writing-workspace>#shoulder,
+main.tw-three.writing-workspace.show-right>#shoulder,
+main.tw-three.writing-workspace.show-left.show-right>#shoulder{grid-column:3!important;grid-row:2!important;width:100%!important;max-width:none!important;min-width:0!important;position:sticky!important;top:calc(var(--chrome-h,200px) + 48px)!important;height:calc(100vh - var(--chrome-h,200px) - 80px)!important;max-height:none!important;justify-self:stretch!important}
+main.tw-three.writing-workspace>.writing-shoulder-header{display:flex!important;align-items:flex-start!important;justify-content:flex-end!important;grid-row:1!important;position:sticky!important;top:calc(var(--chrome-h,200px) + 8px)!important;z-index:10;min-width:0;max-width:100%;background:var(--tw-canvas,#eeeff2)}
+#writing-left-header{grid-column:1!important}#writing-right-header{grid-column:3!important}
+.writing-shoulder-header button{border:1px solid var(--tw-line,#ccd0d7)!important;border-radius:5px!important;background:var(--tw-field,#fff)!important;color:var(--tw-ink,#222)!important;min-height:32px;max-width:100%;padding:5px 8px!important;font:12px system-ui!important;white-space:normal!important;text-align:left!important;cursor:pointer}
+@media(max-width:1100px){main.tw-three.writing-workspace,main.tw-three.writing-workspace.show-left,main.tw-three.writing-workspace.show-right,main.tw-three.writing-workspace.show-left.show-right{grid-template-columns:minmax(80px,1fr) minmax(0,640px) minmax(80px,1fr)!important;column-gap:6px!important;padding:6px!important}}
+@media(max-width:600px){main.tw-three.writing-workspace,main.tw-three.writing-workspace.show-left,main.tw-three.writing-workspace.show-right,main.tw-three.writing-workspace.show-left.show-right{grid-template-columns:64px minmax(0,1fr) 64px!important;column-gap:4px!important;padding:4px!important}.writing-shoulder-header button{font-size:10px!important;padding:4px!important}#shoulder .sh-tabs{flex-wrap:wrap!important}#shoulder .sh-pane{padding:4px!important}}
+@media print{main.tw-three.writing-workspace{display:block!important}main.writing-workspace>.writing-shoulder-header{display:none!important}}

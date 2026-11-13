@@ -41,9 +41,27 @@
   var editSeq = {};         /* document id -> counter, bumped on every edit */
   var stateEl = null;
 
+  /* Drive messages are shown as a toast at the bottom of the window, so they are visible even when the side panel is hidden. */
+  var toastTimer = null;
+  function showToast(msg, isError) {
+    var t = document.getElementById('tw-toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.id = 'tw-toast';
+      t.setAttribute('role', 'status');
+      t.setAttribute('aria-live', 'polite');
+      document.body.appendChild(t);
+    }
+    t.textContent = msg;
+    t.classList.toggle('tw-toast-error', !!isError);
+    t.classList.add('tw-toast-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('tw-toast-on'); }, isError ? 9000 : 5000);
+  }
   function report(msg) {
     var s = document.getElementById('status');
     if (s) s.textContent = msg;
+    showToast(msg, /not saved|could not|not available|needs an internet|no open|sign-in could not|failed|expired/i.test(msg));
   }
 
   function httpError(r) {
@@ -422,7 +440,8 @@
     document.head.appendChild(st);
   }
 
-  /* Shows Google's own file chooser, limited to documents and Google Docs. Resolves with the chosen file, or null if cancelled. */
+  /* Shows Google's own file chooser, limited to documents and Google Docs. Several files can be chosen at once.
+     Resolves with the list of chosen files (empty if cancelled). */
   function openPicker(t) {
     if (!API_KEY || API_KEY.indexOf('PASTE_') === 0) {
       return Promise.reject(new Error('The Picker key is not set in this build.'));
@@ -432,6 +451,7 @@
         var view = new google.picker.DocsView(google.picker.ViewId.DOCS).setMimeTypes(OPEN_MIMES.join(','));
         fitPickerStyle();
         new google.picker.PickerBuilder()
+          .enableFeature(google.picker.Feature.MULTISELECT_ENABLED)
           .addView(view)
           .setSize(Math.max(320, Math.min(1051, window.innerWidth - 32)), Math.max(320, Math.min(650, window.innerHeight - 32)))
           .setOAuthToken(t)
@@ -439,8 +459,8 @@
           .setAppId(PROJECT_NUMBER)
           .setTitle('Open a document or Google Doc from Google Drive')
           .setCallback(function (data) {
-            if (data.action === google.picker.Action.PICKED) resolve(data.docs[0]);
-            else if (data.action === google.picker.Action.CANCEL) resolve(null);
+            if (data.action === google.picker.Action.PICKED) resolve(data.docs || []);
+            else if (data.action === google.picker.Action.CANCEL) resolve([]);
           })
           .build()
           .setVisible(true);
@@ -449,6 +469,7 @@
   }
 
   function openDriveFile(f) {
+    /* returns a promise, so several files can be opened one after another */
     var gdoc = f.mimeType === GDOC;
     var name = gdoc ? f.name.replace(/\.docx$/i, '') + '.docx' : f.name, driveName = null;
     if (!gdoc && !OPEN_EXT.test(name)) {
@@ -456,7 +477,7 @@
       if (ext) { driveName = f.name; name = f.name + ext; }
     }
     report('Opening ' + f.name + (gdoc ? ' from Google Docs…' : ' from Google Drive…'));
-    getToken().then(function (t) {
+    return getToken().then(function (t) {
       var url = FILES + '/' + encodeURIComponent(f.id) +
         (gdoc ? '/export?mimeType=' + encodeURIComponent(DOCX) : '?alt=media');
       return fetch(url, { headers: { Authorization: 'Bearer ' + t } });
@@ -501,7 +522,39 @@
     then();
   }
 
+  /* Save all open documents to Google Drive, one after another. */
+  function wireSaveAll() {
+    /* Toolbar and ribbon copies are both matched by title, so no element id is needed. */
+    document.addEventListener('click', function (ev) {
+      var t = ev.target && ev.target.closest ? ev.target.closest('button[title="Save all to Google Drive"]') : null;
+      if (!t) return;
+      requireGis(function () {
+        try { syncDoc(); } catch (e) { /* the active document is saved below anyway */ }
+        var list = allDocs().slice();
+        if (!list.length) { report('No open documents to save.'); return; }
+        var i = 0, ok = 0, failed = [];
+        report('Saving ' + list.length + (list.length === 1 ? ' document' : ' documents') + ' to Google Drive…');
+        function next() {
+          if (i >= list.length) {
+            refresh();
+            report(failed.length
+              ? 'Saved and closed ' + ok + ' of ' + list.length + ' · still open, not saved: ' + failed.join(', ')
+              : 'Saved to Google Drive and closed ' + ok + (ok === 1 ? ' tab' : ' tabs'));
+            schedule(1000);
+            return;
+          }
+          var d = list[i++];
+          Promise.resolve()
+            .then(function () { var out = payload(d); return saveDoc(d, out.blob, out.name, out.mime); })
+            .then(function () { ok++; if (window.twCloseSavedTab) window.twCloseSavedTab(d.id); next(); }, function () { failed.push(fileNameOf(d)); next(); });
+        }
+        next();
+      });
+    });
+  }
+
   function wireButtons() {
+    wireSaveAll();
     var saveBtn = document.getElementById('savedrive');
     if (saveBtn) {
       saveBtn.addEventListener('click', function () {
@@ -569,13 +622,18 @@
         requireGis(function () {
           var tokenP = getToken(false);           /* starts the sign-in window while this click is still active */
           tokenP.then(function (t) {
-            return openPicker(t).then(function (doc) {
-              if (!doc) return;
-              report('Opening ' + doc.name + ' from Google Drive…');
-              return fetch(FILES + '/' + encodeURIComponent(doc.id) + '?fields=id,name,modifiedTime,mimeType', {
-                headers: { Authorization: 'Bearer ' + t }
-              }).then(function (r) { if (!r.ok) throw httpError(r); return r.json(); })
-                .then(function (meta) { openDriveFile(meta); });
+            return openPicker(t).then(function (docs) {
+              if (!docs.length) return;
+              /* one file after another, so each one lands in its own tab with its own Drive link */
+              return docs.reduce(function (p, doc) {
+                return p.then(function () {
+                  report('Opening ' + doc.name + ' from Google Drive…');
+                  return fetch(FILES + '/' + encodeURIComponent(doc.id) + '?fields=id,name,modifiedTime,mimeType', {
+                    headers: { Authorization: 'Bearer ' + t }
+                  }).then(function (r) { if (!r.ok) throw httpError(r); return r.json(); })
+                    .then(function (meta) { return openDriveFile(meta); });
+                });
+              }, Promise.resolve());
             });
           }).catch(function (e) {
             if (e && e.status === 401) token = null;
