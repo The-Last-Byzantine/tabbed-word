@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TabbedWord · Duck.ai Bridge",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Send selected text to Duck.ai in a background tab and return the reply to TabbedWord; the task tab closes on delivery.",
   "permissions": [
     "storage",

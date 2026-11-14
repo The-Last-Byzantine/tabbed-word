@@ -1,4 +1,4 @@
-/* DuckBridge 1.5.0 Duck.ai runner. Pulls its job from the worker and polls the page, so it works while the tab stays in the background. */
+/* DuckBridge 1.5.1 Duck.ai runner. Pulls its job from the worker and polls the page, so it works while the tab stays in the background. */
 'use strict';
 (async()=>{
  if(globalThis.__twDuck150)return;globalThis.__twDuck150=true;

@@ -1,6 +1,6 @@
-/* DuckBridge 1.5.0. Session-backed jobs, page-pulled delivery (works in background tabs), owned task tab closed on delivery or cancel. */
+/* DuckBridge 1.5.1. Session-backed jobs, page-pulled delivery (works in background tabs), owned task tab closed on delivery or cancel. */
 'use strict';
-const VERSION='1.5.0',key=id=>'duck:'+id,valid=id=>typeof id==='string'&&/^[a-zA-Z0-9_-]{8,100}$/.test(id),TIMEOUT=6*60*1000;
+const VERSION='1.5.1',key=id=>'duck:'+id,valid=id=>typeof id==='string'&&/^[a-zA-Z0-9_-]{8,100}$/.test(id),TIMEOUT=6*60*1000;
 const origin=u=>{try{return new URL(u).origin;}catch{return '';}};
 const word=s=>s.frameId===0&&origin(s.url)==='https://tabbedword.pages.dev';
 const duckTab=(s,j)=>s.frameId===0&&s.tab?.id===j.tab&&['https://duck.ai','https://duckduckgo.com'].includes(origin(s.url));
@@ -19,7 +19,7 @@ async function handle(m,s){
  if(word(s)){
   if(m.type==='DUCK_CONNECTION')return{ok:true,version:VERSION};
   if(m.type==='DUCK_START'){
-   if(!valid(m.id)||typeof m.prompt!=='string'||!m.prompt.trim()||m.prompt.length>50000)throw Error('Invalid request or text too long (50,000 characters maximum).');
+   if(!valid(m.id)||typeof m.prompt!=='string'||!m.prompt.trim()||m.prompt.length>66000)throw Error('Invalid request or text too long (60,000 selected characters maximum).');
    for(const j of await jobs()){if(j.owner!==s.tab.id)continue;if(j.finished)await drop(j);else throw Error('This TabbedWord tab already has a Duck.ai request. Cancel it first.');}
    const j={duck:true,id:m.id,owner:s.tab.id,tab:null,state:'opening',prompt:m.prompt,submitted:false,created:Date.now(),deadline:Date.now()+TIMEOUT};
    await put(j);await chrome.alarms.create(key(j.id),{when:j.deadline});

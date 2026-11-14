@@ -1,4 +1,4 @@
-# TabbedWord 2026.11.84
+# TabbedWord 2026.11.85
 
 Deploy the contents of this folder to your static host. The `chrome-duck-bridge` folder is the companion browser extension, not part of the site.
 
@@ -6,7 +6,7 @@ The document stays in a centered column between symmetric left and right shoulde
 
 Command search, writing statistics, comments, tracked changes, TabZot references, exports, versions, local drafts, Organizer and Google Drive tools are included.
 
-## Duck.ai helper (2026.11.82, DuckBridge 1.5.0)
+## Duck.ai helper (2026.11.82, DuckBridge 1.5.1)
 
 Select text in the document, type a command in the Duck.ai shoulder, press Send (or Ctrl/⌘+Enter). The DuckBridge extension opens Duck.ai in a background tab, submits the command with the selected text, streams the reply back into the shoulder and closes the tab the moment the reply arrives. Review or edit the reply, then Insert into document places it below the original selection. No API key, account pairing or setup.
 
@@ -14,9 +14,10 @@ Install the extension from `chrome-duck-bridge/`: chrome://extensions (or brave:
 
 ## What's new since 2026.11.53
 
+- 2026.11.85: Selections up to 60,000 characters (DuckBridge 1.5.1).
 - 2026.11.84: The reply waits for the Insert button (no automatic insertion).
 - 2026.11.83: Insert into document works after document edits (reply goes below the original selection, else at the cursor).
-- 2026.11.82: Duck.ai helper and DuckBridge 1.5.0 (background-tab operation, clean reply extraction, immediate return on Duck.ai's Copy control, tab closed on delivery, equal-height command and reply boxes, Ctrl/⌘+Enter sends).
+- 2026.11.82: Duck.ai helper and DuckBridge 1.5.1 (background-tab operation, clean reply extraction, immediate return on Duck.ai's Copy control, tab closed on delivery, equal-height command and reply boxes, Ctrl/⌘+Enter sends).
 - 2026.11.80: Info shows the current build with release history; named versions (File › Save version, Versions…); Insert › Page break and Table of contents; File › New from template; flat bottom status bar; dark theme for toolbar and ribbon.
 - 2026.11.67: Mobile full-height writing page, keyboard-aware scrolling, mobile Documents & sections menu, mobile font/size/style selectors.
 - 2026.11.63: Detailed ribbon pictograms; Layout page/orientation controls and Indent & spacing; View groups workspace tools.
