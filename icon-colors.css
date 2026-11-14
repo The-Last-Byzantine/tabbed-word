@@ -1,0 +1,19 @@
+/* Reference-inspired graphite linework. Colour is reserved for meaningful details. */
+#tw-chrome #tw-ribbon svg.tw-reference-icon,#tw-chrome #tw-titlebar .tw-qat svg.tw-reference-icon{stroke:#454c54!important;fill:none!important;color:#454c54!important;stroke-width:1.25!important;stroke-linecap:round;stroke-linejoin:round;filter:none!important}
+#tw-chrome svg.tw-reference-icon path,#tw-chrome svg.tw-reference-icon rect,#tw-chrome svg.tw-reference-icon circle{stroke:inherit;fill:none}
+#tw-chrome svg.tw-reference-icon .accent{stroke:var(--tool-accent,#208dbb)!important}
+#tw-chrome svg.tw-reference-icon .soft{fill:var(--tool-accent,#208dbb)!important;fill-opacity:.12}
+#tw-chrome svg.tw-reference-icon text{stroke:none!important;fill:#454c54!important}
+#tw-chrome svg.tw-reference-icon .accent-letter{fill:var(--tool-accent,#208dbb)!important;stroke:none!important}
+#tw-chrome button:disabled svg.tw-reference-icon{opacity:.38;filter:grayscale(.5)!important}
+html[data-theme="dark"] #tw-chrome svg.tw-reference-icon{stroke:#d8dee7!important;color:#d8dee7!important}
+html[data-theme="dark"] #tw-chrome svg.tw-reference-icon text{fill:#d8dee7!important}
+/* Keep the compact surface while letting detailed primary pictograms read clearly. */
+#tw-chrome #tw-ribbon .tw-big svg.tw-reference-icon{width:32px!important;height:32px!important;flex:none}
+#tw-chrome #tw-ribbon .tw-sm svg.tw-reference-icon{width:18px!important;height:18px!important;flex:none}
+#tw-chrome #tw-ribbon .tw-sm.tw-ico svg.tw-reference-icon{width:18px!important;height:18px!important}
+#tw-chrome #tw-ribbon [data-panel="layout"] .tw-big{min-width:64px!important;max-width:92px!important}
+#tw-chrome #tw-ribbon [data-panel="references"] .tw-big{max-width:92px!important}
+#tw-chrome #tw-ribbon .tw-group{border-right-color:#d1d5da!important}
+#tw-chrome #tw-ribbon button[aria-pressed="true"]{background:#e8ebef!important}
+html[data-theme="dark"] #tw-chrome #tw-ribbon button[aria-pressed="true"]{background:#34404e!important}

@@ -1,0 +1,7 @@
+Academic Humanizer integration
+https://github.com/AIScientists-Dev/academic-humanizer
+Version 0.3.3; source snapshot 94b88b23703bed7df507acae7d6d5876209a0cdf.
+Copyright (c) 2026 AIScientists-Dev. MIT licence.
+The original project builds on blader/humanizer (MIT) and acknowledges koaeraser/ARMS.
+Full original notices: academic-humanizer/LICENSE and academic-humanizer/README.md.
+TabbedWord adapts the rules into local checks, a request builder, model preview and revised-document workflow.

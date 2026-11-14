@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "TabbedWord · Duck.ai Bridge",
+  "version": "1.5.0",
+  "description": "Send selected text to Duck.ai in a background tab and return the reply to TabbedWord; the task tab closes on delivery.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://tabbedword.pages.dev/*",
+    "https://duck.ai/*",
+    "https://duckduckgo.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://tabbedword.pages.dev/*"
+      ],
+      "js": [
+        "word-content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://duck.ai/*",
+        "https://duckduckgo.com/*"
+      ],
+      "js": [
+        "duck-content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "action": {
+    "default_title": "TabbedWord · Duck.ai",
+    "default_icon": {
+      "16": "icon-16.png",
+      "32": "icon-32.png"
+    },
+    "default_popup": "popup.html"
+  }
+}

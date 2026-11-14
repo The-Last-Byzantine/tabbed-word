@@ -23,13 +23,13 @@
      converts into the same Google Doc (same file, same link). */
   var GDOC = 'application/vnd.google-apps.document';
   var OPEN_MIMES = [GDOC, DOCX, 'application/vnd.oasis.opendocument.text', 'application/msword',
-                    'text/plain', 'text/markdown', 'text/html'];
-  var OPEN_EXT = /\.(docx|odt|doc|txt|md|markdown|html?)$/i;
+                    'text/plain', 'text/markdown', 'text/html', 'application/x-tex', 'text/x-tex'];
+  var OPEN_EXT = /\.(docx|odt|doc|txt|md|markdown|tex|ltx|latex|html?)$/i;
   /* Drive files can have names without an ending; the app reads the format from the ending. */
   var EXT_OF = {};
   EXT_OF[DOCX] = '.docx'; EXT_OF['application/vnd.oasis.opendocument.text'] = '.odt';
   EXT_OF['application/msword'] = '.doc'; EXT_OF['text/plain'] = '.txt';
-  EXT_OF['text/markdown'] = '.md'; EXT_OF['text/html'] = '.html';
+  EXT_OF['application/x-tex'] = '.tex'; EXT_OF['text/x-tex'] = '.tex'; EXT_OF['text/markdown'] = '.md'; EXT_OF['text/html'] = '.html';
   var IDLE_MS = 3000;       /* no typing for this long before a sync starts */
   var DEBOUNCE_MS = 4000;   /* wait this long after the last change */
   var RETRY_MS = 30000;

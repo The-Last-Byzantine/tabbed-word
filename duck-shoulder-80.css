@@ -1,0 +1,22 @@
+#sh-pane-ai{overflow:auto!important}
+#tw-duck-helper{display:flex;flex-direction:column;gap:10px;min-width:0;font:13px/1.5 Inter,system-ui,sans-serif}
+#tw-duck-helper h2{font-size:18px;margin:0;color:var(--tw-ink,#222)}
+#tw-duck-helper p{margin:0}
+#tw-duck-helper label{display:flex;flex-direction:column;gap:5px;font-weight:600}
+#tw-duck-helper textarea{box-sizing:border-box;width:100%;max-width:100%;min-width:0;border:1px solid var(--tw-line,#ccd0d7)!important;border-radius:8px!important;background:var(--tw-field,#fff)!important;color:var(--tw-ink,#222)!important;padding:9px!important;font:13px/1.5 Inter,system-ui,sans-serif!important;resize:vertical;min-height:150px;height:150px;text-align:start;white-space:pre-wrap}
+#tw-duck-helper #ai-result{min-height:150px;height:150px}
+#tw-duck-helper .ai-row{display:flex;flex-wrap:wrap;gap:6px}
+#tw-duck-helper button{border:1px solid var(--tw-line,#ccd0d7)!important;border-radius:7px!important;background:var(--tw-field,#fff)!important;color:var(--tw-ink,#222)!important;padding:8px 10px!important;min-height:35px;cursor:pointer;font:13px Inter,system-ui,sans-serif!important}
+#tw-duck-helper button.primary{background:#2e5798!important;color:white!important;border-color:#2e5798!important}
+#tw-duck-helper button:disabled{opacity:.5;cursor:default}
+#tw-duck-helper .ai-small{font-size:12px;color:var(--tw-muted,#6a6e78)}
+#tw-duck-helper .ai-status{padding:9px 10px;border:1px solid var(--tw-line,#ccd0d7);border-radius:7px;background:var(--tw-bar,#f4f4f6);overflow-wrap:anywhere}
+#tw-duck-helper .ai-status[data-state=working]{border-color:#2e5798;color:#2e5798}
+#tw-duck-helper .ai-status[data-state=done]{border-color:#16816f}
+#tw-duck-helper details{border-top:1px solid var(--tw-line,#ccd0d7);padding-top:9px}
+#tw-duck-helper summary{cursor:pointer;font-weight:600}
+#shoulder .sh-tabs #sh-tab-ai svg{color:#2e5798}
+#tw-duck-helper [hidden]{display:none!important}
+@media(max-width:800px){#shoulder:has(#sh-tab-ai[aria-selected=true]){min-width:min(300px,90vw)!important;max-width:100%!important}}
+
+#tw-duck-helper h2{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 8px}#tw-duck-helper .duck-phase{font-size:12px;font-weight:500;color:var(--tw-muted,#6a6e78);overflow-wrap:anywhere}#tw-duck-helper .duck-phase::before{content:"· ";}#tw-duck-helper .duck-phase[data-state=working]{color:#b65022}
