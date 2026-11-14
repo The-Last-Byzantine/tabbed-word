@@ -1,4 +1,4 @@
-# TabbedWord 2026.11.82
+# TabbedWord 2026.11.83
 
 Deploy the contents of this folder to your static host. The `chrome-duck-bridge` folder is the companion browser extension, not part of the site.
 
@@ -14,6 +14,7 @@ Install the extension from `chrome-duck-bridge/`: chrome://extensions (or brave:
 
 ## What's new since 2026.11.53
 
+- 2026.11.83: Insert into document works after document edits (reply goes below the original selection, else at the cursor).
 - 2026.11.82: Duck.ai helper and DuckBridge 1.5.0 (background-tab operation, clean reply extraction, immediate return on Duck.ai's Copy control, tab closed on delivery, equal-height command and reply boxes, Ctrl/⌘+Enter sends).
 - 2026.11.80: Info shows the current build with release history; named versions (File › Save version, Versions…); Insert › Page break and Table of contents; File › New from template; flat bottom status bar; dark theme for toolbar and ribbon.
 - 2026.11.67: Mobile full-height writing page, keyboard-aware scrolling, mobile Documents & sections menu, mobile font/size/style selectors.
